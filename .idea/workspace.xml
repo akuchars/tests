@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0bbdd235-7237-4c47-8c2c-370cf7aff8c9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.circleci/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.circleci/config.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/akuchars/ApplicationRunnerTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/tasks.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/META-INF/tasks.kotlin_module" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,6 +24,7 @@
         <option value="Kotlin Object" />
         <option value="Kotlin Interface" />
         <option value="Kotlin Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -42,16 +45,24 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="add_unversioned_files" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateKotlinClassDialog.RecentsKey">
-      <recent name="akuchars.application.task.model" />
-    </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
       <recent name="akuchars.infrastructure.spring" />
       <recent name="akuchars.application.user.model" />
+    </key>
+    <key name="CreateKotlinClassDialog.RecentsKey">
+      <recent name="akuchars.application.task.model" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="akuchars" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="akuchars.domain.task.model" />
@@ -76,7 +87,23 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Kotlin.akuchars.ApplicationRunnerKt">
+  <component name="RunManager" selected="JUnit.ApplicationRunnerTest.applicationContextTest">
+    <configuration name="ApplicationRunnerTest.applicationContextTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="tasks" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="akuchars.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="akuchars" />
+      <option name="MAIN_CLASS_NAME" value="akuchars.ApplicationRunnerTest" />
+      <option name="METHOD_NAME" value="applicationContextTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="akuchars.ApplicationRunnerKt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
       <module name="tasks" />
       <option name="VM_PARAMETERS" />
@@ -93,19 +120,6 @@
     <configuration name="docker-compose.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings>
-          <option name="sourceFilePath" value="docker-compose.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
-    <configuration name="docker-compose.yml.mongo: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="services">
-            <list>
-              <option value="mongo" />
-            </list>
-          </option>
           <option name="sourceFilePath" value="docker-compose.yml" />
         </settings>
       </deployment>
@@ -139,11 +153,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ApplicationRunnerTest.applicationContextTest" />
         <item itemvalue="Kotlin.akuchars.ApplicationRunnerKt" />
         <item itemvalue="Docker.docker-compose.yml.mongodb: Compose Deployment" />
         <item itemvalue="Docker.docker-compose.yml.rabbit: Compose Deployment" />
         <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
-        <item itemvalue="Docker.docker-compose.yml.mongo: Compose Deployment" />
       </list>
     </recent_temporary>
   </component>
@@ -201,7 +215,28 @@
       <option name="project" value="LOCAL" />
       <updated>1566910234806</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="circleCi #1">
+      <created>1566910401742</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1566910401742</updated>
+    </task>
+    <task id="LOCAL-00006" summary="circleCi #2">
+      <created>1566910495688</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1566910495688</updated>
+    </task>
+    <task id="LOCAL-00007" summary="circleCi #3">
+      <created>1566910604106</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1566910604107</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -220,7 +255,10 @@
     <MESSAGE value="Change entity class to kotlin" />
     <MESSAGE value="Adding circleci" />
     <MESSAGE value="Fix in config.yml container" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix in config.yml container" />
+    <MESSAGE value="circleCi #1" />
+    <MESSAGE value="circleCi #2" />
+    <MESSAGE value="circleCi #3" />
+    <option name="LAST_COMMIT_MESSAGE" value="circleCi #3" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
