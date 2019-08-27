@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0bbdd235-7237-4c47-8c2c-370cf7aff8c9" name="Default Changelist" comment="" />
+    <list default="true" id="0bbdd235-7237-4c47-8c2c-370cf7aff8c9" name="Default Changelist" comment="Create .gitignore file">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +25,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
       <MavenImportingSettings>
@@ -34,14 +39,22 @@
     <option name="version" value="1" />
   </component>
   <component name="ProjectId" id="1Px9CEsMa1lAYzJ5VmVlpl78g8h" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="add_unversioned_files" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateKotlinClassDialog.RecentsKey">
+      <recent name="akuchars.application.task.model" />
+    </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
       <recent name="akuchars.infrastructure.spring" />
       <recent name="akuchars.application.user.model" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="akuchars.domain.task.model" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Repozytoria\akuchars\tasks" />
@@ -49,12 +62,6 @@
       <recent name="C:\Repozytoria\akuchars\tasks\src\main\kotlin\akuchars\application\users" />
       <recent name="C:\Repozytoria\akuchars\tasks\src\test\kotlin\akuchars" />
       <recent name="C:\Repozytoria\akuchars\tasks\src\main\kotlin" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="akuchars.domain.task.model" />
-    </key>
-    <key name="CreateKotlinClassDialog.RecentsKey">
-      <recent name="akuchars.application.task.model" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -166,18 +173,48 @@
       <option name="presentableId" value="Default" />
       <updated>1566804750373</updated>
     </task>
+    <task id="LOCAL-00001" summary="Create .gitignore file">
+      <created>1566900811535</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1566900811535</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Change entity class to kotlin">
+      <created>1566910043411</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1566910043411</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Adding circleci">
+      <created>1566910070633</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1566910070633</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Create .gitignore file" />
+    <MESSAGE value="Change entity class to kotlin" />
+    <MESSAGE value="Adding circleci" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding circleci" />
+  </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/akuchars/infrastructure/spring/InitDatabaseRunner.kt</url>
-          <line>31</line>
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="JetRunConfigurationType">
         <watch expression="userRepository.save(User())" />
