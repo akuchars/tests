@@ -1,0 +1,52 @@
+# Java Maven CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-java/ for more details
+#
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/openjdk:11-jdk
+
+      - image: circleci/rabbitmq:3-management
+          ports:
+            - 5672:5672
+            - 15672:15672
+      - image: circleci/mongo:latest
+          container_name: "mongodb"
+          environment:
+            - MONGO_DATA_DIR=/data/db
+            - MONGO_LOG_DIR=/dev/null
+            - MONGODB_USER="akuchars"
+            - MONGODB_PASS="haslo123"
+          volumes:
+            - ./data/db:/data/db
+          ports:
+            - 27017:27017
+
+    working_directory: ~/repo
+
+    environment:
+      # Customize the JVM maximum heap limit
+      MAVEN_OPTS: -Xmx3200m
+
+    steps:
+      - checkout
+
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "pom.xml" }}
+            # fallback to using the latest cache if no exact match is found
+            - mvn install -DskipTests
+            - v1-dependencies-
+
+      - run: mvn compile install dependency:go-offline
+
+      - save_cache:
+          paths:
+            - ~/.m2
+          key: v1-dependencies-{{ checksum "pom.xml" }}
+
+      # run tests!
+      - run: mvn integration-test
