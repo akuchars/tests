@@ -19,7 +19,7 @@ import org.springframework.stereotype.Component
 import org.springframework.transaction.annotation.Transactional
 
 @Component
-//@Profile(ProfileProperties.H2_PROFILE)
+@Profile(ProfileProperties.H2_PROFILE)
 class InitDatabaseRunner (
 		private val userRepository: UserRepository,
 		private val projectRepository: ProjectRepository,
