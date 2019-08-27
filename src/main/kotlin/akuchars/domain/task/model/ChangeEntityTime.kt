@@ -1,27 +1,23 @@
-package akuchars.domain.task.model;
+package akuchars.domain.task.model
 
-import kotlin.jvm.internal.Intrinsics;
+import java.time.LocalDateTime
+import javax.persistence.Embeddable
 
-import java.time.LocalDateTime;
+@Embeddable
+data class ChangeEntityTime(
+		val createdDate: LocalDateTime,
+		private var updateDate: LocalDateTime?
+) {
 
-class ChangeEntityTime {
-	private LocalDateTime createdDate;
-	private LocalDateTime updateDate;
-
-	private ChangeEntityTime(LocalDateTime createdDate, LocalDateTime updateDate) {
-		Intrinsics.checkParameterIsNotNull(createdDate, "createdDate");
-		this.createdDate = createdDate;
-		this.updateDate = updateDate;
+	internal fun updateTime() {
+		this.updateDate = LocalDateTime.now()
 	}
 
-	ChangeEntityTime() {
-	}
+	companion object {
 
-	static ChangeEntityTime now() {
-		return new ChangeEntityTime(LocalDateTime.now(), null);
-	}
-
-	void updateTime() {
-		this.updateDate = LocalDateTime.now();
+		@JvmStatic
+		internal fun now(): ChangeEntityTime {
+			return ChangeEntityTime(LocalDateTime.now(), null)
+		}
 	}
 }

@@ -1,18 +1,6 @@
-package akuchars.domain.task.model;
+package akuchars.domain.task.model
 
-import kotlin.jvm.internal.Intrinsics;
-
-import javax.persistence.Embeddable;
+import javax.persistence.Embeddable
 
 @Embeddable
-public class TaskContent {
-	private String value;
-
-	public TaskContent(String value) {
-		Intrinsics.checkParameterIsNotNull(value, "value");
-		this.value = value;
-	}
-
-	TaskContent() {
-	}
-}
+data class TaskContent(val value: String)

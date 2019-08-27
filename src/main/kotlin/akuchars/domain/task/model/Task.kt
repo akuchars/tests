@@ -1,106 +1,96 @@
-package akuchars.domain.task.model;
+package akuchars.domain.task.model
 
-import akuchars.domain.common.AbstractJpaEntity;
-import akuchars.domain.common.EventBus;
-import akuchars.domain.task.event.TaskChangedAssigneeAsyncEvent;
-import akuchars.domain.task.event.TaskCreatedAsyncEvent;
-import akuchars.domain.task.repository.ProjectTaskRepository;
-import akuchars.domain.user.model.User;
-import akuchars.kernel.ApplicationProperties;
-import kotlin.jvm.internal.Intrinsics;
-
-import javax.persistence.AttributeOverride;
-import javax.persistence.AttributeOverrides;
-import javax.persistence.Column;
-import javax.persistence.Embedded;
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
-
-import static akuchars.kernel.ApplicationProperties.TASK_QUEUE_NAME;
+import akuchars.domain.common.AbstractJpaEntity
+import akuchars.domain.common.EventBus
+import akuchars.domain.task.event.TaskChangedAssigneeAsyncEvent
+import akuchars.domain.task.event.TaskCreatedAsyncEvent
+import akuchars.domain.task.repository.ProjectTaskRepository
+import akuchars.domain.user.model.User
+import akuchars.kernel.ApplicationProperties
+import akuchars.kernel.ApplicationProperties.TASK_QUEUE_NAME
+import javax.persistence.AttributeOverride
+import javax.persistence.AttributeOverrides
+import javax.persistence.Column
+import javax.persistence.Embedded
+import javax.persistence.Entity
+import javax.persistence.EnumType
+import javax.persistence.Enumerated
+import javax.persistence.JoinColumn
+import javax.persistence.ManyToOne
+import javax.persistence.OneToOne
+import javax.persistence.Table
 
 @Entity
 @Table(schema = ApplicationProperties.TASK_SCHEMA_NAME, name = "tasks")
-public class Task extends AbstractJpaEntity {
+class Task private constructor() : AbstractJpaEntity() {
 	@OneToOne
 	@JoinColumn(name = "creator_id")
-	private User creator;
+	lateinit var creator: User
+		private set
 
 	@OneToOne
 	@JoinColumn(name = "assignee_id")
-	private User assignee;
+	lateinit var assignee: User
+		private set
 
 	@Embedded
-	@AttributeOverrides({
-			@AttributeOverride(name = "value", column = @Column(name = "content"))
-	})
-	private TaskContent taskContent;
+	@AttributeOverrides(AttributeOverride(name = "value", column = Column(name = "content")))
+	lateinit var taskContent: TaskContent
+		private set
 
 	@Embedded
-	@AttributeOverrides({
-			@AttributeOverride(name = "value", column = @Column(name = "title"))
-	})
-	private TaskTitle taskTitle;
+	@AttributeOverrides(AttributeOverride(name = "value", column = Column(name = "title")))
+	lateinit var taskTitle: TaskTitle
+		private set
 
 	@Enumerated(EnumType.STRING)
-	private TaskPriority priority;
+	lateinit var priority: TaskPriority
+		private set
 
 	@Enumerated(EnumType.STRING)
-	private TaskStatus status;
+	lateinit var status: TaskStatus
+		private set
 
 	@ManyToOne
 	@JoinColumn(name = "parent_id")
-	private Project parent;
+	lateinit var parent: Project
+		private set
 
 	@Embedded
-	@AttributeOverrides({
-			@AttributeOverride(name = "createdDate", column = @Column(name = "created_time")),
-			@AttributeOverride(name = "updateDate", column = @Column(name = "update_time"))
-	})
-	private ChangeEntityTime time;
+	@AttributeOverrides(AttributeOverride(name = "createdDate", column = Column(name = "created_time")), AttributeOverride(name = "updateDate", column = Column(name = "update_time")))
+	lateinit var time: ChangeEntityTime
+		private set
 
-	private Task() {
+	fun changeAssignee(eventBus: EventBus, assignee: User): Task {
+		this.assignee = assignee
+		this.time.updateTime()
+		eventBus.sendAsync(TASK_QUEUE_NAME, TaskChangedAssigneeAsyncEvent(id, assignee.id!!))
+		return this
 	}
 
-	public static Task createProjectTask(EventBus eventBus, ProjectTaskRepository repository,
-										 User creator,
-										 User assignee,
-										 TaskContent taskContent, TaskTitle taskTitle,
-										 TaskPriority taskPriority,
-										 Project parent
-	) {
-		Intrinsics.checkParameterIsNotNull(eventBus, "eventBus");
-		Intrinsics.checkParameterIsNotNull(creator, "creator");
-		Intrinsics.checkParameterIsNotNull(assignee, "assignee");
-		Intrinsics.checkParameterIsNotNull(taskContent, "content");
-		Intrinsics.checkParameterIsNotNull(taskTitle, "title");
-		Intrinsics.checkParameterIsNotNull(taskPriority, "priority");
-		Intrinsics.checkParameterIsNotNull(parent, "parent");
+	companion object {
 
-		Task task = new Task();
-		task.creator = creator;
-		task.assignee = assignee;
-		task.taskContent = taskContent;
-		task.taskTitle = taskTitle;
-		task.priority = taskPriority;
-		task.parent = parent;
-		task.status = TaskStatus.NEW;
+		fun createProjectTask(eventBus: EventBus, repository: ProjectTaskRepository,
+							  creator: User,
+							  assignee: User,
+							  taskContent: TaskContent, taskTitle: TaskTitle,
+							  taskPriority: TaskPriority,
+							  parent: Project
+		): Task {
+			return Task().apply {
+				this.creator = creator
+				this.assignee = assignee
+				this.taskContent = taskContent
+				this.taskTitle = taskTitle
+				this.priority = taskPriority
+				this.parent = parent
+				this.status = TaskStatus.NEW
+				this.time = ChangeEntityTime.now()
 
-		repository.save(task);
-		eventBus.sendAsync(TASK_QUEUE_NAME, new TaskCreatedAsyncEvent(task.id, task.taskTitle.getValue()));
-		return task;
-	}
-
-	public Task changeAssignee(final EventBus eventBus, final User assignee) {
-		Intrinsics.checkParameterIsNotNull(eventBus, "eventBus");
-		Intrinsics.checkParameterIsNotNull(assignee, "assignee");
-		this.assignee = assignee;
-		this.time.updateTime();
-		eventBus.sendAsync(TASK_QUEUE_NAME, new TaskChangedAssigneeAsyncEvent(id, assignee.getId()));
-		return this;
+				repository.save(this)
+			}.also {
+				eventBus.sendAsync(TASK_QUEUE_NAME, TaskCreatedAsyncEvent(it.id, it.taskTitle.value))
+			}
+		}
 	}
 }

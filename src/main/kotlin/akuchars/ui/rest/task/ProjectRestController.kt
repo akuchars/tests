@@ -34,6 +34,6 @@ class ProjectRestController(
 
 	@GetMapping("/{id}")
 	fun getProjectById(@PathVariable id: Long): ProjectDto? {
-		return projectApplicationService.getProjectById(id)
+		return projectApplicationService.findProjectById(id)
 	}
 }

@@ -1,7 +1,6 @@
 package akuchars.application.task.command
 
 import akuchars.application.task.model.ProjectDto
-import akuchars.application.task.model.TaskDto
 import akuchars.application.user.model.UserDto
 import akuchars.application.user.query.UserQueryService
 import akuchars.domain.common.EventBus
@@ -27,7 +26,7 @@ class ProjectApplicationService(
 	}
 
 	@Transactional(readOnly = true)
-	fun getProjectById(id: Long): ProjectDto? =
+	fun findProjectById(id: Long): ProjectDto? =
 			projectRepository.findByIdOrNull(id)?.convertToDto()
 
 	@Transactional
@@ -35,7 +34,7 @@ class ProjectApplicationService(
 			projectRepository.findAll(pageable).map { it.convertToDto() }
 
 	private fun Project.convertToDto(): ProjectDto {
-		return ProjectDto(id, name.value, UserDto(), tasks.map { TaskDto() }.toSet())
+		return ProjectDto(id, name.value, UserDto(), setOf())
 //			TODO("Poprawić tutaj ")
 	}
 }

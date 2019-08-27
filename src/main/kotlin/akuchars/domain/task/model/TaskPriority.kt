@@ -1,6 +1,6 @@
-package akuchars.domain.task.model;
+package akuchars.domain.task.model
 
-public enum TaskPriority {
+enum class TaskPriority {
 	HIGH,
 	MEDIUM,
 	LOW

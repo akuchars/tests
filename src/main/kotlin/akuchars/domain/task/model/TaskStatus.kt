@@ -1,5 +1,5 @@
-package akuchars.domain.task.model;
+package akuchars.domain.task.model
 
-public enum TaskStatus {
+enum class TaskStatus {
 	NEW
 }
