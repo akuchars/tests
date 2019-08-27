@@ -7,7 +7,7 @@ jobs:
   build:
     docker:
       - image: circleci/openjdk:11-jdk
-      - image: circleci/rabbitmq
+      - image: circleci/rabbitmq:3.7.7
       - image: circleci/mongo:latest
       - image: circleci/postgres:latest
 
