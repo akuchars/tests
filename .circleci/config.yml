@@ -7,22 +7,17 @@ jobs:
   build:
     docker:
       - image: circleci/openjdk:11-jdk
-
       - image: circleci/rabbitmq:3-management
       - image: circleci/mongo:latest
-          environment:
-            - MONGO_DATA_DIR=/data/db
-            - MONGO_LOG_DIR=/dev/null
-            - MONGODB_USER="akuchars"
-            - MONGODB_PASS="haslo123"
-          volumes:
-            - ./data/db:/data/db
 
     working_directory: ~/repo
 
     environment:
-      # Customize the JVM maximum heap limit
       MAVEN_OPTS: -Xmx3200m
+      MONGO_DATA_DIR: /data/db
+      MONGO_LOG_DIR: /dev/null
+      MONGODB_USER: "akuchars"
+      MONGODB_PASS: "haslo123"
 
     steps:
       - checkout
