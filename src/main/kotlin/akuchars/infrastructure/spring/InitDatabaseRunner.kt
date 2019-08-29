@@ -9,7 +9,12 @@ import akuchars.domain.task.model.TaskPriority.HIGH
 import akuchars.domain.task.model.TaskTitle
 import akuchars.domain.task.repository.ProjectRepository
 import akuchars.domain.task.repository.ProjectTaskRepository
+import akuchars.domain.user.model.Email
+import akuchars.domain.user.model.Password
+import akuchars.domain.user.model.PhoneNumber
 import akuchars.domain.user.model.User
+import akuchars.domain.user.model.UserData
+import akuchars.domain.user.repository.RoleRepository
 import akuchars.domain.user.repository.UserRepository
 import akuchars.kernel.ProfileProperties
 import org.springframework.boot.ApplicationArguments
@@ -19,20 +24,33 @@ import org.springframework.stereotype.Component
 import org.springframework.transaction.annotation.Transactional
 
 @Component
-@Profile(ProfileProperties.H2_PROFILE)
+//@Profile(ProfileProperties.H2_PROFILE)
 class InitDatabaseRunner (
 		private val userRepository: UserRepository,
 		private val projectRepository: ProjectRepository,
 		private val taskRepository: ProjectTaskRepository,
+		private val roleRepository: RoleRepository,
 		private val mockedEventBus: EventBus
 ): ApplicationRunner {
 
 	@Transactional
 	override fun run(args: ApplicationArguments) {
-		val user = userRepository.save(User())
+		val user = createMe()
 
 		val project = Project.createProject(mockedEventBus, projectRepository, ProjectName("Some nice project name"), user)
 
-		Task.createProjectTask(mockedEventBus, taskRepository, user, user, TaskContent("My task content"), TaskTitle("Some title"), HIGH, project)
+//		Task.createProjectTask(mockedEventBus, taskRepository, user, user, TaskContent("My task content"), TaskTitle("Some title"), HIGH, project)
+	}
+
+	private fun createMe(): User {
+		return User.createUser(
+				mockedEventBus,
+				userRepository,
+				UserData("Adam", "Kucharski"),
+				Email("adamkucharski1994@gmail.com"),
+				Password("haslo123"),
+				roleRepository.findAll().toSet(),
+				PhoneNumber("501464579")
+		)
 	}
 }

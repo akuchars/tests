@@ -51,4 +51,32 @@
 			alter table task.projects add column update_time date;
 		</sql>
 	</changeSet>
+
+	<changeSet id="Adding authentication to user data" author="">
+		<sql>
+			alter table personal.users add column name varchar not null;
+			alter table personal.users add column surname varchar not null;
+			alter table personal.users add column email varchar not null;
+			alter table personal.users add column phone varchar;
+			alter table personal.users add column password varchar;
+
+			create table personal.roles
+			(
+				id bigserial not null,
+				role varchar not null,
+				constraint role_pk primary key (id),
+				constraint role_unique unique (id)
+			);
+
+			create table personal.users_roles
+			(
+				user_id bigserial not null,
+				role_id bigserial not null,
+				constraint user_role_pk primary key (user_id, role_id)
+			);
+
+			insert into personal.roles values(1, 'ADMIN');
+			insert into personal.roles values(2, 'USER');
+		</sql>
+	</changeSet>
 </databaseChangeLog>

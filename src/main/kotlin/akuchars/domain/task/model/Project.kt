@@ -17,31 +17,34 @@ import javax.persistence.Column
 import javax.persistence.Embedded
 import javax.persistence.Entity
 import javax.persistence.JoinColumn
+import javax.persistence.ManyToMany
+import javax.persistence.ManyToOne
 import javax.persistence.OneToMany
 import javax.persistence.OneToOne
 import javax.persistence.Table
 
 @Entity
 @Table(schema = ApplicationProperties.TASK_SCHEMA_NAME, name = "projects")
-class Project private constructor() : AbstractJpaEntity() {
-	@Embedded
-	@AttributeOverrides(AttributeOverride(name = "value", column = Column(name = "name")))
-	lateinit var name: ProjectName
-		private set
+data class Project (
+		@Embedded
+		@AttributeOverrides(AttributeOverride(name = "value", column = Column(name = "name")))
+		val name: ProjectName,
 
-	@OneToMany(mappedBy = "parent", cascade = [CascadeType.ALL], orphanRemoval = true)
-	lateinit var tasks: MutableSet<Task>
-		private set
+		@OneToMany(mappedBy = "parent", cascade = [CascadeType.ALL], orphanRemoval = true)
+		val tasks: MutableSet<Task>,
 
-	@OneToOne
-	@JoinColumn(name = "owner_id")
-	lateinit var owner: User
-		private set
+		@ManyToOne
+		@JoinColumn(name = "owner_id")
+		val owner: User,
 
+		@Embedded
+		@AttributeOverrides(
+				AttributeOverride(name = "createdDate", column = Column(name = "created_time")),
+				AttributeOverride(name = "updateDate", column = Column(name = "update_time"))
+		)
+		val changeTime: ChangeEntityTime
+): AbstractJpaEntity() {
 	// TODO dodać użytkowników
-	@Embedded
-	@AttributeOverrides(AttributeOverride(name = "createdDate", column = Column(name = "created_time")), AttributeOverride(name = "updateDate", column = Column(name = "update_time")))
-	private lateinit var changeTime: ChangeEntityTime
 
 	fun addTask(eventBus: EventBus, addTaskToProjectPolicy: AddTaskToProjectPolicy, task: Task): Project {
 		if (addTaskToProjectPolicy.canAddTaskToProject(task, this)) {
@@ -56,11 +59,7 @@ class Project private constructor() : AbstractJpaEntity() {
 		fun createProject(eventBus: EventBus, projectRepository: ProjectRepository,
 						  name: ProjectName, tasks: MutableSet<Task>,
 						  owner: User, changeTime: ChangeEntityTime): Project {
-			return Project().apply {
-				this.name = name
-				this.tasks = tasks
-				this.owner = owner
-				this.changeTime = changeTime
+			return Project(name, tasks, owner, changeTime).apply {
 				projectRepository.save(this)
 			}.also {
 				eventBus.sendAsync(TASK_QUEUE_NAME, ProjectCreatedAsyncEvent(it.id, it.name.value))

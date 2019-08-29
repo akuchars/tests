@@ -45,5 +45,4 @@ class TaskApplicationService(
 			LOW ->  TaskPriorityDto.LOW
 		}
 	}
-
 }

@@ -5,4 +5,5 @@ object ApplicationProperties {
 	const val USER_SCHEMA_NAME: String = "personal"
 
 	const val TASK_QUEUE_NAME = "tasks_queue"
+	const val PERSONAL_QUEUE_NAME = "personal_queue"
 }
