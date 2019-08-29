@@ -12,6 +12,7 @@ import javax.persistence.AttributeOverrides
 import javax.persistence.Column
 import javax.persistence.Embedded
 import javax.persistence.Entity
+import javax.persistence.FetchType.EAGER
 import javax.persistence.JoinColumn
 import javax.persistence.JoinTable
 import javax.persistence.ManyToMany
@@ -39,14 +40,16 @@ data class User(
 		@AttributeOverrides(AttributeOverride(name = "value", column = Column(name = "password")))
 		val password: Password,
 
-		@ManyToMany
+		@ManyToMany(fetch = EAGER)
 		@JoinTable(
 				schema = USER_SCHEMA_NAME,
 				name = "users_roles",
 				joinColumns = [JoinColumn(name = "user_id")],
 				inverseJoinColumns = [JoinColumn(name = "role_id")]
 		)
-		val roles: Set<Role>
+		val roles: Set<Role>,
+
+		val enable: Boolean
 ) : AbstractJpaEntity() {
 
 	companion object {
@@ -56,7 +59,7 @@ data class User(
 		               password: Password, roles: Set<Role>,
 		               phoneNumber: PhoneNumber? = null
 		): User {
-			return User(name, email, phoneNumber, password, roles).apply {
+			return User(name, email, phoneNumber, password, roles, true).apply {
 				userRepository.save(this)
 			}.also {
 				eventBus.sendAsync(PERSONAL_QUEUE_NAME, UserCreatedAsyncEvent(it.id, it.userData, it.roles))

@@ -20,17 +20,19 @@ import akuchars.kernel.ProfileProperties
 import org.springframework.boot.ApplicationArguments
 import org.springframework.boot.ApplicationRunner
 import org.springframework.context.annotation.Profile
+import org.springframework.security.crypto.password.PasswordEncoder
 import org.springframework.stereotype.Component
 import org.springframework.transaction.annotation.Transactional
 
 @Component
-//@Profile(ProfileProperties.H2_PROFILE)
+@Profile(ProfileProperties.H2_PROFILE)
 class InitDatabaseRunner (
 		private val userRepository: UserRepository,
 		private val projectRepository: ProjectRepository,
 		private val taskRepository: ProjectTaskRepository,
 		private val roleRepository: RoleRepository,
-		private val mockedEventBus: EventBus
+		private val mockedEventBus: EventBus,
+		private val passwordEncoder: PasswordEncoder
 ): ApplicationRunner {
 
 	@Transactional
@@ -39,7 +41,7 @@ class InitDatabaseRunner (
 
 		val project = Project.createProject(mockedEventBus, projectRepository, ProjectName("Some nice project name"), user)
 
-//		Task.createProjectTask(mockedEventBus, taskRepository, user, user, TaskContent("My task content"), TaskTitle("Some title"), HIGH, project)
+		Task.createProjectTask(mockedEventBus, taskRepository, user, user, TaskContent("My task content"), TaskTitle("Some title"), HIGH, project)
 	}
 
 	private fun createMe(): User {
@@ -48,7 +50,7 @@ class InitDatabaseRunner (
 				userRepository,
 				UserData("Adam", "Kucharski"),
 				Email("adamkucharski1994@gmail.com"),
-				Password("haslo123"),
+				Password(passwordEncoder.encode("haslo123")),
 				roleRepository.findAll().toSet(),
 				PhoneNumber("501464579")
 		)

@@ -79,4 +79,11 @@
 			insert into personal.roles values(2, 'USER');
 		</sql>
 	</changeSet>
+
+	<changeSet id="Editing users table" author="akuchars">
+		<sql>
+			alter table personal.users add column enable boolean not null default true;
+			alter table personal.users add constraint user_email_unique unique (email);
+		</sql>
+	</changeSet>
 </databaseChangeLog>

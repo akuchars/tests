@@ -3,6 +3,8 @@ package akuchars.infrastructure.events
 import akuchars.domain.common.AsyncEvent
 import akuchars.domain.common.EventBus
 import akuchars.kernel.ProfileProperties.PROD_PROFILE
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 import org.springframework.amqp.rabbit.core.RabbitTemplate
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.context.ApplicationEvent
@@ -24,9 +26,11 @@ class EventBusImpl(
 	}
 
 	override fun <E : ApplicationEvent> afterSendSyncInner(event: E) {
-		afterSendSyncRunner.forEach {
-			kotlin.runCatching {
-				it.runAfterEvent(event)
+		GlobalScope.launch {
+			afterSendSyncRunner.forEach {
+				kotlin.runCatching {
+					it.runAfterEvent(event)
+				}
 			}
 		}
 	}
@@ -36,9 +40,11 @@ class EventBusImpl(
 	}
 
 	override fun <E : AsyncEvent> afterSendAsyncInner(event: E) {
-		afterSendAsyncRunner.forEach {
-			kotlin.runCatching {
-				it.runAfterEvent(event)
+		GlobalScope.launch {
+			afterSendAsyncRunner.forEach {
+				kotlin.runCatching {
+					it.runAfterEvent(event)
+				}
 			}
 		}
 	}
