@@ -6,7 +6,9 @@ import akuchars.domain.common.EventBus
 import akuchars.domain.task.model.Project
 import akuchars.domain.task.model.ProjectName
 import akuchars.domain.task.repository.ProjectRepository
+import akuchars.domain.user.model.User
 import akuchars.domain.user.repository.UserRepository
+import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable
 import org.springframework.data.repository.findByIdOrNull
 import org.springframework.stereotype.Service
@@ -21,24 +23,21 @@ class ProjectApplicationService(
 ) {
 
 	@Transactional
-	fun createNewProject(projectName: String): ProjectDto {
-		val actualUser = userQueryService.getLoggedUser().id.let {
-			userRepository.findByIdOrNull(it)
-		}!!
-		return Project.createProject(eventBus, projectRepository, ProjectName(projectName), actualUser).convertToDto()
-	}
+	fun createNewProject(projectName: String): ProjectDto =
+			Project.createProject(eventBus, projectRepository, ProjectName(projectName), getUser()).convertToDto()
 
 	@Transactional(readOnly = true)
-	fun findProjectById(id: Long): ProjectDto? {
-		val project = projectRepository.findByIdOrNull(id)
+	fun findProjectById(id: Long): ProjectDto? =
+			projectRepository.findByIdAndOwner(id, getUser())?.convertToDto()
 
-		return project!!.convertToDto()
-	}
+	@Transactional(readOnly = true)
+	fun getProjectsPaginated(pageable: Pageable): Page<ProjectDto> =
+			projectRepository.findAllByOwner(pageable, getUser()).map { it.convertToDto() }
 
-	@Transactional
-	fun getProjectsPaginated(pageable: Pageable) =
-			projectRepository.findAll(pageable).map { it.convertToDto() }
-
-	private fun Project.convertToDto(): ProjectDto =
-			ProjectDto(id, name.value, userQueryService.getUserById(owner.id), setOf())
+	private fun getUser(): User = userQueryService.getLoggedUser().id.let {
+		userRepository.findByIdOrNull(it)
+	}!!
 }
+
+fun Project.convertToDto(): ProjectDto =
+		ProjectDto(id, name.value, tasks.map { it.toDto() }.toSet())

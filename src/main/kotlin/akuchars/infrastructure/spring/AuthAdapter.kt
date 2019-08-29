@@ -9,20 +9,28 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 import org.springframework.security.config.annotation.web.builders.HttpSecurity
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter
+import org.springframework.security.core.Authentication
+import org.springframework.security.core.AuthenticationException
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder
+import org.springframework.security.crypto.password.PasswordEncoder
+import javax.servlet.http.HttpServletRequest
+import javax.servlet.http.HttpServletResponse
 import javax.sql.DataSource
-
 
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(securedEnabled = true)
-class AuthConfiguration(
-		private val dataSource: DataSource,
-		private val userRepository: RoleRepository
-) : WebSecurityConfigurerAdapter() {
-
+class AuthConfig {
 	@Bean
 	fun passwordEncoder(): BCryptPasswordEncoder = BCryptPasswordEncoder()
+}
+
+@Configuration
+class AuthAdapter(
+		private val dataSource: DataSource,
+		private val userRepository: RoleRepository,
+		private val passwordEncoder: PasswordEncoder
+) : WebSecurityConfigurerAdapter() {
 
 	override fun configure(http: HttpSecurity) {
 		http.csrf().disable()
@@ -41,23 +49,8 @@ class AuthConfiguration(
 				.usernameParameter("user")
 				.passwordParameter("password")
 				.loginProcessingUrl("/authenticate")
-				.successHandler {    //Success handler invoked after successful authentication
-					_, res, auth ->
-					for (authority in auth.authorities) {
-						println(authority.authority)
-					}
-					println(auth.name)
-					res.sendRedirect("/") // Redirect user to index/home page
-				}.failureHandler { req, res, exp ->
-					var errMsg = ""
-					errMsg = if (exp::class.java.isAssignableFrom(BadCredentialsException::class.java)) {
-						"Invalid username or password."
-					} else {
-						"Unknown error - " + exp.localizedMessage
-					}
-					req.session.setAttribute("message", errMsg)
-					res.sendRedirect("/login")
-				}
+				.successHandler(handleSuccess())
+				.failureHandler(handleFailure())
 				.permitAll()
 				.and()
 				.logout()
@@ -68,15 +61,6 @@ class AuthConfiguration(
 	}
 
 	override fun configure(auth: AuthenticationManagerBuilder) {
-//		auth.inMemoryAuthentication()
-//				.withUser("user")
-//				.password("password")
-//				.password("USER")
-//				.and()
-//				.withUser("admin")
-//				.password("admin")
-//				.roles("USER", "ADMIN")
-
 		auth.jdbcAuthentication()
 				.dataSource(dataSource)
 				.usersByUsernameQuery("select email, password, enable from personal.users where email=?")
@@ -87,6 +71,28 @@ class AuthConfiguration(
 								"join personal.roles r on ur.role_id = r.id " +
 								"where email=?"
 				)
-				.passwordEncoder(passwordEncoder())
+				.passwordEncoder(passwordEncoder)
+	}
+
+	private fun handleFailure(): (HttpServletRequest, HttpServletResponse, AuthenticationException) -> Unit {
+		return { req, res, exp ->
+			val errMsg = if (exp::class.java.isAssignableFrom(BadCredentialsException::class.java)) {
+				"Invalid username or password."
+			} else {
+				"Unknown error - " + exp.localizedMessage
+			}
+			req.session.setAttribute("message", errMsg)
+			res.sendRedirect("/login")
+		}
+	}
+
+	private fun handleSuccess(): (HttpServletRequest, HttpServletResponse, Authentication) -> Unit {
+		return { _, res, auth ->
+			for (authority in auth.authorities) {
+				println(authority.authority)
+			}
+			println(auth.name)
+			res.sendRedirect("/")
+		}
 	}
 }

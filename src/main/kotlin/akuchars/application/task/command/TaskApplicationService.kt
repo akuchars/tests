@@ -35,20 +35,22 @@ class TaskApplicationService(
 		}!!
 		val project = projectRepository.findById(taskForm.projectId).orElseThrow(::RuntimeException)
 
-		return Task.createProjectTask(eventBus, taskRepository, actualUser, actualUser,
-				TaskContent(taskForm.content), TaskTitle(taskForm.title), taskForm.priority.toEntity(), project
-		).toDto()
+		val task = Task.createProjectTask(actualUser, actualUser,
+				TaskContent(taskForm.content), TaskTitle(taskForm.title), taskForm.priority.toEntity()
+		)
+		project.addTask(eventBus, taskRepository, task) { _, _ -> true }
+		return task.toDto()
 	}
+}
 
-	private fun Task.toDto(): TaskDto {
-		return TaskDto(this.taskContent.value, this.taskTitle.value, this.priority.toDto(), this.parent.id)
-	}
+fun Task.toDto(): TaskDto {
+	return TaskDto(this.taskContent.value, this.taskTitle.value, this.priority.toDto())
+}
 
-	private fun TaskPriority.toDto(): TaskPriorityDto {
-		return when(this) {
-			HIGH -> TaskPriorityDto.HIGH
-			MEDIUM ->  TaskPriorityDto.MEDIUM
-			LOW ->  TaskPriorityDto.LOW
-		}
+fun TaskPriority.toDto(): TaskPriorityDto {
+	return when (this) {
+		HIGH -> TaskPriorityDto.HIGH
+		MEDIUM -> TaskPriorityDto.MEDIUM
+		LOW -> TaskPriorityDto.LOW
 	}
 }

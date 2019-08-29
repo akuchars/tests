@@ -3,9 +3,7 @@ package akuchars.domain.task.model
 import akuchars.domain.common.AbstractJpaEntity
 import akuchars.domain.common.EventBus
 import akuchars.domain.task.event.TaskChangedAssigneeAsyncEvent
-import akuchars.domain.task.event.TaskCreatedAsyncEvent
 import akuchars.domain.task.model.TaskStatus.NEW
-import akuchars.domain.task.repository.ProjectTaskRepository
 import akuchars.domain.user.model.User
 import akuchars.kernel.ApplicationProperties
 import akuchars.kernel.ApplicationProperties.TASK_QUEUE_NAME
@@ -46,15 +44,15 @@ data class Task(
 		@Enumerated(EnumType.STRING)
 		val status: TaskStatus,
 
-		@ManyToOne
-		@JoinColumn(name = "parent_id")
-		val parent: Project,
-
 		@Embedded
 		@AttributeOverrides(AttributeOverride(name = "createdDate", column = Column(name = "created_time")), AttributeOverride(name = "updateDate", column = Column(name = "update_time")))
 		val time: ChangeEntityTime
 
 ) : AbstractJpaEntity() {
+
+	@ManyToOne
+	@JoinColumn(name = "parent_id")
+	lateinit var parent: Project
 
 	fun changeAssignee(eventBus: EventBus, assignee: User): Task {
 		this.assignee = assignee
@@ -65,18 +63,12 @@ data class Task(
 
 	companion object {
 
-		fun createProjectTask(eventBus: EventBus, repository: ProjectTaskRepository,
-		                      creator: User,
+		fun createProjectTask(creator: User,
 		                      assignee: User,
-		                      taskContent: TaskContent, taskTitle: TaskTitle,
-		                      taskPriority: TaskPriority,
-		                      parent: Project
+		                      taskContent: TaskContent,
+		                      taskTitle: TaskTitle, taskPriority: TaskPriority
 		): Task {
-			return Task(creator, assignee, taskContent, taskTitle, taskPriority, NEW, parent, ChangeEntityTime.now()).apply {
-				repository.save(this)
-			}.also {
-				eventBus.sendAsync(TASK_QUEUE_NAME, TaskCreatedAsyncEvent(it.id, it.taskTitle.value))
-			}
+			return Task(creator, assignee, taskContent, taskTitle, taskPriority, NEW, ChangeEntityTime.now())
 		}
 	}
 }

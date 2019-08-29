@@ -2,32 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0bbdd235-7237-4c47-8c2c-370cf7aff8c9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/infrastructure/user/UserQueryServiceImpl.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/ui/mvc/LoginController.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/ui/rest/personal/LoginRestController.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/ui/rest/task/TaskRestController.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/akuchars/application/task/command/ProjectApplicationService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/application/task/command/ProjectApplicationService.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/akuchars/application/task/command/TaskApplicationService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/application/task/command/TaskApplicationService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/akuchars/application/user/model/UserDto.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/application/user/model/UserDto.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/akuchars/application/user/query/UserQueryService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/application/user/query/UserQueryService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/akuchars/domain/user/model/User.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/domain/user/model/User.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/akuchars/infrastructure/events/EventBusImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/infrastructure/events/EventBusImpl.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/akuchars/infrastructure/spring/AuthConfiguration.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/infrastructure/spring/AuthConfiguration.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/akuchars/application/task/model/ProjectDto.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/application/task/model/ProjectDto.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/akuchars/application/task/model/TaskDto.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/application/task/model/TaskDto.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/akuchars/application/task/model/TaskForm.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/application/task/model/TaskForm.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/akuchars/domain/task/event/TaskCreatedAsyncEvent.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/akuchars/domain/task/model/Project.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/domain/task/model/Project.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/akuchars/domain/task/model/Task.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/domain/task/model/Task.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/akuchars/domain/task/repository/AddTaskToProjectPolicy.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/domain/task/repository/AddTaskToProjectPolicy.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/akuchars/domain/task/repository/ProjectRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/domain/task/repository/ProjectRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/akuchars/infrastructure/spring/AuthConfiguration.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/infrastructure/spring/AuthAdapter.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/akuchars/infrastructure/spring/InitDatabaseRunner.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/infrastructure/spring/InitDatabaseRunner.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/akuchars/infrastructure/user/TestUserQueryService.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/changelog/db.changelog-master.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/db.changelog-master.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/akuchars/application/task/command/ProjectApplicationService$getProjectsPaginated$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/akuchars/application/task/command/ProjectApplicationService$getProjectsPaginated$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/akuchars/application/task/command/ProjectApplicationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/akuchars/application/task/command/ProjectApplicationService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/application/user/model/UserDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/akuchars/application/user/model/UserDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/application/user/query/UserQueryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/akuchars/application/user/query/UserQueryService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/domain/user/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/akuchars/domain/user/model/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/infrastructure/events/EventBusImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/akuchars/infrastructure/events/EventBusImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/infrastructure/spring/AuthConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/akuchars/infrastructure/spring/AuthConfiguration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/application/task/model/ProjectDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/akuchars/application/task/model/ProjectDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/application/task/model/TaskDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/akuchars/application/task/model/TaskDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/domain/task/event/TaskCreatedAsyncEvent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/domain/task/model/Project.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/akuchars/domain/task/model/Project.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/domain/task/model/Task.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/akuchars/domain/task/model/Task.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/domain/task/repository/AddTaskToProjectPolicy.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/akuchars/domain/task/repository/AddTaskToProjectPolicy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/domain/task/repository/ProjectRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/akuchars/domain/task/repository/ProjectRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/infrastructure/spring/AuthConfiguration.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/akuchars/infrastructure/spring/InitDatabaseRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/akuchars/infrastructure/spring/InitDatabaseRunner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/infrastructure/user/TestUserQueryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/akuchars/infrastructure/user/TestUserQueryService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/db/changelog/db.changelog-master.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/db/changelog/db.changelog-master.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -309,7 +308,14 @@
       <option name="project" value="LOCAL" />
       <updated>1567075436025</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Finished authorization and login">
+      <created>1567091789193</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1567091789193</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -336,15 +342,16 @@
     <MESSAGE value="Adding ApplicationRunnerTest.kt which check taht spring boot for test profile is started" />
     <MESSAGE value="Adding postgres docker image to docker-compose.yml" />
     <MESSAGE value="Adding new personal tables" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding new personal tables" />
+    <MESSAGE value="Finished authorization and login" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished authorization and login" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/akuchars/infrastructure/spring/AuthConfiguration.kt</url>
+          <url>file://$PROJECT_DIR$/src/main/kotlin/akuchars/domain/task/model/Project.kt</url>
           <line>51</line>
-          <option name="timeStamp" value="2" />
+          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

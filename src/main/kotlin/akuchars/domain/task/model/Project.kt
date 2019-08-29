@@ -6,6 +6,7 @@ import akuchars.domain.task.event.ProjectCreatedAsyncEvent
 import akuchars.domain.task.event.TaskAddedToProjectAsyncEvent
 import akuchars.domain.task.repository.AddTaskToProjectPolicy
 import akuchars.domain.task.repository.ProjectRepository
+import akuchars.domain.task.repository.ProjectTaskRepository
 import akuchars.domain.user.model.User
 import akuchars.kernel.ApplicationProperties
 import akuchars.kernel.ApplicationProperties.TASK_QUEUE_NAME
@@ -17,15 +18,13 @@ import javax.persistence.Column
 import javax.persistence.Embedded
 import javax.persistence.Entity
 import javax.persistence.JoinColumn
-import javax.persistence.ManyToMany
 import javax.persistence.ManyToOne
 import javax.persistence.OneToMany
-import javax.persistence.OneToOne
 import javax.persistence.Table
 
 @Entity
 @Table(schema = ApplicationProperties.TASK_SCHEMA_NAME, name = "projects")
-data class Project (
+data class Project(
 		@Embedded
 		@AttributeOverrides(AttributeOverride(name = "value", column = Column(name = "name")))
 		val name: ProjectName,
@@ -43,22 +42,30 @@ data class Project (
 				AttributeOverride(name = "updateDate", column = Column(name = "update_time"))
 		)
 		val changeTime: ChangeEntityTime
-): AbstractJpaEntity() {
+) : AbstractJpaEntity() {
 	// TODO dodać użytkowników
 
-	fun addTask(eventBus: EventBus, addTaskToProjectPolicy: AddTaskToProjectPolicy, task: Task): Project {
+	fun addTask(eventBus: EventBus, taskRepository: ProjectTaskRepository, task: Task, addTaskToProjectPolicy: AddTaskToProjectPolicy): Project {
 		if (addTaskToProjectPolicy.canAddTaskToProject(task, this)) {
-			this.tasks.add(task)
-			eventBus.sendAsync(TASK_QUEUE_NAME, TaskAddedToProjectAsyncEvent(task.id!!, id))
+			task.parent = this
+			val updatedTask = taskRepository.save(task)
+			eventBus.sendAsync(TASK_QUEUE_NAME, TaskAddedToProjectAsyncEvent(updatedTask.id!!, id))
 		}
 		return this
+	}
+
+	fun addTask(eventBus: EventBus, taskRepository: ProjectTaskRepository, task: Task, canAddTaskPolicyFunction: (Task, Project) -> Boolean): Project {
+		return addTask(eventBus, taskRepository, task, object : AddTaskToProjectPolicy {
+			override fun canAddTaskToProjectInner(task: Task, project: Project): Boolean =
+					canAddTaskPolicyFunction.invoke(task, project)
+		})
 	}
 
 	companion object {
 
 		fun createProject(eventBus: EventBus, projectRepository: ProjectRepository,
-						  name: ProjectName, tasks: MutableSet<Task>,
-						  owner: User, changeTime: ChangeEntityTime): Project {
+		                  name: ProjectName, tasks: MutableSet<Task>,
+		                  owner: User, changeTime: ChangeEntityTime): Project {
 			return Project(name, tasks, owner, changeTime).apply {
 				projectRepository.save(this)
 			}.also {

@@ -26,14 +26,14 @@ import org.springframework.transaction.annotation.Transactional
 
 @Component
 @Profile(ProfileProperties.H2_PROFILE)
-class InitDatabaseRunner (
+class InitDatabaseRunner(
 		private val userRepository: UserRepository,
 		private val projectRepository: ProjectRepository,
 		private val taskRepository: ProjectTaskRepository,
 		private val roleRepository: RoleRepository,
 		private val mockedEventBus: EventBus,
 		private val passwordEncoder: PasswordEncoder
-): ApplicationRunner {
+) : ApplicationRunner {
 
 	@Transactional
 	override fun run(args: ApplicationArguments) {
@@ -41,7 +41,8 @@ class InitDatabaseRunner (
 
 		val project = Project.createProject(mockedEventBus, projectRepository, ProjectName("Some nice project name"), user)
 
-		Task.createProjectTask(mockedEventBus, taskRepository, user, user, TaskContent("My task content"), TaskTitle("Some title"), HIGH, project)
+		val task = Task.createProjectTask(user, user, TaskContent("My task content"), TaskTitle("Some title"), HIGH)
+		project.addTask(mockedEventBus, taskRepository, task) { _, _ -> true }
 	}
 
 	private fun createMe(): User {
