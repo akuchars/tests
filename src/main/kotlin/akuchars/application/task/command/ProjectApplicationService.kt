@@ -1,6 +1,9 @@
 package akuchars.application.task.command
 
+import akuchars.application.task.model.DetailProjectDto
 import akuchars.application.task.model.ProjectDto
+import akuchars.application.user.model.FrontUserDto
+import akuchars.application.user.model.UserDataDto
 import akuchars.application.user.query.UserQueryService
 import akuchars.domain.common.EventBus
 import akuchars.domain.task.model.Project
@@ -27,8 +30,8 @@ class ProjectApplicationService(
 			Project.createProject(eventBus, projectRepository, ProjectName(projectName), getUser()).convertToDto()
 
 	@Transactional(readOnly = true)
-	fun findProjectById(id: Long): ProjectDto? =
-			projectRepository.findByIdAndOwner(id, getUser())?.convertToDto()
+	fun findProjectById(id: Long): DetailProjectDto? =
+			projectRepository.findByIdAndOwner(id, getUser())?.convertToDetailDto()
 
 	@Transactional(readOnly = true)
 	fun getProjectsPaginated(pageable: Pageable): Page<ProjectDto> =
@@ -41,3 +44,8 @@ class ProjectApplicationService(
 
 fun Project.convertToDto(): ProjectDto =
 		ProjectDto(id, name.value, tasks.map { it.toDto() }.toSet())
+
+//todo tutaj będzie można dodać odrazu grupowanie tasków po priorytetach/datach/statusach
+fun Project.convertToDetailDto(): DetailProjectDto =
+		DetailProjectDto(id, name.value, tasks.map { it.toDto() }.toSet(),
+				users.map { FrontUserDto(it.id, it.userData.name, it.userData.surname, it.email.value) }.toSet())

@@ -86,4 +86,15 @@
 			alter table personal.users add constraint user_email_unique unique (email);
 		</sql>
 	</changeSet>
+
+	<changeSet id="Adding users to project" author="akuchars">
+		<sql>
+			create table task.projects_users
+			(
+				user_id bigserial not null,
+				project_id bigserial not null,
+				constraint user_role_pk primary key (user_id, project_id)
+			);
+		</sql>
+	</changeSet>
 </databaseChangeLog>

@@ -1,11 +1,18 @@
 package akuchars.application.user.model
 
-class UserDto(
+open class FrontUserDto(
 		val id: Long,
-		val data: UserDataDto,
+		val name: String,
+		val surname: String,
+		val email: String
+)
+
+class UserDto(
+		id: Long,
+		data: UserDataDto,
 		val contactData: ContactDataDto,
 		val roles: Set<RoleDto>
-)
+): FrontUserDto(id, data.name, data.surname, contactData.email)
 
 class RoleDto(
 		val roleKey: String

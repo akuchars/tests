@@ -1,6 +1,7 @@
 package akuchars.ui.rest.task
 
 import akuchars.application.task.command.ProjectApplicationService
+import akuchars.application.task.model.DetailProjectDto
 import akuchars.application.task.model.ProjectDto
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.PageRequest
@@ -33,7 +34,7 @@ class ProjectRestController(
 	}
 
 	@GetMapping("/{id}")
-	fun getProjectById(@PathVariable id: Long): ProjectDto? {
+	fun getProjectById(@PathVariable id: Long): DetailProjectDto? {
 		return projectApplicationService.findProjectById(id)
 	}
 }
