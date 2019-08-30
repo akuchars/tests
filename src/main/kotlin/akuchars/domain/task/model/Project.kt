@@ -69,7 +69,7 @@ data class Project(
 	}
 
 	fun addTask(eventBus: EventBus, taskRepository: ProjectTaskRepository, task: Task, canAddTaskPolicyFunction: (Task, Project) -> Boolean): Project {
-		return addTask(eventBus, taskRepository, task, object : AddTaskToProjectPolicy {
+		return addTask(eventBus, taskRepository, task, object : AddTaskToProjectPolicy() {
 			override fun canAddTaskToProjectInner(task: Task, project: Project): Boolean =
 					canAddTaskPolicyFunction.invoke(task, project)
 		})

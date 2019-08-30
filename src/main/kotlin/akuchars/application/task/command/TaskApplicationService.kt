@@ -12,12 +12,14 @@ import akuchars.domain.task.model.TaskPriority.HIGH
 import akuchars.domain.task.model.TaskPriority.LOW
 import akuchars.domain.task.model.TaskPriority.MEDIUM
 import akuchars.domain.task.model.TaskTitle
+import akuchars.domain.task.repository.ChangeTaskAssigneePolicy
 import akuchars.domain.task.repository.ProjectRepository
 import akuchars.domain.task.repository.ProjectTaskRepository
 import akuchars.domain.user.repository.UserRepository
 import org.springframework.data.repository.findByIdOrNull
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
+import javax.persistence.EntityNotFoundException
 
 @Service
 class TaskApplicationService(
@@ -25,7 +27,8 @@ class TaskApplicationService(
 		private val taskRepository: ProjectTaskRepository,
 		private val projectRepository: ProjectRepository,
 		private val userRepository: UserRepository,
-		private val userQueryService: UserQueryService
+		private val userQueryService: UserQueryService,
+		private val changeTaskAssigneePolicy: ChangeTaskAssigneePolicy
 ) {
 
 	@Transactional
@@ -41,10 +44,17 @@ class TaskApplicationService(
 		project.addTask(eventBus, taskRepository, task) { _, _ -> true }
 		return task.toDto()
 	}
+
+	@Transactional
+	fun changeAssigneeForTask(taskId: Long,  userId: Long): TaskDto {
+		val task = taskRepository.findByIdOrNull(taskId) ?: throw EntityNotFoundException()
+		val user = userRepository.findByIdOrNull(userId) ?: throw EntityNotFoundException()
+		return task.changeAssignee(eventBus, changeTaskAssigneePolicy, user).toDto()
+	}
 }
 
 fun Task.toDto(): TaskDto {
-	return TaskDto(this.taskContent.value, this.taskTitle.value, this.priority.toDto())
+	return TaskDto(id, this.taskContent.value, this.taskTitle.value, this.priority.toDto(), this.assignee.email.value)
 }
 
 fun TaskPriority.toDto(): TaskPriorityDto {

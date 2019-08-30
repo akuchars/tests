@@ -4,6 +4,7 @@ import akuchars.domain.common.AbstractJpaEntity
 import akuchars.domain.common.EventBus
 import akuchars.domain.task.event.TaskChangedAssigneeAsyncEvent
 import akuchars.domain.task.model.TaskStatus.NEW
+import akuchars.domain.task.repository.ChangeTaskAssigneePolicy
 import akuchars.domain.user.model.User
 import akuchars.kernel.ApplicationProperties
 import akuchars.kernel.ApplicationProperties.TASK_QUEUE_NAME
@@ -54,11 +55,14 @@ data class Task(
 	@JoinColumn(name = "parent_id")
 	lateinit var parent: Project
 
-	fun changeAssignee(eventBus: EventBus, assignee: User): Task {
-		this.assignee = assignee
-		this.time.updateTime()
-		eventBus.sendAsync(TASK_QUEUE_NAME, TaskChangedAssigneeAsyncEvent(id, assignee.id!!))
-		return this
+	fun changeAssignee(eventBus: EventBus, changePolicy: ChangeTaskAssigneePolicy, assignee: User): Task {
+		val canChangeResult = changePolicy.canChangeAssigneeForTask(this, assignee)
+		if (canChangeResult.isRight) {
+			this.assignee = assignee
+			this.time.updateTime()
+			eventBus.sendAsync(TASK_QUEUE_NAME, TaskChangedAssigneeAsyncEvent(id, assignee.id!!))
+			return this
+		} else throw canChangeResult.left
 	}
 
 	companion object {

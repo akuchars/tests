@@ -4,6 +4,8 @@ import akuchars.application.task.command.TaskApplicationService
 import akuchars.application.task.model.TaskDto
 import akuchars.application.task.model.TaskForm
 import org.springframework.http.HttpStatus
+import org.springframework.web.bind.annotation.PathVariable
+import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.PutMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
@@ -18,4 +20,8 @@ class TaskRestController(private val taskApplicationService: TaskApplicationServ
 	@ResponseStatus(HttpStatus.CREATED)
 	fun createNewTask(@RequestBody taskForm: TaskForm): TaskDto =
 			taskApplicationService.createNewTask(taskForm)
+
+	@PostMapping("/{taskId}/assignee/{userId}")
+	fun changeAssignee(@PathVariable taskId: Long, @PathVariable userId: Long) : TaskDto =
+			taskApplicationService.changeAssigneeForTask(taskId, userId)
 }

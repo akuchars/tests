@@ -8,12 +8,13 @@ import io.vavr.control.Either
 import io.vavr.control.Either.left
 import io.vavr.control.Either.right
 
-interface AddTaskToProjectPolicy {
+@FunctionalInterface
+abstract class AddTaskToProjectPolicy {
 
 	fun canAddTaskToProject(task: Task, project: Project): Either<out DomainTaskException, Task> {
 		return if (canAddTaskToProjectInner(task, project)) right(task)
 		else left(CannotAddTaskToProjectException(project, task))
 	}
 
-	fun canAddTaskToProjectInner(task: Task, project: Project): Boolean
+	protected abstract fun canAddTaskToProjectInner(task: Task, project: Project): Boolean
 }
