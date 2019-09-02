@@ -1,6 +1,7 @@
 package akuchars.domain.task.exceptions
 
 import akuchars.domain.common.DomainException
+import akuchars.domain.task.model.PeriodOfTime
 import akuchars.domain.task.model.Project
 import akuchars.domain.task.model.Task
 import akuchars.domain.user.model.User
@@ -15,4 +16,9 @@ class CannotAddTaskToProjectException(val project: Project, val task: Task) : Do
 class CannotChangeAssigneeForTaskException(val user: User, val task: Task) : DomainTaskException(
 		"task.tasks.cannot.change.assignee.for.task.error.code",
 		"Cannot change assignee for task ${task.id} and user ${user.email}, user is not in project"
+)
+
+class CannotChangePeriodOfTaskException(val periodOfTime: PeriodOfTime, val task: Task) : DomainTaskException(
+		"task.tasks.cannot.change.period.of.task.error.code",
+		"Cannot change period of $periodOfTime time for closed task ${task.id}"
 )

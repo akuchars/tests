@@ -1,0 +1,16 @@
+package akuchars.domain.common
+
+import akuchars.kernel.ApplicationProperties.TASK_QUEUE_NAME
+
+fun <A, E : AbstractJpaEntity> E.updateEntity(eventBus: EventBus,
+                                              changePolicy: ChangeEntityPolicy<A, E>,
+                                              attribute: A,
+                                              asyncEvent: AsyncEvent,
+                                              action: (E) -> E): E {
+	val canChange = changePolicy.canChangeAttribute(this, attribute)
+	if (canChange.isRight) {
+		val entity = action.invoke(this)
+		eventBus.sendAsync(TASK_QUEUE_NAME, asyncEvent)
+		return entity
+	} else throw canChange.left
+}

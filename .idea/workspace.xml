@@ -2,23 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0bbdd235-7237-4c47-8c2c-370cf7aff8c9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/application/common/model/ErrorDto.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/application/common/model/FrontDto.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/domain/common/DomainException.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/kernel/DtoUtils.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/domain/common/AbstractJpaUtils.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/domain/common/ChangeEntityPolicy.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/domain/task/event/TaskChangedPeriodAsyncEvent.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/domain/task/repository/ChangeTaskAttributePolicy.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/infrastructure/task/DefaultChangePeriodAttributePolicy.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/infrastructure/task/DefaultChangeTaskAssigneeAttributePolicy.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/kernel/DateUtils.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/akuchars/application/task/command/ProjectApplicationService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/application/task/command/ProjectApplicationService.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/akuchars/application/task/command/TaskApplicationService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/application/task/command/TaskApplicationService.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/akuchars/application/task/model/ProjectDto.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/application/task/model/ProjectDto.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/akuchars/application/user/query/UserQueryService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/application/user/query/UserQueryService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/akuchars/application/task/model/TaskDto.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/application/task/model/TaskDto.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/akuchars/application/task/model/TaskForm.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/application/task/model/TaskForm.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/akuchars/domain/task/exceptions/DomainTaskException.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/domain/task/exceptions/DomainTaskException.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/akuchars/ui/rest/task/ProjectRestController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/ui/rest/task/ProjectRestController.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/akuchars/ui/rest/task/TaskRestController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/ui/rest/task/TaskRestController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/akuchars/domain/task/model/ChangeEntityTime.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/domain/task/model/PeriodOfTime.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/akuchars/domain/task/model/Project.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/domain/task/model/Project.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/akuchars/domain/task/model/Task.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/domain/task/model/Task.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/akuchars/domain/task/model/TaskStatus.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/domain/task/model/TaskStatus.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/akuchars/domain/task/repository/ChangeTaskAssigneePolicy.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/akuchars/infrastructure/task/DefaultChangeTaskAssigneePolicy.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db/changelog/db.changelog-master.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/db.changelog-master.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/META-INF/tasks.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/META-INF/tasks.kotlin_module" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/application/task/command/ProjectApplicationService$getProjectsPaginated$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/akuchars/application/task/command/ProjectApplicationService$getProjectsPaginated$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/application/task/command/ProjectApplicationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/akuchars/application/task/command/ProjectApplicationService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/akuchars/application/task/model/ProjectDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/akuchars/application/task/model/ProjectDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/ui/rest/task/ProjectRestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/akuchars/ui/rest/task/ProjectRestController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/application/task/model/TaskDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/akuchars/application/task/model/TaskDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/domain/task/model/ChangeEntityTime.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/domain/task/model/Project.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/akuchars/domain/task/model/Project.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/domain/task/model/Task.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/akuchars/domain/task/model/Task.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/domain/task/model/TaskStatus.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/akuchars/domain/task/model/TaskStatus.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/db/changelog/db.changelog-master.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/db/changelog/db.changelog-master.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,8 +48,8 @@
         <option value="JUnit5 Test Class" />
         <option value="Class" />
         <option value="Kotlin Interface" />
-        <option value="Kotlin File" />
         <option value="Kotlin Class" />
+        <option value="Kotlin File" />
       </list>
     </option>
   </component>
@@ -327,7 +338,14 @@
       <option name="project" value="LOCAL" />
       <updated>1567167400748</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Now all error is catching into errorDto in front">
+      <created>1567419360411</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1567419360411</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -357,17 +375,7 @@
     <MESSAGE value="Finished authorization and login" />
     <MESSAGE value="Adding users into project" />
     <MESSAGE value="Implementing of change task assignee" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implementing of change task assignee" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/akuchars/kernel/DtoUtils.kt</url>
-          <line>12</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Now all error is catching into errorDto in front" />
+    <option name="LAST_COMMIT_MESSAGE" value="Now all error is catching into errorDto in front" />
   </component>
 </project>

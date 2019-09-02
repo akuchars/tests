@@ -2,12 +2,14 @@ package akuchars.domain.task.model
 
 import akuchars.domain.common.AbstractJpaEntity
 import akuchars.domain.common.EventBus
+import akuchars.domain.common.updateEntity
 import akuchars.domain.task.event.TaskChangedAssigneeAsyncEvent
+import akuchars.domain.task.event.TaskChangedPeriodAsyncEvent
 import akuchars.domain.task.model.TaskStatus.NEW
-import akuchars.domain.task.repository.ChangeTaskAssigneePolicy
+import akuchars.domain.task.repository.ChangePeriodAttributePolicy
+import akuchars.domain.task.repository.ChangeTaskAssigneeAttributePolicy
 import akuchars.domain.user.model.User
 import akuchars.kernel.ApplicationProperties
-import akuchars.kernel.ApplicationProperties.TASK_QUEUE_NAME
 import javax.persistence.AttributeOverride
 import javax.persistence.AttributeOverrides
 import javax.persistence.Column
@@ -46,8 +48,11 @@ data class Task(
 		val status: TaskStatus,
 
 		@Embedded
-		@AttributeOverrides(AttributeOverride(name = "createdDate", column = Column(name = "created_time")), AttributeOverride(name = "updateDate", column = Column(name = "update_time")))
-		val time: ChangeEntityTime
+		@AttributeOverrides(
+				AttributeOverride(name = "startDate", column = Column(name = "created_time")),
+				AttributeOverride(name = "endDate", column = Column(name = "update_time"))
+		)
+		val changeTime: PeriodOfTime
 
 ) : AbstractJpaEntity() {
 
@@ -55,14 +60,27 @@ data class Task(
 	@JoinColumn(name = "parent_id")
 	lateinit var parent: Project
 
-	fun changeAssignee(eventBus: EventBus, changePolicy: ChangeTaskAssigneePolicy, assignee: User): Task {
-		val canChangeResult = changePolicy.canChangeAssigneeForTask(this, assignee)
-		if (canChangeResult.isRight) {
+	@Embedded
+	@AttributeOverrides(
+			AttributeOverride(name = "startDate", column = Column(name = "start_time")),
+			AttributeOverride(name = "endDate", column = Column(name = "end_time"))
+	)
+	var period: PeriodOfTime? = null
+
+	fun changeAssignee(eventBus: EventBus, changePolicy: ChangeTaskAssigneeAttributePolicy, assignee: User): Task {
+		return updateEntity(eventBus, changePolicy, assignee, TaskChangedAssigneeAsyncEvent(id, assignee.id!!)) {
 			this.assignee = assignee
-			this.time.updateTime()
-			eventBus.sendAsync(TASK_QUEUE_NAME, TaskChangedAssigneeAsyncEvent(id, assignee.id!!))
-			return this
-		} else throw canChangeResult.left
+			this.changeTime.updateTime()
+			this
+		}
+	}
+
+	fun changePeriod(eventBus: EventBus, changePeriodPolicy: ChangePeriodAttributePolicy, period: PeriodOfTime): Task {
+		return updateEntity(eventBus, changePeriodPolicy, period, TaskChangedPeriodAsyncEvent(period)) {
+			this.period = period
+			this.changeTime.updateTime()
+			this
+		}
 	}
 
 	companion object {
@@ -72,7 +90,7 @@ data class Task(
 		                      taskContent: TaskContent,
 		                      taskTitle: TaskTitle, taskPriority: TaskPriority
 		): Task {
-			return Task(creator, assignee, taskContent, taskTitle, taskPriority, NEW, ChangeEntityTime.now())
+			return Task(creator, assignee, taskContent, taskTitle, taskPriority, NEW, PeriodOfTime.now())
 		}
 	}
 }

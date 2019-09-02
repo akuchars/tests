@@ -4,5 +4,11 @@ class TaskForm(
 		var content: String,
 		var title: String,
 		var priority: TaskPriorityDto,
-		var projectId: Long
+		var projectId: Long,
+		var period: PeriodForm? = null
+)
+
+class PeriodForm(
+		var start: String,
+		var end: String? = null
 )

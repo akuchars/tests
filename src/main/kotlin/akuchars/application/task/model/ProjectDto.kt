@@ -13,6 +13,5 @@ class DetailProjectDto(
 open class ProjectDto(
 		val id: Long,
 		val name: String,
-		val tasks: Set<TaskDto> = setOf(),
-		val error: ErrorDto? = null
+		val tasks: Set<TaskDto> = setOf()
 )

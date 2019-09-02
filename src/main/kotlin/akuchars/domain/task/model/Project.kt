@@ -7,7 +7,6 @@ import akuchars.domain.task.event.TaskAddedToProjectAsyncEvent
 import akuchars.domain.task.repository.AddTaskToProjectPolicy
 import akuchars.domain.task.repository.ProjectRepository
 import akuchars.domain.task.repository.ProjectTaskRepository
-import akuchars.domain.user.model.Role
 import akuchars.domain.user.model.User
 import akuchars.kernel.ApplicationProperties
 import akuchars.kernel.ApplicationProperties.TASK_QUEUE_NAME
@@ -42,10 +41,10 @@ data class Project(
 
 		@Embedded
 		@AttributeOverrides(
-				AttributeOverride(name = "createdDate", column = Column(name = "created_time")),
-				AttributeOverride(name = "updateDate", column = Column(name = "update_time"))
+				AttributeOverride(name = "startDate", column = Column(name = "created_time")),
+				AttributeOverride(name = "endDate", column = Column(name = "update_time"))
 		)
-		val changeTime: ChangeEntityTime,
+		val changeTime: PeriodOfTime,
 
 		@ManyToMany(fetch = EAGER)
 		@JoinTable(
@@ -56,7 +55,6 @@ data class Project(
 		)
 		val users: Set<User>
 ) : AbstractJpaEntity() {
-	// TODO dodać użytkowników
 
 	fun addTask(eventBus: EventBus, taskRepository: ProjectTaskRepository, task: Task, addTaskToProjectPolicy: AddTaskToProjectPolicy): Project {
 		val policyResult = addTaskToProjectPolicy.canAddTaskToProject(task, this)
@@ -79,7 +77,7 @@ data class Project(
 
 		fun createProject(eventBus: EventBus, projectRepository: ProjectRepository,
 		                  name: ProjectName, tasks: MutableSet<Task>,
-		                  owner: User, changeTime: ChangeEntityTime): Project {
+		                  owner: User, changeTime: PeriodOfTime): Project {
 			return Project(name, tasks, owner, changeTime, setOf(owner)).apply {
 				projectRepository.save(this)
 			}.also {
@@ -88,7 +86,7 @@ data class Project(
 		}
 
 		fun createProject(eventBus: EventBus, projectRepository: ProjectRepository, name: ProjectName, owner: User): Project {
-			return createProject(eventBus, projectRepository, name, HashSet(), owner, ChangeEntityTime.now())
+			return createProject(eventBus, projectRepository, name, HashSet(), owner, PeriodOfTime.now())
 		}
 	}
 }
