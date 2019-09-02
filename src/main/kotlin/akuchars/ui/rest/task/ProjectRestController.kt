@@ -1,5 +1,6 @@
 package akuchars.ui.rest.task
 
+import akuchars.application.common.model.FrontDto
 import akuchars.application.task.command.ProjectApplicationService
 import akuchars.application.task.model.DetailProjectDto
 import akuchars.application.task.model.ProjectDto
@@ -23,7 +24,7 @@ class ProjectRestController(
 
 	@ResponseStatus(HttpStatus.CREATED)
 	@PutMapping("/create")
-	fun createNewProject(@RequestParam projectName: String): ResponseEntity<ProjectDto> {
+	fun createNewProject(@RequestParam projectName: String): ResponseEntity<FrontDto<ProjectDto>> {
 		return ResponseEntity(projectApplicationService.createNewProject(projectName), HttpStatus.CREATED)
 	}
 

@@ -2,21 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0bbdd235-7237-4c47-8c2c-370cf7aff8c9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/domain/task/repository/ChangeTaskAssigneePolicy.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/infrastructure/task/DefaultChangeTaskAssigneePolicy.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/application/common/model/ErrorDto.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/application/common/model/FrontDto.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/domain/common/DomainException.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/kernel/DtoUtils.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/akuchars/application/task/command/ProjectApplicationService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/application/task/command/ProjectApplicationService.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/akuchars/application/task/command/TaskApplicationService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/application/task/command/TaskApplicationService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/akuchars/application/task/model/TaskDto.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/application/task/model/TaskDto.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/akuchars/application/task/model/ProjectDto.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/application/task/model/ProjectDto.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/akuchars/application/user/query/UserQueryService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/application/user/query/UserQueryService.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/akuchars/domain/task/exceptions/DomainTaskException.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/domain/task/exceptions/DomainTaskException.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/akuchars/domain/task/model/Project.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/domain/task/model/Project.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/akuchars/domain/task/model/Task.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/domain/task/model/Task.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/akuchars/domain/task/repository/AddTaskToProjectPolicy.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/domain/task/repository/AddTaskToProjectPolicy.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/akuchars/ui/rest/task/ProjectRestController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/ui/rest/task/ProjectRestController.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/akuchars/ui/rest/task/TaskRestController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/ui/rest/task/TaskRestController.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/application/task/model/TaskDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/akuchars/application/task/model/TaskDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/domain/task/model/Project.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/akuchars/domain/task/model/Project.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/domain/task/model/Task.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/akuchars/domain/task/model/Task.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/domain/task/repository/AddTaskToProjectPolicy.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/akuchars/domain/task/repository/AddTaskToProjectPolicy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/tasks.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/META-INF/tasks.kotlin_module" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/application/task/command/ProjectApplicationService$getProjectsPaginated$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/akuchars/application/task/command/ProjectApplicationService$getProjectsPaginated$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/application/task/command/ProjectApplicationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/akuchars/application/task/command/ProjectApplicationService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/application/task/model/ProjectDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/akuchars/application/task/model/ProjectDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/ui/rest/task/ProjectRestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/akuchars/ui/rest/task/ProjectRestController.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,11 +33,11 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Kotlin File" />
         <option value="Kotlin Object" />
         <option value="JUnit5 Test Class" />
         <option value="Class" />
         <option value="Kotlin Interface" />
+        <option value="Kotlin File" />
         <option value="Kotlin Class" />
       </list>
     </option>
@@ -192,30 +194,30 @@
           <expand>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@104066f0" type="9fbbdea:ServiceModel$ServiceNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@279bace2" type="9fbbdea:ServiceModel$ServiceNode" />
             </path>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@104066f0" type="9fbbdea:ServiceModel$ServiceNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@38cd77b7" type="9fbbdea:ServiceModel$ServiceNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@279bace2" type="9fbbdea:ServiceModel$ServiceNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@1593776b" type="9fbbdea:ServiceModel$ServiceNode" />
             </path>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@104066f0" type="9fbbdea:ServiceModel$ServiceNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@38cd77b7" type="9fbbdea:ServiceModel$ServiceNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@3fce383b" type="9fbbdea:ServiceModel$ServiceNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@279bace2" type="9fbbdea:ServiceModel$ServiceNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@1593776b" type="9fbbdea:ServiceModel$ServiceNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@566fa8fe" type="9fbbdea:ServiceModel$ServiceNode" />
             </path>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@104066f0" type="9fbbdea:ServiceModel$ServiceNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@38cd77b7" type="9fbbdea:ServiceModel$ServiceNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@4c634226" type="9fbbdea:ServiceModel$ServiceNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@279bace2" type="9fbbdea:ServiceModel$ServiceNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@1593776b" type="9fbbdea:ServiceModel$ServiceNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@3838f0a5" type="9fbbdea:ServiceModel$ServiceNode" />
             </path>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@104066f0" type="9fbbdea:ServiceModel$ServiceNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@38cd77b7" type="9fbbdea:ServiceModel$ServiceNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@18f9a917" type="9fbbdea:ServiceModel$ServiceNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@279bace2" type="9fbbdea:ServiceModel$ServiceNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@1593776b" type="9fbbdea:ServiceModel$ServiceNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@527bb975" type="9fbbdea:ServiceModel$ServiceNode" />
             </path>
           </expand>
           <select />
@@ -318,7 +320,14 @@
       <option name="project" value="LOCAL" />
       <updated>1567160802697</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Implementing of change task assignee">
+      <created>1567167400748</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1567167400748</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -347,6 +356,18 @@
     <MESSAGE value="Adding new personal tables" />
     <MESSAGE value="Finished authorization and login" />
     <MESSAGE value="Adding users into project" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding users into project" />
+    <MESSAGE value="Implementing of change task assignee" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implementing of change task assignee" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/akuchars/kernel/DtoUtils.kt</url>
+          <line>12</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

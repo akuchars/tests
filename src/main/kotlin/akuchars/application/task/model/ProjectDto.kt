@@ -1,5 +1,6 @@
 package akuchars.application.task.model
 
+import akuchars.application.common.model.ErrorDto
 import akuchars.application.user.model.FrontUserDto
 
 class DetailProjectDto(
@@ -12,5 +13,6 @@ class DetailProjectDto(
 open class ProjectDto(
 		val id: Long,
 		val name: String,
-		val tasks: Set<TaskDto> = setOf()
+		val tasks: Set<TaskDto> = setOf(),
+		val error: ErrorDto? = null
 )

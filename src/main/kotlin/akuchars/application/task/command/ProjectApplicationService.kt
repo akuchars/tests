@@ -1,9 +1,10 @@
 package akuchars.application.task.command
 
+import akuchars.application.common.model.ErrorDto
+import akuchars.application.common.model.FrontDto
 import akuchars.application.task.model.DetailProjectDto
 import akuchars.application.task.model.ProjectDto
 import akuchars.application.user.model.FrontUserDto
-import akuchars.application.user.model.UserDataDto
 import akuchars.application.user.query.UserQueryService
 import akuchars.domain.common.EventBus
 import akuchars.domain.task.model.Project
@@ -11,6 +12,8 @@ import akuchars.domain.task.model.ProjectName
 import akuchars.domain.task.repository.ProjectRepository
 import akuchars.domain.user.model.User
 import akuchars.domain.user.repository.UserRepository
+import akuchars.kernel.toFrontDto
+import io.vavr.control.Either
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable
 import org.springframework.data.repository.findByIdOrNull
@@ -26,8 +29,9 @@ class ProjectApplicationService(
 ) {
 
 	@Transactional
-	fun createNewProject(projectName: String): ProjectDto =
-			Project.createProject(eventBus, projectRepository, ProjectName(projectName), getUser()).convertToDto()
+	fun createNewProject(projectName: String): FrontDto<ProjectDto> {
+		return toFrontDto { Project.createProject(eventBus, projectRepository, ProjectName(projectName), getUser()).convertToDto() }
+	}
 
 	@Transactional(readOnly = true)
 	fun findProjectById(id: Long): DetailProjectDto? =

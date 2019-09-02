@@ -1,5 +1,6 @@
 package akuchars.application.task.command
 
+import akuchars.application.common.model.FrontDto
 import akuchars.application.task.model.TaskDto
 import akuchars.application.task.model.TaskForm
 import akuchars.application.task.model.TaskPriorityDto
@@ -16,6 +17,7 @@ import akuchars.domain.task.repository.ChangeTaskAssigneePolicy
 import akuchars.domain.task.repository.ProjectRepository
 import akuchars.domain.task.repository.ProjectTaskRepository
 import akuchars.domain.user.repository.UserRepository
+import akuchars.kernel.toFrontDto
 import org.springframework.data.repository.findByIdOrNull
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
@@ -32,7 +34,7 @@ class TaskApplicationService(
 ) {
 
 	@Transactional
-	fun createNewTask(taskForm: TaskForm): TaskDto {
+	fun createNewTask(taskForm: TaskForm): FrontDto<TaskDto> {
 		val actualUser = userQueryService.getLoggedUser().id.let {
 			userRepository.findByIdOrNull(it)
 		}!!
@@ -41,15 +43,19 @@ class TaskApplicationService(
 		val task = Task.createProjectTask(actualUser, actualUser,
 				TaskContent(taskForm.content), TaskTitle(taskForm.title), taskForm.priority.toEntity()
 		)
-		project.addTask(eventBus, taskRepository, task) { _, _ -> true }
-		return task.toDto()
+		return toFrontDto {
+			project.addTask(eventBus, taskRepository, task) { _, _ -> true }
+			task.toDto()
+		}
 	}
 
 	@Transactional
-	fun changeAssigneeForTask(taskId: Long,  userId: Long): TaskDto {
-		val task = taskRepository.findByIdOrNull(taskId) ?: throw EntityNotFoundException()
-		val user = userRepository.findByIdOrNull(userId) ?: throw EntityNotFoundException()
-		return task.changeAssignee(eventBus, changeTaskAssigneePolicy, user).toDto()
+	fun changeAssigneeForTask(taskId: Long, userId: Long): FrontDto<TaskDto> {
+		return toFrontDto {
+			val task = taskRepository.findByIdOrNull(taskId) ?: throw EntityNotFoundException()
+			val user = userRepository.findByIdOrNull(userId) ?: throw EntityNotFoundException()
+			task.changeAssignee(eventBus, changeTaskAssigneePolicy, user).toDto()
+		}
 	}
 }
 

@@ -19,5 +19,4 @@ interface UserQueryService {
 				roles.map { RoleDto(it.role) }.toSet()
 		)
 	}
-
 }
