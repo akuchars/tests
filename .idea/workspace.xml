@@ -2,44 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0bbdd235-7237-4c47-8c2c-370cf7aff8c9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/application/task/command/TagApplicationService.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/application/task/model/TagDto.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/application/task/model/TagForm.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/application/task/query/TaskQueryService.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/domain/task/event/TagAddedToTaskAsyncEvent.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/domain/task/event/TaskEditedAssigneeAsyncEvent.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/domain/task/model/Tag.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/domain/task/repository/CustomTaskRepository.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/domain/task/repository/TagRepository.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/infrastructure/spring/SecurityContextUserHolder.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/infrastructure/task/DefaultAddTagToTaskAttributePolicy.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/infrastructure/task/TaskRepositoryImpl.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/kernel/FreeLoggerForEveryone.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/akuchars/application/common/command/FrontDtoConverter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/application/common/command/FrontDtoConverter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/akuchars/application/task/command/ProjectApplicationService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/application/task/command/ProjectApplicationService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/akuchars/application/task/command/TaskApplicationService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/application/task/command/TaskApplicationService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/akuchars/application/task/model/TaskDto.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/application/task/model/TaskDto.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/akuchars/application/task/model/TaskForm.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/application/task/model/TaskForm.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/akuchars/domain/common/AbstractJpaUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/domain/common/AbstractJpaUtils.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/akuchars/domain/task/model/Project.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/domain/task/model/Project.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/akuchars/domain/task/model/Task.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/domain/task/model/Task.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/akuchars/domain/task/repository/ChangeTaskAttributePolicy.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/domain/task/repository/ChangeTaskAttributePolicy.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/akuchars/domain/task/repository/ProjectTaskRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/domain/task/repository/TaskRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/akuchars/infrastructure/spring/AuthAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/infrastructure/spring/AuthAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/akuchars/infrastructure/spring/InitDatabaseRunner.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/infrastructure/spring/InitDatabaseRunner.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/akuchars/ui/rest/task/ProjectRestController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/ui/rest/task/ProjectRestController.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/akuchars/ui/rest/task/TaskRestController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/ui/rest/task/TaskRestController.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/changelog/db.changelog-master.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/db.changelog-master.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/tasks.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/META-INF/tasks.kotlin_module" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/application/task/command/ProjectApplicationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/akuchars/application/task/command/ProjectApplicationService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/application/task/model/TaskDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/akuchars/application/task/model/TaskDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/domain/task/model/Project.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/akuchars/domain/task/model/Project.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/domain/task/model/Task.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/akuchars/domain/task/model/Task.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/domain/task/repository/ProjectTaskRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/infrastructure/spring/InitDatabaseRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/akuchars/infrastructure/spring/InitDatabaseRunner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/ui/rest/task/ProjectRestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/akuchars/ui/rest/task/ProjectRestController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/db/changelog/db.changelog-master.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/db/changelog/db.changelog-master.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/akuchars/infrastructure/task/TaskRepositoryImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/infrastructure/task/TaskRepositoryImpl.kt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -371,7 +334,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568363498015</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Adding tags and filtering task by tags">
+      <created>1568381917714</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1568381917714</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -404,7 +374,8 @@
     <MESSAGE value="Now all error is catching into errorDto in front" />
     <MESSAGE value="Adding period of time for task" />
     <MESSAGE value="Adding internatiolization" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding internatiolization" />
+    <MESSAGE value="Adding tags and filtering task by tags" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding tags and filtering task by tags" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -421,11 +392,6 @@
             <option name="lambda-ordinal" value="-1" />
           </properties>
           <option name="timeStamp" value="18" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/akuchars/infrastructure/task/TaskRepositoryImpl.kt</url>
-          <line>30</line>
-          <option name="timeStamp" value="25" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

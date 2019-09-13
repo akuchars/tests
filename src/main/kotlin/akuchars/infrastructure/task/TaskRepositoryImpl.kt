@@ -22,7 +22,7 @@ class TaskRepositoryImpl(
 
 		query.select(task)
 				.where(
-						cb.equal( task.get<Project>("parent"), project),
+						cb.equal(task.get<Project>("parent"), project),
 						cb.isMember(tag, task.get<Set<Tag>>("tags"))
 				)
 
