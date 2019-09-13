@@ -4,6 +4,8 @@ import akuchars.application.common.model.FrontDto
 import akuchars.application.task.command.ProjectApplicationService
 import akuchars.application.task.model.DetailProjectDto
 import akuchars.application.task.model.ProjectDto
+import akuchars.application.task.model.TaskDto
+import akuchars.application.task.query.TaskQueryService
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.PageRequest
 import org.springframework.http.HttpStatus
@@ -19,7 +21,8 @@ import org.springframework.web.bind.annotation.RestController
 @RestController
 @RequestMapping("/api/v1/task/projects")
 class ProjectRestController(
-		private val projectApplicationService: ProjectApplicationService
+		private val projectApplicationService: ProjectApplicationService,
+		private val taskQueryService: TaskQueryService
 ) {
 
 	@ResponseStatus(HttpStatus.CREATED)
@@ -37,5 +40,15 @@ class ProjectRestController(
 	@GetMapping("/{id}")
 	fun getProjectById(@PathVariable id: Long): DetailProjectDto? {
 		return projectApplicationService.findProjectById(id)
+	}
+
+	@GetMapping("/{projectId}/tasks")
+	fun getAllTaskFilteredByTag(@PathVariable projectId: Long,
+	                            @RequestParam tag: String,
+	                            @RequestParam page: Int,
+	                            @RequestParam size: Int
+	): FrontDto<Page<TaskDto>> {
+		val pageable = PageRequest.of(page, size)
+		return taskQueryService.findTasksByTag(tag, projectId, pageable)
 	}
 }

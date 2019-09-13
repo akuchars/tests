@@ -1,6 +1,8 @@
 package akuchars.infrastructure.spring
 
+import akuchars.application.user.query.UserQueryService
 import akuchars.domain.user.repository.RoleRepository
+import akuchars.domain.user.repository.UserRepository
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.security.authentication.BadCredentialsException
@@ -28,8 +30,11 @@ class AuthConfig {
 @Configuration
 class AuthAdapter(
 		private val dataSource: DataSource,
-		private val userRepository: RoleRepository,
-		private val passwordEncoder: PasswordEncoder
+		private val roleRepository: RoleRepository,
+		private val passwordEncoder: PasswordEncoder,
+		private val userQueryService: UserQueryService,
+		private val userRepository: UserRepository
+
 ) : WebSecurityConfigurerAdapter() {
 
 	override fun configure(http: HttpSecurity) {
@@ -42,7 +47,7 @@ class AuthAdapter(
 				.anyRequest()
 				.authenticated()
 				.antMatchers("/api/v1/user/**")
-				.hasAnyRole(* userRepository.findAll().map { it.role }.toTypedArray())
+				.hasAnyRole(* roleRepository.findAll().map { it.role }.toTypedArray())
 				.and()
 				.formLogin()
 				.loginPage("/login")
@@ -93,6 +98,9 @@ class AuthAdapter(
 			}
 			println(auth.name)
 			res.sendRedirect("/")
+			SecurityContextUserHolder.loggedUser = userQueryService.getLoggedUser().let {
+				userRepository.findById(it.id).get()
+			}
 		}
 	}
 }

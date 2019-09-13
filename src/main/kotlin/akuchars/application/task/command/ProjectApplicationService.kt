@@ -12,9 +12,9 @@ import akuchars.domain.task.model.ProjectName
 import akuchars.domain.task.repository.ProjectRepository
 import akuchars.domain.user.model.User
 import akuchars.domain.user.repository.UserRepository
+import akuchars.infrastructure.spring.SecurityContextUserHolder
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable
-import org.springframework.data.repository.findByIdOrNull
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
 
@@ -40,9 +40,7 @@ class ProjectApplicationService(
 	fun getProjectsPaginated(pageable: Pageable): Page<ProjectDto> =
 			projectRepository.findAllByOwner(pageable, getUser()).map { it.convertToDto() }
 
-	private fun getUser(): User = userQueryService.getLoggedUser().id.let {
-		userRepository.findByIdOrNull(it)
-	}!!
+	private fun getUser(): User = SecurityContextUserHolder.loggedUser
 }
 
 fun Project.convertToDto(): ProjectDto =

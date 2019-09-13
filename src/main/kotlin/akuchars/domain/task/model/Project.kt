@@ -6,7 +6,7 @@ import akuchars.domain.task.event.ProjectCreatedAsyncEvent
 import akuchars.domain.task.event.TaskAddedToProjectAsyncEvent
 import akuchars.domain.task.repository.AddTaskToProjectPolicy
 import akuchars.domain.task.repository.ProjectRepository
-import akuchars.domain.task.repository.ProjectTaskRepository
+import akuchars.domain.task.repository.TaskRepository
 import akuchars.domain.user.model.User
 import akuchars.kernel.ApplicationProperties
 import akuchars.kernel.ApplicationProperties.TASK_QUEUE_NAME
@@ -56,7 +56,7 @@ data class Project(
 		val users: Set<User>
 ) : AbstractJpaEntity() {
 
-	fun addTask(eventBus: EventBus, taskRepository: ProjectTaskRepository, task: Task, addTaskToProjectPolicy: AddTaskToProjectPolicy): Project {
+	fun addTask(eventBus: EventBus, taskRepository: TaskRepository, task: Task, addTaskToProjectPolicy: AddTaskToProjectPolicy): Project {
 		val policyResult = addTaskToProjectPolicy.canAddTaskToProject(task, this)
 		if (policyResult.isRight) {
 			task.parent = this
@@ -66,7 +66,7 @@ data class Project(
 		} else throw policyResult.left
 	}
 
-	fun addTask(eventBus: EventBus, taskRepository: ProjectTaskRepository, task: Task, canAddTaskPolicyFunction: (Task, Project) -> Boolean): Project {
+	fun addTask(eventBus: EventBus, taskRepository: TaskRepository, task: Task, canAddTaskPolicyFunction: (Task, Project) -> Boolean): Project {
 		return addTask(eventBus, taskRepository, task, object : AddTaskToProjectPolicy() {
 			override fun canAddTaskToProjectInner(task: Task, project: Project): Boolean =
 					canAddTaskPolicyFunction.invoke(task, project)

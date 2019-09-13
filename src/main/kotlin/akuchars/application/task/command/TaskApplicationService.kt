@@ -3,6 +3,7 @@ package akuchars.application.task.command
 import akuchars.application.common.command.FrontDtoConverter
 import akuchars.application.common.model.FrontDto
 import akuchars.application.task.model.PeriodDto
+import akuchars.application.task.model.TagDto
 import akuchars.application.task.model.TaskDto
 import akuchars.application.task.model.TaskForm
 import akuchars.application.task.model.TaskPriorityDto
@@ -20,8 +21,10 @@ import akuchars.domain.task.model.TaskTitle
 import akuchars.domain.task.repository.ChangePeriodAttributePolicy
 import akuchars.domain.task.repository.ChangeTaskAssigneeAttributePolicy
 import akuchars.domain.task.repository.ProjectRepository
-import akuchars.domain.task.repository.ProjectTaskRepository
+import akuchars.domain.task.repository.TaskRepository
+import akuchars.domain.user.model.User
 import akuchars.domain.user.repository.UserRepository
+import akuchars.infrastructure.task.DefaultAddTagToTaskAttributePolicy
 import akuchars.kernel.toLocalTime
 import org.springframework.data.repository.findByIdOrNull
 import org.springframework.stereotype.Service
@@ -31,10 +34,11 @@ import javax.persistence.EntityNotFoundException
 @Service
 class TaskApplicationService(
 		private val eventBus: EventBus,
-		private val taskRepository: ProjectTaskRepository,
+		private val taskRepository: TaskRepository,
 		private val projectRepository: ProjectRepository,
 		private val userRepository: UserRepository,
 		private val userQueryService: UserQueryService,
+		private val tagApplicationService: TagApplicationService,
 
 		private val changeTaskAssigneePolicy: ChangeTaskAssigneeAttributePolicy,
 		private val changePeriodAttributePolicy: ChangePeriodAttributePolicy,
@@ -43,21 +47,41 @@ class TaskApplicationService(
 
 	@Transactional
 	fun createNewTask(taskForm: TaskForm): FrontDto<TaskDto> {
+		return createOrEditTask(taskForm) { taskFormInner, actualUser ->
+			Task.createProjectTask(actualUser, actualUser,
+					TaskContent(taskFormInner.content), TaskTitle(taskFormInner.title), taskFormInner.priority.toEntity()
+			)
+		}
+	}
+
+	@Transactional
+	fun editTask(taskForm: TaskForm): FrontDto<TaskDto> {
+		return createOrEditTask(taskForm) { taskFormInner, actualUser ->
+			taskRepository.findByIdOrNull(taskFormInner.id!!)!!
+					.changeTaskData(eventBus,
+							TaskContent(taskFormInner.content),
+							TaskTitle(taskFormInner.title),
+							taskFormInner.priority.toEntity()
+					)
+		}
+	}
+
+	private fun createOrEditTask(taskForm: TaskForm, taskCreator: (TaskForm, User) -> Task): FrontDto<TaskDto> {
 		val actualUser = userQueryService.getLoggedUser().id.let {
 			userRepository.findByIdOrNull(it)
 		}!!
 		val project = projectRepository.findById(taskForm.projectId).orElseThrow(::RuntimeException)
 		return frontDtoConverter.toFrontDto {
-			val task = Task.createProjectTask(actualUser, actualUser,
-					TaskContent(taskForm.content), TaskTitle(taskForm.title), taskForm.priority.toEntity()
-			)
+			val task = taskCreator.invoke(taskForm, actualUser)
 			taskForm.period?.also {
 				task.changePeriod(eventBus, changePeriodAttributePolicy, PeriodOfTime(it.start.toLocalTime(), it.end.toLocalTime()))
 			}
 			taskForm.mainGoal?.also {
 				task.mainGoal = TaskMainGoal(it)
 			}
-
+			tagApplicationService.findOrCreateTags(taskForm).forEach { tag ->
+				task.addTag(eventBus, DefaultAddTagToTaskAttributePolicy(), tag)
+			}
 			project.addTask(eventBus, taskRepository, task) { _, _ -> true }
 			task.toDto()
 		}
@@ -74,8 +98,13 @@ class TaskApplicationService(
 }
 
 fun Task.toDto(): TaskDto {
-	return TaskDto(id, taskContent.value, taskTitle.value, priority.toDto(),
-			assignee.email.value, period?.let { PeriodDto(it.startDate.toString(), it.endDate?.toString()) }, mainGoal?.value)
+	return TaskDto(id,
+			taskContent.value, taskTitle.value, priority.toDto(),
+			assignee.email.value,
+			period?.let { PeriodDto(it.startDate.toString(), it.endDate?.toString()) },
+			mainGoal?.value,
+			tags.map { TagDto(it.id, it.name) }.toSet()
+	)
 }
 
 fun TaskPriority.toDto(): TaskPriorityDto {

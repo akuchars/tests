@@ -8,7 +8,7 @@ import akuchars.domain.task.model.TaskContent
 import akuchars.domain.task.model.TaskPriority.HIGH
 import akuchars.domain.task.model.TaskTitle
 import akuchars.domain.task.repository.ProjectRepository
-import akuchars.domain.task.repository.ProjectTaskRepository
+import akuchars.domain.task.repository.TaskRepository
 import akuchars.domain.user.model.Email
 import akuchars.domain.user.model.Password
 import akuchars.domain.user.model.PhoneNumber
@@ -29,7 +29,7 @@ import org.springframework.transaction.annotation.Transactional
 class InitDatabaseRunner(
 		private val userRepository: UserRepository,
 		private val projectRepository: ProjectRepository,
-		private val taskRepository: ProjectTaskRepository,
+		private val taskRepository: TaskRepository,
 		private val roleRepository: RoleRepository,
 		private val mockedEventBus: EventBus,
 		private val passwordEncoder: PasswordEncoder

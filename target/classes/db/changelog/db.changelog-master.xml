@@ -117,4 +117,29 @@
 			alter table task.tasks add column main_goal varchar;
 		</sql>
 	</changeSet>
+
+	<changeSet id="Adding tags to task" author="akuchars">
+		<sql>
+			create table task.tags
+			(
+				id bigserial not null,
+				name varchar not null,
+				constraint tags_pk primary key (id)
+			);
+			create table task.task_tags
+			(
+				task_id bigserial not null,
+				tag_id bigserial not null,
+				constraint tag_task_pk primary key (task_id, tag_id),
+				constraint task_tag_task_fk foreign key (task_id) references task.tasks(id),
+				constraint task_tag_tag_fk foreign key (tag_id) references task.tags(id)
+			);
+		</sql>
+	</changeSet>
+
+	<changeSet id="Adding constraint on tag table" author="akuchars">
+		<sql>
+			alter table task.tags add constraint tag_name_unique unique (name);
+		</sql>
+	</changeSet>
 </databaseChangeLog>

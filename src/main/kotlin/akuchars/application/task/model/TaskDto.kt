@@ -7,7 +7,8 @@ class TaskDto(
 		val priority: TaskPriorityDto,
 		val assignee: String,
 		val period: PeriodDto? = null,
-		val mainGoal: String? = null
+		val mainGoal: String? = null,
+		val tagsDto: Set<TagDto> = setOf()
 )
 
 class PeriodDto(
