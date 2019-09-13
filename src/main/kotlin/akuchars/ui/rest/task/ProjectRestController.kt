@@ -25,7 +25,7 @@ class ProjectRestController(
 	@ResponseStatus(HttpStatus.CREATED)
 	@PutMapping("/create")
 	fun createNewProject(@RequestParam projectName: String): ResponseEntity<FrontDto<ProjectDto>> {
-		return ResponseEntity(projectApplicationService.createNewProject(projectName), HttpStatus.CREATED)
+		return projectApplicationService.createNewProject(projectName).toResponseEntity()
 	}
 
 	@GetMapping

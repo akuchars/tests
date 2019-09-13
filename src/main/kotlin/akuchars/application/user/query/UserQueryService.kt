@@ -11,12 +11,13 @@ interface UserQueryService {
 	fun getLoggedUser(): UserDto
 	fun getUserById(id: Long): UserDto
 
-	fun User.toDto(): UserDto {
-		return UserDto(
-				id,
-				UserDataDto(userData.name, userData.surname),
-				ContactDataDto(email.value, phoneNumber?.value),
-				roles.map { RoleDto(it.role) }.toSet()
-		)
-	}
+}
+
+fun User.toDto(): UserDto {
+	return UserDto(
+			id,
+			UserDataDto(userData.name, userData.surname),
+			ContactDataDto(email.value, phoneNumber?.value),
+			roles.map { RoleDto(it.role) }.toSet()
+	)
 }

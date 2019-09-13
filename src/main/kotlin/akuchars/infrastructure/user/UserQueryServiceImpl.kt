@@ -2,6 +2,7 @@ package akuchars.infrastructure.user
 
 import akuchars.application.user.model.UserDto
 import akuchars.application.user.query.UserQueryService
+import akuchars.application.user.query.toDto
 import akuchars.domain.user.model.Email
 import akuchars.domain.user.repository.UserRepository
 import akuchars.kernel.ProfileProperties

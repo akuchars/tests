@@ -104,4 +104,17 @@
 			alter table task.tasks add column end_time date;
 		</sql>
 	</changeSet>
+
+	<changeSet id="Adding time period task column" author="akuchars">
+		<sql>
+			alter table task.tasks add column start_time date;
+			alter table task.tasks add column end_time date;
+		</sql>
+	</changeSet>
+
+	<changeSet id="Adding column 'why question' in task table" author="akuchars">
+		<sql>
+			alter table task.tasks add column main_goal varchar;
+		</sql>
+	</changeSet>
 </databaseChangeLog>

@@ -7,12 +7,20 @@ open class FrontUserDto(
 		val email: String
 )
 
+class RegistrationFrontUserDto(
+		id: Long,
+		name: String,
+		surname: String,
+		email: String,
+		val registrationInfo: RegistrationInfoTextDto
+) : FrontUserDto(id, name, surname, email)
+
 class UserDto(
 		id: Long,
 		data: UserDataDto,
 		val contactData: ContactDataDto,
 		val roles: Set<RoleDto>
-): FrontUserDto(id, data.name, data.surname, contactData.email)
+) : FrontUserDto(id, data.name, data.surname, contactData.email)
 
 class RoleDto(
 		val roleKey: String

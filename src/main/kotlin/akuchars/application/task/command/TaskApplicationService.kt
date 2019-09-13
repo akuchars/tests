@@ -1,5 +1,6 @@
 package akuchars.application.task.command
 
+import akuchars.application.common.command.FrontDtoConverter
 import akuchars.application.common.model.FrontDto
 import akuchars.application.task.model.PeriodDto
 import akuchars.application.task.model.TaskDto
@@ -10,6 +11,7 @@ import akuchars.domain.common.EventBus
 import akuchars.domain.task.model.PeriodOfTime
 import akuchars.domain.task.model.Task
 import akuchars.domain.task.model.TaskContent
+import akuchars.domain.task.model.TaskMainGoal
 import akuchars.domain.task.model.TaskPriority
 import akuchars.domain.task.model.TaskPriority.HIGH
 import akuchars.domain.task.model.TaskPriority.LOW
@@ -20,7 +22,6 @@ import akuchars.domain.task.repository.ChangeTaskAssigneeAttributePolicy
 import akuchars.domain.task.repository.ProjectRepository
 import akuchars.domain.task.repository.ProjectTaskRepository
 import akuchars.domain.user.repository.UserRepository
-import akuchars.kernel.toFrontDto
 import akuchars.kernel.toLocalTime
 import org.springframework.data.repository.findByIdOrNull
 import org.springframework.stereotype.Service
@@ -36,7 +37,8 @@ class TaskApplicationService(
 		private val userQueryService: UserQueryService,
 
 		private val changeTaskAssigneePolicy: ChangeTaskAssigneeAttributePolicy,
-		private val changePeriodAttributePolicy: ChangePeriodAttributePolicy
+		private val changePeriodAttributePolicy: ChangePeriodAttributePolicy,
+		private val frontDtoConverter: FrontDtoConverter
 ) {
 
 	@Transactional
@@ -45,12 +47,15 @@ class TaskApplicationService(
 			userRepository.findByIdOrNull(it)
 		}!!
 		val project = projectRepository.findById(taskForm.projectId).orElseThrow(::RuntimeException)
-		return toFrontDto {
+		return frontDtoConverter.toFrontDto {
 			val task = Task.createProjectTask(actualUser, actualUser,
 					TaskContent(taskForm.content), TaskTitle(taskForm.title), taskForm.priority.toEntity()
 			)
 			taskForm.period?.also {
 				task.changePeriod(eventBus, changePeriodAttributePolicy, PeriodOfTime(it.start.toLocalTime(), it.end.toLocalTime()))
+			}
+			taskForm.mainGoal?.also {
+				task.mainGoal = TaskMainGoal(it)
 			}
 
 			project.addTask(eventBus, taskRepository, task) { _, _ -> true }
@@ -60,7 +65,7 @@ class TaskApplicationService(
 
 	@Transactional
 	fun changeAssigneeForTask(taskId: Long, userId: Long): FrontDto<TaskDto> {
-		return toFrontDto {
+		return frontDtoConverter.toFrontDto {
 			val task = taskRepository.findByIdOrNull(taskId) ?: throw EntityNotFoundException()
 			val user = userRepository.findByIdOrNull(userId) ?: throw EntityNotFoundException()
 			task.changeAssignee(eventBus, changeTaskAssigneePolicy, user).toDto()
@@ -70,7 +75,7 @@ class TaskApplicationService(
 
 fun Task.toDto(): TaskDto {
 	return TaskDto(id, taskContent.value, taskTitle.value, priority.toDto(),
-			assignee.email.value, period?.let { PeriodDto(it.startDate.toString(), it.endDate?.toString()) })
+			assignee.email.value, period?.let { PeriodDto(it.startDate.toString(), it.endDate?.toString()) }, mainGoal?.value)
 }
 
 fun TaskPriority.toDto(): TaskPriorityDto {

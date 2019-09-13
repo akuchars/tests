@@ -5,6 +5,7 @@ import akuchars.application.task.command.TaskApplicationService
 import akuchars.application.task.model.TaskDto
 import akuchars.application.task.model.TaskForm
 import org.springframework.http.HttpStatus
+import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.PutMapping
@@ -19,10 +20,10 @@ class TaskRestController(private val taskApplicationService: TaskApplicationServ
 
 	@PutMapping("/create")
 	@ResponseStatus(HttpStatus.CREATED)
-	fun createNewTask(@RequestBody taskForm: TaskForm): FrontDto<TaskDto> =
-			taskApplicationService.createNewTask(taskForm)
+	fun createNewTask(@RequestBody taskForm: TaskForm): ResponseEntity<FrontDto<TaskDto>> =
+			taskApplicationService.createNewTask(taskForm).toResponseEntity()
 
 	@PostMapping("/{taskId}/assignee/{userId}")
-	fun changeAssignee(@PathVariable taskId: Long, @PathVariable userId: Long) : FrontDto<TaskDto> =
-			taskApplicationService.changeAssigneeForTask(taskId, userId)
+	fun changeAssignee(@PathVariable taskId: Long, @PathVariable userId: Long) : ResponseEntity<FrontDto<TaskDto>> =
+			taskApplicationService.changeAssigneeForTask(taskId, userId).toResponseEntity()
 }

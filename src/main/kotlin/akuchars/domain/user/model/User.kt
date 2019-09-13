@@ -62,7 +62,7 @@ data class User(
 			return User(name, email, phoneNumber, password, roles, true).apply {
 				userRepository.save(this)
 			}.also {
-				eventBus.sendAsync(PERSONAL_QUEUE_NAME, UserCreatedAsyncEvent(it.id, it.userData, it.roles))
+				eventBus.sendAsync(PERSONAL_QUEUE_NAME, UserCreatedAsyncEvent(it.id, it.userData))
 			}
 		}
 	}

@@ -67,6 +67,10 @@ data class Task(
 	)
 	var period: PeriodOfTime? = null
 
+	@Embedded
+	@AttributeOverrides(AttributeOverride(name = "value", column = Column(name = "main_goal")))
+	var mainGoal: TaskMainGoal? = null
+
 	fun changeAssignee(eventBus: EventBus, changePolicy: ChangeTaskAssigneeAttributePolicy, assignee: User): Task {
 		return updateEntity(eventBus, changePolicy, assignee, TaskChangedAssigneeAsyncEvent(id, assignee.id!!)) {
 			this.assignee = assignee

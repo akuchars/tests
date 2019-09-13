@@ -5,7 +5,8 @@ class TaskForm(
 		var title: String,
 		var priority: TaskPriorityDto,
 		var projectId: Long,
-		var period: PeriodForm? = null
+		var period: PeriodForm? = null,
+		var mainGoal: String? = null
 )
 
 class PeriodForm(
