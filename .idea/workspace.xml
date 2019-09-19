@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0bbdd235-7237-4c47-8c2c-370cf7aff8c9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/akuchars/infrastructure/task/TaskRepositoryImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/infrastructure/task/TaskRepositoryImpl.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/akuchars/application/task/query/TaskQueryService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/application/task/query/TaskQueryService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/akuchars/domain/task/repository/TaskRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/domain/task/repository/TaskRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/akuchars/ui/rest/task/ProjectRestController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/ui/rest/task/ProjectRestController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/ui/rest/task/ProjectRestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/akuchars/ui/rest/task/ProjectRestController.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -177,39 +181,12 @@
     <option name="allServicesViewState">
       <serviceView>
         <treeState>
-          <expand>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@62a620a1" type="9fbbdea:ServiceModel$ServiceNode" />
-            </path>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@62a620a1" type="9fbbdea:ServiceModel$ServiceNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@3dfd9389" type="9fbbdea:ServiceModel$ServiceNode" />
-            </path>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@62a620a1" type="9fbbdea:ServiceModel$ServiceNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@3dfd9389" type="9fbbdea:ServiceModel$ServiceNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@3eee9977" type="9fbbdea:ServiceModel$ServiceNode" />
-            </path>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@62a620a1" type="9fbbdea:ServiceModel$ServiceNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@3dfd9389" type="9fbbdea:ServiceModel$ServiceNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@3d94a366" type="9fbbdea:ServiceModel$ServiceNode" />
-            </path>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@62a620a1" type="9fbbdea:ServiceModel$ServiceNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@3dfd9389" type="9fbbdea:ServiceModel$ServiceNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@566eb897" type="9fbbdea:ServiceModel$ServiceNode" />
-            </path>
-          </expand>
+          <expand />
           <select />
         </treeState>
       </serviceView>
     </option>
+    <option name="selectedView" value="0" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -341,7 +318,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568381917714</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Resolve formatting">
+      <created>1568381985315</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1568381985315</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -375,7 +359,8 @@
     <MESSAGE value="Adding period of time for task" />
     <MESSAGE value="Adding internatiolization" />
     <MESSAGE value="Adding tags and filtering task by tags" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding tags and filtering task by tags" />
+    <MESSAGE value="Resolve formatting" />
+    <option name="LAST_COMMIT_MESSAGE" value="Resolve formatting" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

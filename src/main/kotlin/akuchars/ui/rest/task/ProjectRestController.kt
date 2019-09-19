@@ -5,6 +5,7 @@ import akuchars.application.task.command.ProjectApplicationService
 import akuchars.application.task.model.DetailProjectDto
 import akuchars.application.task.model.ProjectDto
 import akuchars.application.task.model.TaskDto
+import akuchars.application.task.model.TaskPriorityDto
 import akuchars.application.task.query.TaskQueryService
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.PageRequest
@@ -43,12 +44,20 @@ class ProjectRestController(
 	}
 
 	@GetMapping("/{projectId}/tasks")
-	fun getAllTaskFilteredByTag(@PathVariable projectId: Long,
-	                            @RequestParam tag: String,
-	                            @RequestParam page: Int,
-	                            @RequestParam size: Int
+	fun getAllTaskFilteredByTag(
+			@PathVariable projectId: Long,
+			@RequestParam tag: String?,
+			@RequestParam priority: TaskPriorityDto?,
+			@RequestParam page: Int,
+			@RequestParam size: Int
 	): FrontDto<Page<TaskDto>> {
+		//todo przenieść tą logikę do "generatora filtrów", żeby na podstawie jakiegoś "jquery" (albo innego języka zapytań)
+		//todo generowało się rezultat (patrz własne definiowanie filtrów
 		val pageable = PageRequest.of(page, size)
-		return taskQueryService.findTasksByTag(tag, projectId, pageable)
+		if (tag != null)
+			return taskQueryService.findTasksByTag(tag, projectId, pageable)
+		if (priority != null)
+			return taskQueryService.findTasksByPriority(priority, projectId, pageable)
+		return taskQueryService.findTaskByProject(projectId, pageable)
 	}
 }
