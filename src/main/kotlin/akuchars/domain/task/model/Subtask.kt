@@ -35,4 +35,28 @@ class Subtask(
 		this.status = DONE
 		return this
 	}
+
+	override fun equals(other: Any?): Boolean {
+		if (this === other) return true
+		if (javaClass != other?.javaClass) return false
+		if (!super.equals(other)) return false
+
+		other as Subtask
+
+		if (taskTitle != other.taskTitle) return false
+		if (status != other.status) return false
+		if (parent.id != other.parent.id) return false
+
+		return true
+	}
+
+	override fun hashCode(): Int {
+		var result = super.hashCode()
+		result = 31 * result + taskTitle.hashCode()
+		result = 31 * result + status.hashCode()
+		result = 31 * result + parent.id.hashCode()
+		return result
+	}
+
+
 }

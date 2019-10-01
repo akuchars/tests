@@ -135,7 +135,7 @@ data class Task(
 
 	fun addSubtasks(eventBus: EventBus, subtasks: MutableList<Subtask>): Task {
 		return updateEntity(eventBus, SubtaskAddedToTaskAsyncEvent()) {
-			this.subtasks = subtasks
+			this.subtasks.addAll(subtasks)
 			this.changeTime.updateTime()
 			this
 		}
