@@ -8,7 +8,9 @@ class TaskDto(
 		val assignee: String,
 		val period: PeriodDto? = null,
 		val mainGoal: String? = null,
-		val tagsDto: Set<TagDto> = setOf()
+		val tagsDto: Set<TagDto> = setOf(),
+		val subtasksInfo: SubtaskInfoDto,
+		val taskStatus : TaskStatusDto
 )
 
 class PeriodDto(

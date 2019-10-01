@@ -2,6 +2,7 @@
   <dictionary name="akuchars">
     <words>
       <w>mongo</w>
+      <w>subtasks</w>
     </words>
   </dictionary>
 </component>

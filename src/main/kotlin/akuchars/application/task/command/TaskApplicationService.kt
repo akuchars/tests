@@ -3,6 +3,9 @@ package akuchars.application.task.command
 import akuchars.application.common.command.FrontDtoConverter
 import akuchars.application.common.model.FrontDto
 import akuchars.application.task.model.PeriodDto
+import akuchars.application.task.model.TaskStatusDto
+import akuchars.application.task.model.SubtaskDto
+import akuchars.application.task.model.SubtaskInfoDto
 import akuchars.application.task.model.TagDto
 import akuchars.application.task.model.TaskDto
 import akuchars.application.task.model.TaskForm
@@ -10,6 +13,7 @@ import akuchars.application.task.model.TaskPriorityDto
 import akuchars.application.user.query.UserQueryService
 import akuchars.domain.common.EventBus
 import akuchars.domain.task.model.PeriodOfTime
+import akuchars.domain.task.model.Subtask
 import akuchars.domain.task.model.Task
 import akuchars.domain.task.model.TaskContent
 import akuchars.domain.task.model.TaskMainGoal
@@ -17,14 +21,19 @@ import akuchars.domain.task.model.TaskPriority
 import akuchars.domain.task.model.TaskPriority.HIGH
 import akuchars.domain.task.model.TaskPriority.LOW
 import akuchars.domain.task.model.TaskPriority.MEDIUM
+import akuchars.domain.task.model.TaskStatus
+import akuchars.domain.task.model.TaskStatus.DONE
+import akuchars.domain.task.model.TaskStatus.NEW
 import akuchars.domain.task.model.TaskTitle
 import akuchars.domain.task.repository.ChangePeriodAttributePolicy
 import akuchars.domain.task.repository.ChangeTaskAssigneeAttributePolicy
 import akuchars.domain.task.repository.ProjectRepository
+import akuchars.domain.task.repository.SubtaskRepository
 import akuchars.domain.task.repository.TaskRepository
 import akuchars.domain.user.model.User
 import akuchars.domain.user.repository.UserRepository
 import akuchars.infrastructure.task.DefaultAddTagToTaskAttributePolicy
+import akuchars.infrastructure.task.DefaultFinishSubtaskPolicy
 import akuchars.kernel.toLocalTime
 import org.springframework.data.repository.findByIdOrNull
 import org.springframework.stereotype.Service
@@ -35,11 +44,11 @@ import javax.persistence.EntityNotFoundException
 class TaskApplicationService(
 		private val eventBus: EventBus,
 		private val taskRepository: TaskRepository,
+		private val subtaskRepository: SubtaskRepository,
 		private val projectRepository: ProjectRepository,
 		private val userRepository: UserRepository,
 		private val userQueryService: UserQueryService,
 		private val tagApplicationService: TagApplicationService,
-
 		private val changeTaskAssigneePolicy: ChangeTaskAssigneeAttributePolicy,
 		private val changePeriodAttributePolicy: ChangePeriodAttributePolicy,
 		private val frontDtoConverter: FrontDtoConverter
@@ -66,6 +75,15 @@ class TaskApplicationService(
 		}
 	}
 
+	@Transactional
+	fun finishSubtask(taskId: Long, subtaskId: Long): FrontDto<TaskDto> {
+		return frontDtoConverter.toFrontDto {
+			val task = taskRepository.findById(taskId).orElseThrow(::RuntimeException)
+			val subtask = subtaskRepository.findByParentAndId(task, subtaskId)
+			task.finishSubtask(eventBus, subtask, DefaultFinishSubtaskPolicy()).toDto()
+		}
+	}
+
 	private fun createOrEditTask(taskForm: TaskForm, taskCreator: (TaskForm, User) -> Task): FrontDto<TaskDto> {
 		val actualUser = userQueryService.getLoggedUser().id.let {
 			userRepository.findByIdOrNull(it)
@@ -82,6 +100,8 @@ class TaskApplicationService(
 			tagApplicationService.findOrCreateTags(taskForm).forEach { tag ->
 				task.addTag(eventBus, DefaultAddTagToTaskAttributePolicy(), tag)
 			}
+			task.addSubtasks(eventBus, taskForm.subtasks.map { Subtask(TaskTitle(it.title), NEW, task) }.toMutableList())
+
 			project.addTask(eventBus, taskRepository, task) { _, _ -> true }
 			task.toDto()
 		}
@@ -103,8 +123,21 @@ fun Task.toDto(): TaskDto {
 			assignee.email.value,
 			period?.let { PeriodDto(it.startDate.toString(), it.endDate?.toString()) },
 			mainGoal?.value,
-			tags.map { TagDto(it.id, it.name) }.toSet()
+			tags.map { TagDto(it.id, it.name) }.toSet(),
+			SubtaskInfoDto(
+					subtasks.map { SubtaskDto(it.id, it.taskTitle.value, it.isDone()) },
+					countDoneSubtask(),
+					countUndoneSubtask()
+					),
+			status.toDto()
 	)
+}
+
+private fun TaskStatus.toDto(): TaskStatusDto {
+	return when(this) {
+		NEW -> TaskStatusDto.NEW
+		DONE -> TaskStatusDto.DONE
+	}
 }
 
 fun TaskPriority.toDto(): TaskPriorityDto {

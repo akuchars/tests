@@ -8,7 +8,8 @@ class TaskForm(
 		var projectId: Long,
 		var period: PeriodForm? = null,
 		var mainGoal: String? = null,
-		var tags: Set<TagForm> = setOf()
+		var tags: Set<TagForm> = setOf(),
+		var subtasks: Set<SubtaskForm> = setOf()
 )
 
 class PeriodForm(

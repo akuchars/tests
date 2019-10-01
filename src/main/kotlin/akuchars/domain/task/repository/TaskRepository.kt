@@ -1,6 +1,7 @@
 package akuchars.domain.task.repository
 
 import akuchars.domain.task.model.Project
+import akuchars.domain.task.model.Subtask
 import akuchars.domain.task.model.Task
 import akuchars.domain.task.model.TaskPriority
 import org.springframework.data.domain.Page

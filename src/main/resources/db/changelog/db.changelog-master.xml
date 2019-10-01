@@ -142,4 +142,18 @@
 			alter table task.tags add constraint tag_name_unique unique (name);
 		</sql>
 	</changeSet>
+
+	<changeSet id="Adding subtasks" author="akuchars">
+		<sql>
+			create table task.subtasks
+			(
+				id bigserial not null,
+				title varchar not null,
+				status varchar not null,
+				parent_id bigserial not null,
+				constraint subtasks_pk primary key (id),
+				constraint subtasks_tasks_fk foreign key (parent_id) references task.tasks(id)
+			);
+		</sql>
+	</changeSet>
 </databaseChangeLog>

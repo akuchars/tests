@@ -3,6 +3,7 @@ package akuchars.domain.task.exceptions
 import akuchars.domain.common.DomainException
 import akuchars.domain.task.model.PeriodOfTime
 import akuchars.domain.task.model.Project
+import akuchars.domain.task.model.Subtask
 import akuchars.domain.task.model.Task
 import akuchars.domain.user.model.User
 
@@ -26,4 +27,11 @@ class CannotChangePeriodOfTaskException(val periodOfTime: PeriodOfTime, val task
 		"Cannot change period of $periodOfTime time for closed task ${task.id}"
 ) {
 	override fun getMessageResolverParams(): Array<*>? = arrayOf(periodOfTime, task.id)
+}
+
+class CannotFinishSubtaskOfTaskException(val subtask: Subtask, val task: Task) : DomainTaskException(
+		"task.tasks.cannot.finish.subtask.of.task.error.code",
+		"Cannot finish subtask ${subtask.id} of task ${task.id}"
+) {
+	override fun getMessageResolverParams(): Array<*>? = arrayOf(subtask.id, task.id)
 }

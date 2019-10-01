@@ -4,18 +4,23 @@ import akuchars.domain.common.AbstractJpaEntity
 import akuchars.domain.common.EventBus
 import akuchars.domain.common.updateEntity
 import akuchars.domain.common.updateEntityWithPolicy
+import akuchars.domain.task.event.SubtaskAddedToTaskAsyncEvent
+import akuchars.domain.task.event.SubtaskCompletedInTaskAsyncEvent
 import akuchars.domain.task.event.TagAddedToTaskAsyncEvent
 import akuchars.domain.task.event.TaskChangedAssigneeAsyncEvent
 import akuchars.domain.task.event.TaskChangedPeriodAsyncEvent
+import akuchars.domain.task.event.TaskCompletedAsyncEvent
 import akuchars.domain.task.event.TaskEditedAssigneeAsyncEvent
 import akuchars.domain.task.model.TaskStatus.NEW
 import akuchars.domain.task.repository.AddTagToTaskAttributePolicy
 import akuchars.domain.task.repository.ChangePeriodAttributePolicy
 import akuchars.domain.task.repository.ChangeTaskAssigneeAttributePolicy
+import akuchars.domain.task.repository.FinishSubtaskPolicy
 import akuchars.domain.user.model.User
 import akuchars.kernel.ApplicationProperties
 import javax.persistence.AttributeOverride
 import javax.persistence.AttributeOverrides
+import javax.persistence.CascadeType
 import javax.persistence.Column
 import javax.persistence.Embedded
 import javax.persistence.Entity
@@ -26,6 +31,7 @@ import javax.persistence.JoinColumn
 import javax.persistence.JoinTable
 import javax.persistence.ManyToMany
 import javax.persistence.ManyToOne
+import javax.persistence.OneToMany
 import javax.persistence.OneToOne
 import javax.persistence.Table
 
@@ -52,7 +58,7 @@ data class Task(
 		var priority: TaskPriority,
 
 		@Enumerated(EnumType.STRING)
-		val status: TaskStatus,
+		var status: TaskStatus,
 
 		@Embedded
 		@AttributeOverrides(
@@ -86,6 +92,9 @@ data class Task(
 			inverseJoinColumns = [JoinColumn(name = "tag_id")]
 	)
 	var tags: MutableSet<Tag> = mutableSetOf()
+
+	@OneToMany(mappedBy = "parent", cascade = [CascadeType.ALL], orphanRemoval = true)
+	var subtasks: MutableList<Subtask> = mutableListOf()
 
 	fun changeTaskData(eventBus: EventBus, taskContent: TaskContent,
 	                   taskTitle: TaskTitle,
@@ -123,6 +132,35 @@ data class Task(
 			this
 		}
 	}
+
+	fun addSubtasks(eventBus: EventBus, subtasks: MutableList<Subtask>): Task {
+		return updateEntity(eventBus, SubtaskAddedToTaskAsyncEvent()) {
+			this.subtasks = subtasks
+			this.changeTime.updateTime()
+			this
+		}
+	}
+
+	fun forceFinishTask(eventBus: EventBus, taskCompletedAsyncEvent: TaskCompletedAsyncEvent): Task {
+		return updateEntity(eventBus, taskCompletedAsyncEvent) {
+			this.status = TaskStatus.DONE
+			this.changeTime.updateTime()
+			this
+		}
+	}
+
+	fun finishSubtask(eventBus: EventBus, subtask: Subtask, finishSubtaskPolicy: FinishSubtaskPolicy): Task {
+		return updateEntityWithPolicy(eventBus, finishSubtaskPolicy, subtask, SubtaskCompletedInTaskAsyncEvent(subtask.id, id)) {
+			this.subtasks.find { it.id == subtask.id }!!.markAsDone()
+			//todo kończenie zadań globalnych powinno być uzależnione od ustawień użytkownika
+			if (isAllSubtaskFinished()) forceFinishTask(eventBus, TaskCompletedAsyncEvent(id))
+			else this
+		}
+	}
+
+	fun countDoneSubtask(): Int = subtasks.count { it.isDone() }
+	fun countUndoneSubtask(): Int = subtasks.count { !it.isDone() }
+	private fun isAllSubtaskFinished() = this.subtasks.size == this.countDoneSubtask()
 
 	companion object {
 

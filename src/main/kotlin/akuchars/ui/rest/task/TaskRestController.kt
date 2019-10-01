@@ -36,4 +36,8 @@ class TaskRestController(private val taskApplicationService: TaskApplicationServ
 	@PostMapping("/{taskId}/assignee/{userId}")
 	fun changeAssignee(@PathVariable taskId: Long, @PathVariable userId: Long) : ResponseEntity<FrontDto<TaskDto>> =
 			taskApplicationService.changeAssigneeForTask(taskId, userId).toResponseEntity()
+
+	@PostMapping("/{taskId}/finish/{subtaskId}")
+	fun finishSubtask(@PathVariable taskId: Long, @PathVariable subtaskId: Long) : ResponseEntity<FrontDto<TaskDto>> =
+			taskApplicationService.finishSubtask(taskId, subtaskId).toResponseEntity()
 }
