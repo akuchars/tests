@@ -2,7 +2,59 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0bbdd235-7237-4c47-8c2c-370cf7aff8c9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/tasks.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/ApplicationRunner.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/ApplicationRunnerKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/application/task/command/ProjectApplicationService$getProjectsPaginated$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/application/task/command/ProjectApplicationService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/application/task/model/ProjectDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/application/task/model/TaskDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/application/user/model/UserDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/application/user/query/UserQueryService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/domain/common/AbstractJpaEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/domain/common/AsyncEvent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/domain/common/EventBus.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/domain/common/EventType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/domain/statistic/model/DocumentedEvent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/domain/statistic/repository/DocumentedEventRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/domain/task/event/ProjectCreatedAsyncEvent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/domain/task/event/TaskAddedToProjectAsyncEvent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/domain/task/event/TaskChangedAssigneeAsyncEvent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/domain/task/model/Project.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/domain/task/model/ProjectName.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/domain/task/model/Task.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/domain/task/model/TaskContent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/domain/task/model/TaskPriority.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/domain/task/model/TaskStatus.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/domain/task/model/TaskTitle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/domain/task/repository/AddTaskToProjectPolicy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/domain/task/repository/ProjectRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/domain/user/model/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/domain/user/repository/UserRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/infrastructure/events/AfterSendAsyncEventRunner.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/infrastructure/events/AfterSendSyncEventRunner.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/infrastructure/events/EventBusImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/infrastructure/events/MockedEventBus$Companion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/infrastructure/events/MockedEventBus.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/infrastructure/spring/InitDatabaseRunner.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/infrastructure/spring/MongoConfiguration.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/infrastructure/spring/RabbitConfiguration.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/infrastructure/spring/SendWelcomeAsyncEventRunner$run$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/infrastructure/spring/SendWelcomeAsyncEventRunner.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/infrastructure/spring/SwaggerConfiguration.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/infrastructure/statistic/DocumentEventAfterSendAsyncEventRunner.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/infrastructure/user/TestUserQueryService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/kernel/ApplicationProperties.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/kernel/ProfileProperties.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/ui/rest/task/ProjectRestController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/META-INF/tasks.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/akuchars/constraint/IllegalImports.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/akuchars/constraint/LayerDependenciesConstraintsTest$Companion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/akuchars/constraint/LayerDependenciesConstraintsTest$findAllSourceFilesWithPackage$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/akuchars/constraint/LayerDependenciesConstraintsTest$findAllSourceFilesWithPackage$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/akuchars/constraint/LayerDependenciesConstraintsTest$findAllSourceFilesWithPackage$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/akuchars/constraint/LayerDependenciesConstraintsTest$findAllSourceFilesWithPackage$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/akuchars/constraint/LayerDependenciesConstraintsTest.class" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -353,7 +405,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573121992451</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Delete module scheduling">
+      <created>1573122767787</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1573122767787</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -392,7 +451,8 @@
     <MESSAGE value="Adding subtask to task" />
     <MESSAGE value="Fix adding subtasks" />
     <MESSAGE value="Change rabbitMQ configuration to multiple consumers" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change rabbitMQ configuration to multiple consumers" />
+    <MESSAGE value="Delete module scheduling" />
+    <option name="LAST_COMMIT_MESSAGE" value="Delete module scheduling" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
