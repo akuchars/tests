@@ -22,6 +22,7 @@ class LayerDependenciesConstraintsTest {
 	@ParameterizedTest(name = "({0}): {1} layer should not depend on {2} layer")
 	@MethodSource("layersAndExcludes")
 	@Throws(IOException::class)
+	//todo przenieść ten test do osobnego modułu
 	fun validateLayerDependencies(msg: String, fromLayer: String, toLayer: String, excludedClassessToAnalyze: List<Class<*>>, excludedImports: List<Class<*>>) {
 		//given
 		val skippedClasses = excludedClassessToAnalyze.map(Class<*>::getName)

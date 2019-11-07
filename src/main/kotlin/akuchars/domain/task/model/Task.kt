@@ -158,6 +158,12 @@ data class Task(
 		}
 	}
 
+	fun recalculatePeriod(): Task {
+		return apply {
+			//todo poprawić to, powinien wyliczać ten chujek następne wystąpienie
+		}
+	}
+
 	fun countDoneSubtask(): Int = subtasks.count { it.isDone() }
 	fun countUndoneSubtask(): Int = subtasks.count { !it.isDone() }
 	private fun isAllSubtaskFinished() = this.subtasks.size == this.countDoneSubtask()

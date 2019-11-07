@@ -5,8 +5,12 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>akuchars</groupId>
-	<artifactId>akuchars-tasks</artifactId>
+	<artifactId>akuchars-parent</artifactId>
+	<packaging>pom</packaging>
 	<version>1.0-SNAPSHOT</version>
+	<modules>
+		<module>scheduling</module>
+	</modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>

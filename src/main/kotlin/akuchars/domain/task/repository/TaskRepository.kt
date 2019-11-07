@@ -13,4 +13,5 @@ import org.springframework.stereotype.Repository
 interface TaskRepository : PagingAndSortingRepository<Task, Long>, CustomTaskRepository {
 	fun findAllByPriority(pageable: Pageable, priority: TaskPriority): Page<Task>
 	fun findByParent(pageable: Pageable, parent: Project?): Page<Task>
+	fun findAllByPeriodNotNull(): List<Task>
 }

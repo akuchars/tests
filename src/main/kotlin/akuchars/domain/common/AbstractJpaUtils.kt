@@ -6,7 +6,7 @@ fun <A, E : AbstractJpaEntity> E.updateEntityWithPolicy(eventBus: EventBus,
                                                         changePolicy: ChangeEntityPolicy<A, E>,
                                                         attribute: A,
                                                         asyncEvent: AsyncEvent,
-                                                        action: (E) -> E): E {
+                                                        action: E.() -> E): E {
 	val canChange = changePolicy.canChangeAttribute(this, attribute)
 	if (canChange.isRight) {
 		val entity = action.invoke(this)

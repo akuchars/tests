@@ -2,6 +2,8 @@ package akuchars.infrastructure.events
 
 import akuchars.domain.common.AsyncEvent
 import akuchars.domain.common.EventBus
+import akuchars.kernel.ApplicationProperties
+import akuchars.kernel.ApplicationProperties.EXCHANGE_NAME
 import akuchars.kernel.ProfileProperties.PROD_PROFILE
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -36,7 +38,7 @@ class EventBusImpl(
 	}
 
 	override fun <E : AsyncEvent> sendAsyncInner(queueName: String, event: E) {
-		rabbitTemplate.convertAndSend(queueName, event)
+		rabbitTemplate.convertAndSend(EXCHANGE_NAME, "*", event)
 	}
 
 	override fun <E : AsyncEvent> afterSendAsyncInner(event: E) {
