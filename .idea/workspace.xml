@@ -2,77 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0bbdd235-7237-4c47-8c2c-370cf7aff8c9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/scheduling/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scheduling/src/main/kotlin/akuchars/application/SchedulingResolverApplicationService.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scheduling/src/main/kotlin/akuchars/domain/Scheduling.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scheduling/src/main/kotlin/akuchars/infrastructure/SchedulingResolverApplicationServiceImpl.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/application/task/command/SchedulingTaskService.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/application/task/command/TaskEventsListener.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/infrastructure/events/EventWithoutListenerExceptionHandler.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/infrastructure/spring/SchedulingConfiguration.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/akuchars.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/akuchars.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/akuchars/domain/common/AbstractJpaUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/domain/common/AbstractJpaUtils.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/akuchars/domain/task/model/Task.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/domain/task/model/Task.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/akuchars/domain/task/repository/TaskRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/domain/task/repository/TaskRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/akuchars/infrastructure/events/EventBusImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/infrastructure/events/EventBusImpl.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/akuchars/infrastructure/spring/RabbitConfiguration.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/infrastructure/spring/RabbitConfiguration.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/akuchars/kernel/ApplicationProperties.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/akuchars/kernel/ApplicationProperties.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/akuchars/constraint/LayerDependenciesConstraintsTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/akuchars/constraint/LayerDependenciesConstraintsTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/ApplicationRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/akuchars/ApplicationRunner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/ApplicationRunnerKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/akuchars/ApplicationRunnerKt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/application/task/command/ProjectApplicationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/akuchars/application/task/command/ProjectApplicationService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/application/task/model/ProjectDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/akuchars/application/task/model/ProjectDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/application/task/model/TaskDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/akuchars/application/task/model/TaskDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/application/user/model/UserDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/akuchars/application/user/model/UserDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/application/user/query/UserQueryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/akuchars/application/user/query/UserQueryService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/domain/common/AsyncEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/akuchars/domain/common/AsyncEvent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/domain/common/EventBus.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/akuchars/domain/common/EventBus.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/domain/common/EventType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/akuchars/domain/common/EventType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/domain/statistic/model/DocumentedEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/akuchars/domain/statistic/model/DocumentedEvent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/domain/statistic/repository/DocumentedEventRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/akuchars/domain/statistic/repository/DocumentedEventRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/domain/task/event/ProjectCreatedAsyncEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/akuchars/domain/task/event/ProjectCreatedAsyncEvent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/domain/task/event/TaskAddedToProjectAsyncEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/akuchars/domain/task/event/TaskAddedToProjectAsyncEvent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/domain/task/event/TaskChangedAssigneeAsyncEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/akuchars/domain/task/event/TaskChangedAssigneeAsyncEvent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/domain/task/model/Project.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/akuchars/domain/task/model/Project.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/domain/task/model/ProjectName.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/akuchars/domain/task/model/ProjectName.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/domain/task/model/Task.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/akuchars/domain/task/model/Task.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/domain/task/model/TaskContent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/akuchars/domain/task/model/TaskContent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/domain/task/model/TaskPriority.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/akuchars/domain/task/model/TaskPriority.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/domain/task/model/TaskStatus.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/akuchars/domain/task/model/TaskStatus.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/domain/task/model/TaskTitle.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/akuchars/domain/task/model/TaskTitle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/domain/task/repository/AddTaskToProjectPolicy.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/akuchars/domain/task/repository/AddTaskToProjectPolicy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/domain/task/repository/ProjectRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/akuchars/domain/task/repository/ProjectRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/domain/user/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/akuchars/domain/user/model/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/domain/user/repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/akuchars/domain/user/repository/UserRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/infrastructure/events/AfterSendAsyncEventRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/akuchars/infrastructure/events/AfterSendAsyncEventRunner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/infrastructure/events/AfterSendSyncEventRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/akuchars/infrastructure/events/AfterSendSyncEventRunner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/infrastructure/events/EventBusImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/akuchars/infrastructure/events/EventBusImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/infrastructure/events/MockedEventBus$Companion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/akuchars/infrastructure/events/MockedEventBus$Companion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/infrastructure/events/MockedEventBus.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/akuchars/infrastructure/events/MockedEventBus.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/infrastructure/spring/InitDatabaseRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/akuchars/infrastructure/spring/InitDatabaseRunner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/infrastructure/spring/MongoConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/akuchars/infrastructure/spring/MongoConfiguration.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/infrastructure/spring/RabbitConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/akuchars/infrastructure/spring/RabbitConfiguration.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/infrastructure/spring/SendWelcomeAsyncEventRunner$run$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/akuchars/infrastructure/spring/SendWelcomeAsyncEventRunner$run$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/infrastructure/spring/SendWelcomeAsyncEventRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/akuchars/infrastructure/spring/SendWelcomeAsyncEventRunner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/infrastructure/spring/SwaggerConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/akuchars/infrastructure/spring/SwaggerConfiguration.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/infrastructure/statistic/DocumentEventAfterSendAsyncEventRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/akuchars/infrastructure/statistic/DocumentEventAfterSendAsyncEventRunner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/infrastructure/user/TestUserQueryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/akuchars/infrastructure/user/TestUserQueryService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/kernel/ApplicationProperties.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/akuchars/kernel/ApplicationProperties.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/kernel/ProfileProperties.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/akuchars/kernel/ProfileProperties.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/akuchars/ui/rest/task/ProjectRestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/akuchars/ui/rest/task/ProjectRestController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/akuchars/constraint/IllegalImports.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/akuchars/constraint/IllegalImports.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/akuchars/constraint/LayerDependenciesConstraintsTest$Companion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/akuchars/constraint/LayerDependenciesConstraintsTest$Companion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/akuchars/constraint/LayerDependenciesConstraintsTest$findAllSourceFilesWithPackage$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/akuchars/constraint/LayerDependenciesConstraintsTest$findAllSourceFilesWithPackage$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/akuchars/constraint/LayerDependenciesConstraintsTest$findAllSourceFilesWithPackage$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/akuchars/constraint/LayerDependenciesConstraintsTest$findAllSourceFilesWithPackage$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/akuchars/constraint/LayerDependenciesConstraintsTest$findAllSourceFilesWithPackage$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/akuchars/constraint/LayerDependenciesConstraintsTest$findAllSourceFilesWithPackage$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/akuchars/constraint/LayerDependenciesConstraintsTest$findAllSourceFilesWithPackage$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/akuchars/constraint/LayerDependenciesConstraintsTest$findAllSourceFilesWithPackage$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/akuchars/constraint/LayerDependenciesConstraintsTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/akuchars/constraint/LayerDependenciesConstraintsTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks.iml" beforeDir="false" afterPath="$PROJECT_DIR$/parent.iml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -252,35 +182,7 @@
     <option name="allServicesViewState">
       <serviceView>
         <treeState>
-          <expand>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@6288d6d7" type="9fbbdea:ServiceModel$ServiceNode" />
-            </path>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@6288d6d7" type="9fbbdea:ServiceModel$ServiceNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@4eccdeeb" type="9fbbdea:ServiceModel$ServiceNode" />
-            </path>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@6288d6d7" type="9fbbdea:ServiceModel$ServiceNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@4eccdeeb" type="9fbbdea:ServiceModel$ServiceNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@5236243f" type="9fbbdea:ServiceModel$ServiceNode" />
-            </path>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@6288d6d7" type="9fbbdea:ServiceModel$ServiceNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@4eccdeeb" type="9fbbdea:ServiceModel$ServiceNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@37cf44e2" type="9fbbdea:ServiceModel$ServiceNode" />
-            </path>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@6288d6d7" type="9fbbdea:ServiceModel$ServiceNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@4eccdeeb" type="9fbbdea:ServiceModel$ServiceNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@31950f02" type="9fbbdea:ServiceModel$ServiceNode" />
-            </path>
-          </expand>
+          <expand />
           <select />
         </treeState>
       </serviceView>
@@ -444,7 +346,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569936294883</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Change rabbitMQ configuration to multiple consumers">
+      <created>1573121992451</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1573121992451</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -482,7 +391,8 @@
     <MESSAGE value="Adding filtering by priority" />
     <MESSAGE value="Adding subtask to task" />
     <MESSAGE value="Fix adding subtasks" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix adding subtasks" />
+    <MESSAGE value="Change rabbitMQ configuration to multiple consumers" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change rabbitMQ configuration to multiple consumers" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -491,26 +401,6 @@
           <url>jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/5.1.9.RELEASE/spring-webmvc-5.1.9.RELEASE.jar!/org/springframework/web/servlet/i18n/AcceptHeaderLocaleResolver.class</url>
           <line>45</line>
           <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/akuchars/domain/task/model/Project.kt</url>
-          <line>63</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/akuchars/application/task/command/TaskEventsListener.kt</url>
-          <line>14</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/akuchars/application/task/command/TaskEventsListener.kt</url>
-          <line>19</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/akuchars/infrastructure/events/EventWithoutListenerExceptionHandler.kt</url>
-          <line>12</line>
-          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
