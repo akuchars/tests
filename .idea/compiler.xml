@@ -8,6 +8,8 @@
         <outputRelativeToContentRoot value="true" />
         <module name="tasks" />
         <module name="parent" />
+        <module name="structure" />
+        <module name="sender" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -16,9 +18,11 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="akuchars-parent" options="-parameters" />
+      <module name="akuchars-parent" options="" />
       <module name="parent" options="-parameters" />
       <module name="scheduling" options="-parameters" />
+      <module name="sender" options="-parameters" />
+      <module name="structure" options="-parameters" />
       <module name="tasks" options="-parameters" />
     </option>
   </component>

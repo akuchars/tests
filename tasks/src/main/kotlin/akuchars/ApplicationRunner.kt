@@ -14,5 +14,5 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc
 class ApplicationRunner
 
 fun main(args: Array<String>) {
-    runApplication<ApplicationRunner>(*args)
+	runApplication<ApplicationRunner>(*args)
 }
