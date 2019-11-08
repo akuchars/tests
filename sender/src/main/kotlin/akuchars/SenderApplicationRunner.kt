@@ -5,8 +5,8 @@ import org.springframework.boot.runApplication
 
 
 @SpringBootApplication
-class ApplicationRunner
+class SenderApplicationRunner
 
 fun main(args: Array<String>) {
-    runApplication<ApplicationRunner>(*args)
+    runApplication<SenderApplicationRunner>(*args)
 }

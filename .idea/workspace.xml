@@ -1,29 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0bbdd235-7237-4c47-8c2c-370cf7aff8c9" name="Default Changelist" comment="Change project structure">
-      <change afterPath="$PROJECT_DIR$/sender/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/ApplicationRunner.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/application/email/command/EmailBodyResolver.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/application/email/command/EmailSender.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/application/email/model/EmailBodyDto.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/application/email/model/EmailToSendDto.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/domain/email/model/EmailTemplateLocation.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/domain/email/repository/EmailTemplateLocationRepository.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/infrastructure/email/EmailSenderImpl.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/infrastructure/spring/InitDatabaseRunner.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/infrastructure/spring/MongoConfiguration.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/infrastructure/spring/ThymeleafResolverConfiguration.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/ui/email/EmailRestController.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sender/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sender/src/main/resources/mytemplates/dupa.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/structure/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+    <list default="true" id="0bbdd235-7237-4c47-8c2c-370cf7aff8c9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/ApplicationRunner.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/ApplicationRunner.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/ApplicationRunner.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/SenderApplicationRunner.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sender/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/sender/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -132,7 +113,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Kotlin.akuchars.ApplicationRunnerKt">
+  <component name="RunManager" selected="Kotlin.akuchars.SenderApplicationRunnerKt (1)">
     <configuration name="ApplicationRunnerTest.applicationContextTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="parent" />
       <extension name="coverage">
@@ -162,45 +143,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="akuchars.ApplicationRunnerKt (1)" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
-      <module name="akuchars-parent" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" value="akuchars.ApplicationRunnerKt" />
-      <option name="WORKING_DIRECTORY" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="akuchars.ApplicationRunnerKt (2)" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
-      <module name="tasks" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" value="akuchars.ApplicationRunnerKt" />
-      <option name="WORKING_DIRECTORY" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="akuchars.ApplicationRunnerKt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
-      <module name="parent" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" value="akuchars.ApplicationRunnerKt" />
-      <option name="WORKING_DIRECTORY" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="akuchars.ApplicationRunnerKt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
       <module name="sender" />
       <option name="VM_PARAMETERS" />
@@ -214,13 +156,65 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="akuchars.SenderApplicationRunnerKt (1)" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
+      <module name="sender" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" value="akuchars.SenderApplicationRunnerKt" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="akuchars.SenderApplicationRunnerKt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
+      <module name="akuchars-parent" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" value="akuchars.SenderApplicationRunnerKt" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="akuchars.SenderApplicationRunnerKt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
+      <module name="tasks" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" value="akuchars.SenderApplicationRunnerKt" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="akuchars.SenderApplicationRunnerKt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
+      <module name="parent" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" value="akuchars.SenderApplicationRunnerKt" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Kotlin.akuchars.ApplicationRunnerKt" />
-        <item itemvalue="Kotlin.akuchars.ApplicationRunnerKt (2)" />
-        <item itemvalue="Kotlin.akuchars.ApplicationRunnerKt (1)" />
-        <item itemvalue="Kotlin.akuchars.ApplicationRunnerKt" />
-        <item itemvalue="JUnit.ApplicationRunnerTest.applicationContextTest" />
+        <item itemvalue="Kotlin.akuchars.SenderApplicationRunnerKt (1)" />
+        <item itemvalue="Kotlin.akuchars.SenderApplicationRunnerKt" />
+        <item itemvalue="Kotlin.akuchars.SenderApplicationRunnerKt" />
+        <item itemvalue="Kotlin.akuchars.SenderApplicationRunnerKt" />
+        <item itemvalue="Kotlin.akuchars.SenderApplicationRunnerKt" />
       </list>
     </recent_temporary>
   </component>
@@ -231,18 +225,30 @@
           <expand>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@6d57bc41" type="9fbbdea:ServiceModel$ServiceNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@43a801dc" type="9fbbdea:ServiceModel$ServiceNode" />
             </path>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@6d57bc41" type="9fbbdea:ServiceModel$ServiceNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@68f0ccd8" type="9fbbdea:ServiceModel$ServiceNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@43a801dc" type="9fbbdea:ServiceModel$ServiceNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@10d649d7" type="9fbbdea:ServiceModel$ServiceNode" />
             </path>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@6d57bc41" type="9fbbdea:ServiceModel$ServiceNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@68f0ccd8" type="9fbbdea:ServiceModel$ServiceNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@11cbbd1a" type="9fbbdea:ServiceModel$ServiceNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@43a801dc" type="9fbbdea:ServiceModel$ServiceNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@10d649d7" type="9fbbdea:ServiceModel$ServiceNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@631383a6" type="9fbbdea:ServiceModel$ServiceNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@43a801dc" type="9fbbdea:ServiceModel$ServiceNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@10d649d7" type="9fbbdea:ServiceModel$ServiceNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@248e10b0" type="9fbbdea:ServiceModel$ServiceNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@43a801dc" type="9fbbdea:ServiceModel$ServiceNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@10d649d7" type="9fbbdea:ServiceModel$ServiceNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@4ece61b0" type="9fbbdea:ServiceModel$ServiceNode" />
             </path>
           </expand>
           <select />
@@ -443,7 +449,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573131500092</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Adding module to send email">
+      <created>1573139324287</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1573139324287</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -461,7 +474,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Change entity class to kotlin" />
     <MESSAGE value="Adding circleci" />
     <MESSAGE value="Fix in config.yml container" />
     <MESSAGE value="circleCi #1" />
@@ -486,7 +498,8 @@
     <MESSAGE value="Delete module scheduling from pom" />
     <MESSAGE value="Build fix" />
     <MESSAGE value="Change project structure" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change project structure" />
+    <MESSAGE value="Adding module to send email" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding module to send email" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
