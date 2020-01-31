@@ -1,7 +1,7 @@
 package akuchars.infrastructure.spring
 
-import akuchars.domain.email.model.EmailTemplateLocation
-import akuchars.domain.email.repository.EmailTemplateLocationRepository
+import akuchars.notification.email.domain.model.EmailTemplateLocation
+import akuchars.notification.email.domain.repository.EmailTemplateLocationRepository
 import org.springframework.boot.ApplicationArguments
 import org.springframework.boot.ApplicationRunner
 import org.springframework.stereotype.Component

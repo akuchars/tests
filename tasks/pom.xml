@@ -56,6 +56,11 @@
 	</build>
 
 	<dependencies>
+		<dependency>
+			<groupId>akuchars</groupId>
+			<artifactId>sender</artifactId>
+			<version>1.0-SNAPSHOT</version>
+		</dependency>
 		<!--OD SPRINGA-->
 		<dependency>
 			<groupId>org.hibernate</groupId>

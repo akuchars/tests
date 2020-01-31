@@ -8,12 +8,12 @@
         <outputRelativeToContentRoot value="true" />
         <module name="tasks" />
         <module name="parent" />
-        <module name="structure" />
         <module name="sender" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="scheduling" target="1.8" />
+      <module name="structure" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
