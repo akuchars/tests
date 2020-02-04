@@ -1,10 +1,11 @@
 package akuchars.notification.common.application
 
-import akuchars.notification.common.application.model.NotificationData
-import akuchars.notification.common.domain.NotificationType
+import akuchars.notification.common.application.model.NotificationDataDto
+import akuchars.notification.common.application.model.NotificationType
 
-interface NotificationService {
-	fun notify(notificationDataToSend: NotificationData)
+internal interface NotificationService {
+
+	fun notify(notificationDataDtoToSend: NotificationDataDto)
 
 	fun getType(): NotificationType
 }

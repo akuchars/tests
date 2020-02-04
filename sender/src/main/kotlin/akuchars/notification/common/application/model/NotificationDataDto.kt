@@ -1,7 +1,8 @@
 package akuchars.notification.common.application.model
 
-class NotificationData(
+internal class NotificationDataDto(
 		val to: String,
 		val title: String,
-		val content: String
+		val content: String,
+		val type: NotificationType
 )

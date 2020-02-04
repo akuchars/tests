@@ -1,4 +1,4 @@
-package akuchars.motivation.domain
+package akuchars.motivation.domain.model
 
 data class MotivationQuotation(
 		private val text: String,

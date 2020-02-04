@@ -8,7 +8,7 @@ import org.thymeleaf.TemplateEngine
 import org.thymeleaf.context.Context
 
 @Service
-class EmailBodyResolver(
+internal class EmailBodyResolver(
 		private val templateEngine: TemplateEngine,
 		private val emailTemplateLocationRepository: EmailTemplateLocationRepository
 ) {

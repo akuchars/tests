@@ -1,6 +1,6 @@
 package akuchars.motivation.application.model
 
-class MotivationsQuotationDto private constructor(
+class MotivationsQuotationDto(
 		val motivations: List<MotivationQuotationDto> = listOf()
 ) {
 
@@ -15,5 +15,9 @@ class MotivationsQuotationDto private constructor(
 
 class MotivationQuotationDto(
 		val text: String,
-		val author: String? = ""
-)
+		val author: String? = DEFAULT_MOTIVATION_AUTHOR
+) {
+	companion object {
+		const val DEFAULT_MOTIVATION_AUTHOR = ""
+	}
+}

@@ -8,7 +8,8 @@ import org.springframework.stereotype.Component
 import org.springframework.transaction.annotation.Transactional
 
 @Component
-class InitDatabaseRunner(private val emailTemplateLocationRepository: EmailTemplateLocationRepository) : ApplicationRunner {
+class InitDatabaseRunner internal constructor(
+		private val emailTemplateLocationRepository: EmailTemplateLocationRepository) : ApplicationRunner {
 
 	@Transactional
 	override fun run(args: ApplicationArguments) {

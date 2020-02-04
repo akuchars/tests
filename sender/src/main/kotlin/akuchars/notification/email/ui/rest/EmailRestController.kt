@@ -1,7 +1,8 @@
-package akuchars.notification.email.ui
+package akuchars.notification.email.ui.rest
 
 import akuchars.notification.common.application.NotificationService
-import akuchars.notification.common.application.model.NotificationData
+import akuchars.notification.common.application.model.NotificationDataDto
+import akuchars.notification.common.application.model.NotificationType.EMAIL
 import akuchars.notification.email.application.command.EmailBodyResolver
 import akuchars.notification.email.application.command.EmailTemplateService
 import akuchars.notification.email.application.model.EmailTemplateDto
@@ -17,21 +18,23 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 @RequestMapping(("/api/v1/email"))
-class EmailRestController(
+class EmailRestController internal constructor(
 		private val emailBodyResolver: EmailBodyResolver,
 		private val emailSender: NotificationService,
 		private val emailTemplateService: EmailTemplateService
 ) {
 
 	@PostMapping("/send")
+	// todo akuchars - to powinien być rest-dto
 	fun sendEmail(@RequestBody emailToSendDto: EmailToSendDto) {
 		val body = emailBodyResolver.prepareBodyForData(emailToSendDto)
-		val notificationData = NotificationData(emailToSendDto.to, body.title!!, body.value!!)
+		val notificationData = NotificationDataDto(emailToSendDto.to, body.title!!, body.value!!, EMAIL)
 		emailSender.notify(notificationData)
 	}
 
 	@PutMapping("/create")
 	@ResponseStatus(value = CREATED)
+	// todo akuchars - to powinien być rest-dto'sy
 	fun createNewEmailTemplate(@RequestBody emailTemplateDto: EmailTemplateDto): EmailTemplateResponseDto {
 		//todo dopisać ControllerAdvice do błędów - FileAlreadyExist
 		return emailTemplateService.saveNewTemplate(emailTemplateDto)

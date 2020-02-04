@@ -1,6 +1,6 @@
 package akuchars.notification.email.application.model
 
-class EmailBodyDto(
+internal class EmailBodyDto(
 		val title: String?,
 		val value: String?
 )

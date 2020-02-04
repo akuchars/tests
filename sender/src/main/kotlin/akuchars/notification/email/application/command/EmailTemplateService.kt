@@ -15,7 +15,7 @@ import java.nio.file.Path
 import java.nio.file.Paths
 
 @Service
-class EmailTemplateService(
+internal class EmailTemplateService(
 		private val emailTemplateLocationRepository: EmailTemplateLocationRepository,
 		private val thymeleafResolver: ThymeleafResolverConfiguration
 ) {

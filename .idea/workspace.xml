@@ -1,162 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0bbdd235-7237-4c47-8c2c-370cf7aff8c9" name="Default Changelist" comment="Adding saving email template files">
-      <change afterPath="$PROJECT_DIR$/data/db/WiredTiger" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/db/WiredTiger.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/db/WiredTiger.wt.3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/db/WiredTiger.wt.4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/db/WiredTiger.wt.5" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/db/mongod.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/notification/common/application/NotificationService.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/notification/common/application/NotificationServiceProvider.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/notification/common/application/model/NotificationData.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/notification/common/domain/NotificationType.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/notification/common/kernel/RegexUtils.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/notification/email/infrastructure/EmailNotificationServiceImpl.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sender/src/main/resources/mytemplates/test1231456.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sender/src/main/resources/mytemplates/test123211456.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sender/src/main/resources/mytemplates/test2112321121456.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sender/src/main/resources/mytemplates/test21123211456.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sender/src/main/resources/mytemplates/test211ygfd1121456.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/common/infrastructure/spring/SecurityContextUserHolder.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/application/command/MotivationNotificationService.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/application/command/MotivationQuotationProvider.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/application/model/MotivationsQuotationDto.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/application/query/MotivationQuotationQueryService.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/domain/MotivationAddressBook.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/domain/MotivationAddressBookRepository.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/domain/MotivationQuotation.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/domain/MotivationQuotationRepository.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/infrastructure/CsvMotivationQuotationQueryService.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/infrastructure/EvernoteMotivationQuotationQueryService.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/infrastructure/HibernateMotivationQuotationQueryService.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/infrastructure/StaticMotivationAddressBookRepository.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/infrastructure/StaticMotivationQuotationQueryService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+    <list default="true" id="0bbdd235-7237-4c47-8c2c-370cf7aff8c9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/notification/common/application/model/MultipleNotificationDataDto.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/notification/common/application/model/NotificationType.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/notification/common/ui/rest/NotificationRestController.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/notification/common/ui/rest/dto/MultipleNotificationDataRestDto.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/notification/common/ui/rest/dto/NotificationDataRestDto.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/notification/common/ui/rest/dto/NotificationRestType.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/notification/common/ui/rest/dto/RestConverters.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/application/model/MotivationBooksDto.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/application/query/MotivationBookQueryService.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/domain/model/MotivationConfigurationSource.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/domain/model/MotivationSourceType.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/domain/model/NotificationType.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/infrastructure/StaticTextMotivationQuotationQueryService.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/infrastructure/rest/InjectMotivationNotificationService.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dictionaries/akuchars.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/akuchars.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/application/email/command/EmailBodyResolver.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/notification/email/application/command/EmailBodyResolver.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/application/email/command/EmailSender.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/application/email/command/EmailTemplateService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/notification/email/application/command/EmailTemplateService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/application/email/model/EmailBodyDto.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/notification/email/application/model/EmailBodyDto.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/application/email/model/EmailTemplateDto.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/notification/email/application/model/EmailTemplateDto.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/application/email/model/EmailTemplateResponseDto.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/notification/email/application/model/EmailTemplateResponseDto.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/application/email/model/EmailToSendDto.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/notification/email/application/model/EmailToSendDto.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/domain/email/model/EmailTemplateLocation.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/notification/email/domain/model/EmailTemplateLocation.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/domain/email/repository/EmailTemplateLocationRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/notification/email/domain/repository/EmailTemplateLocationRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/infrastructure/email/EmailSenderImpl.kt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/infrastructure/spring/InitDatabaseRunner.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/infrastructure/spring/InitDatabaseRunner.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/infrastructure/spring/MongoConfiguration.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/ui/email/EmailRestController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/notification/email/ui/EmailRestController.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sender/src/main/resources/mytemplates/test123.html" beforeDir="false" afterPath="$PROJECT_DIR$/data/db/WiredTiger.wt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sender/src/main/resources/mytemplates/test125.html" beforeDir="false" afterPath="$PROJECT_DIR$/data/db/WiredTiger.wt.1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sender/src/main/resources/mytemplates/test1251.html" beforeDir="false" afterPath="$PROJECT_DIR$/data/db/WiredTiger.wt.2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/structure/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/notification/common/application/NotificationService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/notification/common/application/NotificationService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/notification/common/application/NotificationServiceProvider.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/notification/common/application/NotificationServiceProvider.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/notification/common/application/model/NotificationData.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/notification/common/application/model/NotificationDataDto.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/notification/common/domain/NotificationType.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/notification/email/application/command/EmailBodyResolver.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/notification/email/application/command/EmailBodyResolver.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/notification/email/application/command/EmailTemplateService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/notification/email/application/command/EmailTemplateService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/notification/email/application/model/EmailBodyDto.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/notification/email/application/model/EmailBodyDto.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/notification/email/domain/model/EmailTemplateLocation.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/notification/email/domain/model/EmailTemplateLocation.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/notification/email/domain/repository/EmailTemplateLocationRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/notification/email/domain/repository/EmailTemplateLocationRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/notification/email/infrastructure/EmailNotificationServiceImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/notification/email/infrastructure/EmailNotificationServiceImpl.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/notification/email/ui/EmailRestController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/notification/email/ui/rest/EmailRestController.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tasks/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/ApplicationRunner.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/ApplicationRunner.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/application/common/command/FrontDtoConverter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/common/application/command/FrontDtoConverter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/application/common/model/ErrorDto.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/common/application/model/ErrorDto.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/application/common/model/FrontDto.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/common/application/model/FrontDto.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/application/task/command/ProjectApplicationService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/task/application/command/ProjectApplicationService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/application/task/command/SchedulingTaskService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/task/application/command/SchedulingTaskService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/application/task/command/TagApplicationService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/task/application/command/TagApplicationService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/application/task/command/TaskApplicationService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/task/application/command/TaskApplicationService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/application/task/command/TaskEventsListener.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/task/application/command/TaskEventsListener.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/application/task/model/ProjectDto.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/task/application/model/ProjectDto.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/application/task/model/SubtaskDto.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/task/application/model/SubtaskDto.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/application/task/model/SubtaskForm.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/task/application/model/SubtaskForm.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/application/task/model/TagDto.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/task/application/model/TagDto.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/application/task/model/TagForm.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/task/application/model/TagForm.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/application/task/model/TaskDto.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/task/application/model/TaskDto.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/application/task/model/TaskForm.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/task/application/model/TaskForm.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/application/task/model/TaskPriorityDto.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/task/application/model/TaskPriorityDto.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/application/task/model/TaskStatusDto.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/task/application/model/TaskStatusDto.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/application/task/query/TaskQueryService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/task/application/query/TaskQueryService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/application/user/command/UserRegistrationService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/user/application/command/UserRegistrationService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/application/user/model/RegistrationInfoTextDto.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/user/application/model/RegistrationInfoTextDto.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/application/user/model/UserDto.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/user/application/model/UserDto.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/application/user/model/UserForm.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/user/application/model/UserForm.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/application/user/query/UserQueryService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/user/application/query/UserQueryService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/domain/common/AbstractJpaEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/common/domain/AbstractJpaEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/domain/common/AbstractJpaUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/common/domain/AbstractJpaUtils.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/domain/common/AsyncEvent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/common/domain/AsyncEvent.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/domain/common/ChangeEntityPolicy.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/common/domain/ChangeEntityPolicy.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/domain/common/DomainException.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/common/domain/DomainException.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/domain/common/EventBus.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/common/domain/EventBus.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/domain/statistic/model/DocumentedEvent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/statistic/domain/model/DocumentedEvent.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/domain/statistic/repository/DocumentedEventRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/statistic/domain/repository/DocumentedEventRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/domain/task/event/ProjectCreatedAsyncEvent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/task/domain/event/ProjectCreatedAsyncEvent.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/domain/task/event/SubtaskAddedToTaskAsyncEvent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/task/domain/event/SubtaskAddedToTaskAsyncEvent.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/domain/task/event/SubtaskCompletedInTaskAsyncEvent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/task/domain/event/SubtaskCompletedInTaskAsyncEvent.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/domain/task/event/TagAddedToTaskAsyncEvent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/task/domain/event/TagAddedToTaskAsyncEvent.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/domain/task/event/TaskAddedToProjectAsyncEvent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/task/domain/event/TaskAddedToProjectAsyncEvent.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/domain/task/event/TaskChangedAssigneeAsyncEvent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/task/domain/event/TaskChangedAssigneeAsyncEvent.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/domain/task/event/TaskChangedPeriodAsyncEvent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/task/domain/event/TaskChangedPeriodAsyncEvent.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/domain/task/event/TaskCompletedAsyncEvent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/task/domain/event/TaskCompletedAsyncEvent.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/domain/task/event/TaskEditedAssigneeAsyncEvent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/task/domain/event/TaskEditedAssigneeAsyncEvent.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/domain/task/exceptions/DomainTaskException.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/task/domain/exceptions/DomainTaskException.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/domain/task/model/PeriodOfTime.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/task/domain/model/PeriodOfTime.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/domain/task/model/Project.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/task/domain/model/Project.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/domain/task/model/ProjectName.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/task/domain/model/ProjectName.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/domain/task/model/Subtask.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/task/domain/model/Subtask.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/domain/task/model/Tag.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/task/domain/model/Tag.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/domain/task/model/Task.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/task/domain/model/Task.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/domain/task/model/TaskContent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/task/domain/model/TaskContent.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/domain/task/model/TaskMainGoal.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/task/domain/model/TaskMainGoal.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/domain/task/model/TaskPriority.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/task/domain/model/TaskPriority.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/domain/task/model/TaskStatus.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/task/domain/model/TaskStatus.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/domain/task/model/TaskTitle.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/task/domain/model/TaskTitle.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/domain/task/repository/AddTaskToProjectPolicy.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/task/domain/repository/AddTaskToProjectPolicy.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/domain/task/repository/ChangeTaskAttributePolicy.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/task/domain/repository/ChangeTaskAttributePolicy.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/domain/task/repository/CustomTaskRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/task/domain/repository/CustomTaskRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/domain/task/repository/ProjectRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/task/domain/repository/ProjectRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/domain/task/repository/SubtaskRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/task/domain/repository/SubtaskRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/domain/task/repository/TagRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/task/domain/repository/TagRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/domain/task/repository/TaskRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/task/domain/repository/TaskRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/domain/user/event/UserCreatedAsyncEvent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/user/domain/event/UserCreatedAsyncEvent.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/domain/user/model/Email.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/user/domain/model/Email.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/domain/user/model/Password.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/user/domain/model/Password.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/domain/user/model/PhoneNumber.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/user/domain/model/PhoneNumber.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/domain/user/model/Role.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/user/domain/model/Role.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/domain/user/model/RoleType.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/user/domain/model/RoleType.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/domain/user/model/User.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/user/domain/model/User.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/domain/user/model/UserData.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/user/domain/model/UserData.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/domain/user/repository/RoleRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/user/domain/repository/RoleRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/domain/user/repository/UserRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/user/domain/repository/UserRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/infrastructure/events/AfterSendAsyncEventRunner.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/common/infrastructure/events/AfterSendAsyncEventRunner.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/infrastructure/events/EventBusImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/common/infrastructure/events/EventBusImpl.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/infrastructure/events/MockedEventBus.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/common/infrastructure/events/MockedEventBus.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/infrastructure/spring/AuthAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/common/infrastructure/spring/AuthAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/infrastructure/spring/InitDatabaseRunner.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/common/infrastructure/spring/InitDatabaseRunner.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/infrastructure/spring/InternationalizationConfiguration.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/common/infrastructure/spring/InternationalizationConfiguration.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/infrastructure/spring/LocaleResolverImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/common/infrastructure/spring/LocaleResolverImpl.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/infrastructure/spring/MongoConfiguration.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/common/infrastructure/spring/MongoConfiguration.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/infrastructure/spring/RabbitConfiguration.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/common/infrastructure/spring/RabbitConfiguration.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/infrastructure/spring/SchedulingConfiguration.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/common/infrastructure/spring/SchedulingConfiguration.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/infrastructure/spring/SecurityContextUserHolder.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/infrastructure/spring/SendWelcomeAsyncEventRunner.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/common/infrastructure/spring/SendWelcomeAsyncEventRunner.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/infrastructure/spring/SwaggerConfiguration.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/common/infrastructure/spring/SwaggerConfiguration.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/infrastructure/statistic/DocumentEventAfterSendAsyncEventRunner.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/statistic/infrastructure/DocumentEventAfterSendAsyncEventRunner.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/infrastructure/task/DefaultAddTagToTaskAttributePolicy.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/task/infrastructure/DefaultAddTagToTaskAttributePolicy.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/infrastructure/task/DefaultChangePeriodAttributePolicy.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/task/infrastructure/DefaultChangePeriodAttributePolicy.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/infrastructure/task/DefaultChangeTaskAssigneeAttributePolicy.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/task/infrastructure/DefaultChangeTaskAssigneeAttributePolicy.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/infrastructure/task/DefaultFinishSubtaskPolicy.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/task/infrastructure/DefaultFinishSubtaskPolicy.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/infrastructure/task/TaskRepositoryImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/task/infrastructure/TaskRepositoryImpl.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/infrastructure/user/UserDetailServiceImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/user/infrastructure/UserDetailServiceImpl.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/infrastructure/user/UserQueryServiceImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/user/infrastructure/UserQueryServiceImpl.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/kernel/ApplicationProperties.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/common/kernel/ApplicationProperties.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/kernel/DateUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/common/kernel/DateUtils.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/kernel/FreeLoggerForEveryone.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/common/kernel/FreeLoggerForEveryone.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/kernel/ProfileProperties.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/common/kernel/ProfileProperties.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/ui/mvc/LoginController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/user/ui/LoginController.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/ui/rest/personal/LoginRestController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/user/ui/LoginRestController.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/ui/rest/personal/RegistrationRestController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/user/ui/RegistrationRestController.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/ui/rest/task/ProjectRestController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/task/ui/ProjectRestController.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/ui/rest/task/TaskRestController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/task/ui/TaskRestController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/application/command/MotivationNotificationService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/application/command/MotivationNotificationService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/application/command/MotivationQuotationProvider.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/application/command/MotivationQuotationProvider.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/application/model/MotivationsQuotationDto.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/application/model/MotivationsQuotationDto.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/application/query/MotivationQuotationQueryService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/application/query/MotivationQuotationQueryService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/domain/MotivationAddressBook.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/domain/model/MotivationAddressBook.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/domain/MotivationAddressBookRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/domain/MotivationAddressBookRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/domain/MotivationQuotation.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/domain/model/MotivationQuotation.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/domain/MotivationQuotationRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/domain/MotivationQuotationRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/infrastructure/CsvMotivationQuotationQueryService.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/infrastructure/EvernoteMotivationQuotationQueryService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/infrastructure/EvernoteMotivationQuotationQueryService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/infrastructure/HibernateMotivationQuotationQueryService.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/infrastructure/StaticMotivationAddressBookRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/infrastructure/repository/StaticMotivationAddressBookRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/infrastructure/StaticMotivationQuotationQueryService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/infrastructure/StaticMotivationQuotationQueryService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasks/src/test/kotlin/akuchars/ApplicationRunnerTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/test/kotlin/akuchars/ApplicationRunnerTest.kt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -174,9 +63,9 @@
         <option value="JUnit5 Test Class" />
         <option value="Kotlin Object" />
         <option value="Class" />
-        <option value="Kotlin Interface" />
-        <option value="Kotlin Class" />
         <option value="Kotlin File" />
+        <option value="Kotlin Class" />
+        <option value="Kotlin Interface" />
       </list>
     </option>
   </component>
@@ -207,15 +96,18 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/tasks/src/main/kotlin" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="project.kotlinCompiler" />
   </component>
   <component name="RecentsManager">
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
-      <recent name="akuchars.notification.email.infrastructure" />
-      <recent name="akuchars.notification.common.domain" />
-      <recent name="akuchars.notification.common.application.model" />
-      <recent name="akuchars.email.ui" />
-      <recent name="akuchars.common.application" />
+      <recent name="akuchars.motivation.application.model" />
+      <recent name="akuchars.notification.common.ui.rest.dto" />
+      <recent name="akuchars.notification.common.ui.rest" />
+      <recent name="akuchars.notification.common.ui" />
+      <recent name="akuchars.notification.email.ui.rest" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -224,23 +116,25 @@
       <recent name="akuchars" />
     </key>
     <key name="CreateKotlinClassDialog.RecentsKey">
+      <recent name="akuchars.motivation.application.query" />
+      <recent name="akuchars.motivation.domain.model" />
+      <recent name="akuchars.motivation.domain" />
       <recent name="akuchars.application.common" />
       <recent name="akuchars.application.task.model" />
-      <recent name="akuchars.application.user.model" />
     </key>
     <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
+      <recent name="akuchars.notification.common.application.model" />
+      <recent name="akuchars.notification.email.ui.rest" />
       <recent name="akuchars.infrastructure.spring" />
       <recent name="infrastructure.spring" />
       <recent name="akuchars.domain.task.event" />
-      <recent name="akuchars.infrastructure.task" />
-      <recent name="akuchars.domain.user.model" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Repozytoria\akuchars\parent\sender\src\main\kotlin\akuchars\notification\common\ui\rest\dto" />
+      <recent name="C:\Repozytoria\akuchars\parent\sender\src\main\kotlin\akuchars\notification\common\ui\rest" />
+      <recent name="C:\Repozytoria\akuchars\parent\sender\src\main\kotlin\akuchars\notification\common\ui" />
       <recent name="C:\Repozytoria\akuchars\parent\tasks\src\main\kotlin\akuchars\common\domain" />
       <recent name="C:\Repozytoria\akuchars\parent\tasks\src\main\kotlin\akuchars\user\infrastructure" />
-      <recent name="C:\Repozytoria\akuchars\parent\sender\src\main\resources\mytemplates" />
-      <recent name="C:\Repozytoria\akuchars\parent\sender\src\main\kotlin\akuchars" />
-      <recent name="C:\Repozytoria\akuchars\parent\tasks" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Repozytoria\akuchars\parent\sender\src\main\kotlin" />
@@ -268,7 +162,15 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Kotlin.akuchars.ApplicationRunnerKt">
+  <component name="RunManager" selected="Kotlin.akuchars.SenderApplicationRunnerKt">
+    <configuration name="All in tasks" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="tasks" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
@@ -282,6 +184,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="akuchars.ApplicationRunner" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
+      <module name="tasks" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" value="akuchars.ApplicationRunner" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="akuchars.ApplicationRunnerKt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
       <module name="tasks" />
       <option name="VM_PARAMETERS" />
@@ -290,6 +205,19 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="MAIN_CLASS_NAME" value="akuchars.ApplicationRunnerKt" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="akuchars.SenderApplicationRunnerKt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
+      <module name="sender" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" value="akuchars.SenderApplicationRunnerKt" />
       <option name="WORKING_DIRECTORY" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -308,47 +236,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="docker-compose.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="sourceFilePath" value="docker-compose.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
-    <configuration name="docker-compose.yml.postgres: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="services">
-            <list>
-              <option value="postgres" />
-            </list>
-          </option>
-          <option name="sourceFilePath" value="docker-compose.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
-    <configuration name="docker-compose.yml.rabbit-vgpo: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="services">
-            <list>
-              <option value="rabbit-vgpo" />
-            </list>
-          </option>
-          <option name="sourceFilePath" value="docker-compose.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Kotlin.akuchars.SenderApplicationRunnerKt" />
         <item itemvalue="Kotlin.akuchars.ApplicationRunnerKt" />
+        <item itemvalue="Kotlin.akuchars.ApplicationRunner" />
+        <item itemvalue="JUnit.All in tasks" />
         <item itemvalue="Kotlin.akuchars.motivation.ApplicatoinRunnerKt" />
-        <item itemvalue="Docker.docker-compose.yml.rabbit-vgpo: Compose Deployment" />
-        <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
-        <item itemvalue="Docker.docker-compose.yml.postgres: Compose Deployment" />
       </list>
     </recent_temporary>
   </component>
@@ -576,7 +470,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573220837322</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Adding motivation mini-app">
+      <created>1580477935630</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1580477935630</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -593,8 +494,8 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="circleCi #1" />
     <MESSAGE value="circleCi #2" />
     <MESSAGE value="circleCi #3" />
     <MESSAGE value="Adding ApplicationRunnerTest.kt which check taht spring boot for test profile is started" />
@@ -619,7 +520,10 @@
     <MESSAGE value="Adding module to send email" />
     <MESSAGE value="Adding emial to properly send mails" />
     <MESSAGE value="Adding saving email template files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding saving email template files" />
+    <MESSAGE value="Adding motivation mini-app" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding motivation mini-app" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
