@@ -156,4 +156,46 @@
 			);
 		</sql>
 	</changeSet>
+
+	<changeSet id="Adding MotivationQuotation as table v2" author="akuchars">
+		<sql>
+			create schema motivation;
+
+			create table motivation.quatations
+			(
+			id bigserial not null,
+			text varchar not null,
+			author varchar not null,
+			constraint quatations_pk primary key (id)
+			);
+		</sql>
+	</changeSet>
+
+	<changeSet id="Adding address book v2" author="akuchars">
+		<sql>
+			create table motivation.address_books
+			(
+			id bigserial not null,
+			addressee varchar not null,
+			type varchar not null,
+			constraint address_books_pk primary key (id)
+			)
+		</sql>
+	</changeSet>
+
+	<changeSet id="Adding configurations_quatations Table v2" author="akuchars">
+		<sql>
+			create table motivation.books_quatations
+			(
+			id bigserial not null,
+			address_book_id bigserial not null,
+			quatations_id bigserial not null,
+			active boolean not null default true,
+			type varchar not null,
+			constraint configuration_source_quatations_pk primary key (id),
+			constraint configuration_source_fk foreign key (address_book_id) references motivation.address_books(id),
+			constraint quatations_fk foreign key (quatations_id) references motivation.quatations(id)
+			)
+		</sql>
+	</changeSet>
 </databaseChangeLog>

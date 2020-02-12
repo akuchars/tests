@@ -133,6 +133,11 @@
 			<artifactId>kotlin-reflect</artifactId>
 		</dependency>
 		<dependency>
+			<groupId>com.evernote</groupId>
+			<artifactId>evernote-api</artifactId>
+			<version>1.25.1</version>
+		</dependency>
+		<dependency>
 			<groupId>io.vavr</groupId>
 			<artifactId>vavr</artifactId>
 			<version>${vavr.version}</version>
@@ -197,6 +202,12 @@
 			<artifactId>spring-test</artifactId>
 			<version>5.1.4.RELEASE</version>
 			<scope>test</scope>
+		</dependency>
+
+		<!--		todo tego nie powinno tutah być-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-mail</artifactId>
 		</dependency>
 	</dependencies>
 </project>

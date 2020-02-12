@@ -1,8 +1,8 @@
 package akuchars.motivation.domain
 
 import akuchars.motivation.domain.model.MotivationAddressBook
+import org.springframework.data.repository.CrudRepository
+import org.springframework.stereotype.Repository
 
-interface MotivationAddressBookRepository {
-
-	fun findAll(): List<MotivationAddressBook>
-}
+@Repository
+interface MotivationAddressBookRepository : CrudRepository<MotivationAddressBook, Long>

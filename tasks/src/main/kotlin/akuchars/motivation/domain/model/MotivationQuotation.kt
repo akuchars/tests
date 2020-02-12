@@ -1,6 +1,13 @@
 package akuchars.motivation.domain.model
 
+import akuchars.common.domain.AbstractJpaEntity
+import akuchars.common.kernel.ApplicationProperties
+import javax.persistence.Entity
+import javax.persistence.Table
+
+@Entity
+@Table(schema = ApplicationProperties.MOTIVATION_SCHEMA_NAME, name = "quatations")
 data class MotivationQuotation(
-		private val text: String,
-		private val author: String?
-)
+		val text: String,
+		val author: String?
+) : AbstractJpaEntity()

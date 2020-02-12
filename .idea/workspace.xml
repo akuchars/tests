@@ -2,50 +2,42 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0bbdd235-7237-4c47-8c2c-370cf7aff8c9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/notification/common/application/model/MultipleNotificationDataDto.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/notification/common/application/model/NotificationType.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/notification/common/ui/rest/NotificationRestController.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/notification/common/ui/rest/dto/MultipleNotificationDataRestDto.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/notification/common/ui/rest/dto/NotificationDataRestDto.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/notification/common/ui/rest/dto/NotificationRestType.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/notification/common/ui/rest/dto/RestConverters.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/application/model/MotivationBooksDto.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/application/query/MotivationBookQueryService.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/domain/model/MotivationConfigurationSource.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/domain/model/MotivationSourceType.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/domain/model/NotificationType.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/infrastructure/StaticTextMotivationQuotationQueryService.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/infrastructure/rest/InjectMotivationNotificationService.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/application/command/MotivationTextBuilder.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/application/command/MotivationTextBuilderImpl.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/domain/model/SourceMotivationQuotation.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/domain/policy/MotivationChooserPolicy.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/domain/policy/RandomMotivationChooserPolicy.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/infrastructure/rest/MotivationNotificationServiceImpl.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/sender/domain/NotificationEvent.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/sender/domain/SenderEventBus.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/sender/infrastructure/InjectRestSenderEventBus.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dictionaries/akuchars.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/akuchars.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/infrastructure/spring/InitDatabaseRunner.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/infrastructure/spring/InitDatabaseRunner.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/notification/common/application/NotificationService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/notification/common/application/NotificationService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/notification/common/application/NotificationServiceProvider.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/notification/common/application/NotificationServiceProvider.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/notification/common/application/model/NotificationData.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/notification/common/application/model/NotificationDataDto.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/notification/common/domain/NotificationType.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/notification/email/application/command/EmailBodyResolver.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/notification/email/application/command/EmailBodyResolver.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/notification/email/application/command/EmailTemplateService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/notification/email/application/command/EmailTemplateService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/notification/email/application/model/EmailBodyDto.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/notification/email/application/model/EmailBodyDto.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/notification/email/domain/model/EmailTemplateLocation.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/notification/email/domain/model/EmailTemplateLocation.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/notification/email/domain/repository/EmailTemplateLocationRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/notification/email/domain/repository/EmailTemplateLocationRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/notification/email/infrastructure/EmailNotificationServiceImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/notification/email/infrastructure/EmailNotificationServiceImpl.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/notification/email/ui/EmailRestController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/notification/email/ui/rest/EmailRestController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/infrastructure/spring/InitDatabaseRunner.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/infrastructure/spring/SenderInitDatabaseRunner.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/notification/common/application/model/NotificationType.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sender/src/main/kotlin/akuchars/notification/common/application/model/NotificationType.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tasks/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/ApplicationRunner.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/ApplicationRunner.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/application/command/MotivationNotificationService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/application/command/MotivationNotificationService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/application/command/MotivationQuotationProvider.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/application/command/MotivationQuotationProvider.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/application/model/MotivationsQuotationDto.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/application/model/MotivationsQuotationDto.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/application/query/MotivationQuotationQueryService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/application/query/MotivationQuotationQueryService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/domain/MotivationAddressBook.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/domain/model/MotivationAddressBook.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/common/infrastructure/spring/InitDatabaseRunner.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/common/infrastructure/spring/InitDatabaseRunner.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/common/infrastructure/spring/SendWelcomeAsyncEventRunner.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/common/infrastructure/spring/SendWelcomeAsyncEventRunner.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/common/kernel/ApplicationProperties.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/common/kernel/ApplicationProperties.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/application/command/MotivationQuotationProvider.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/application/model/MotivationBooksDto.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/application/model/MotivationsQuotationDto.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/application/query/MotivationBookQueryService.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/application/query/MotivationQuotationQueryService.kt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/domain/MotivationAddressBookRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/domain/MotivationAddressBookRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/domain/MotivationQuotation.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/domain/model/MotivationQuotation.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/domain/MotivationQuotationRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/domain/MotivationQuotationRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/infrastructure/CsvMotivationQuotationQueryService.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/infrastructure/EvernoteMotivationQuotationQueryService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/infrastructure/EvernoteMotivationQuotationQueryService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/infrastructure/HibernateMotivationQuotationQueryService.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/infrastructure/StaticMotivationAddressBookRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/infrastructure/repository/StaticMotivationAddressBookRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/infrastructure/StaticMotivationQuotationQueryService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/infrastructure/StaticMotivationQuotationQueryService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/test/kotlin/akuchars/ApplicationRunnerTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/test/kotlin/akuchars/ApplicationRunnerTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/domain/model/MotivationAddressBook.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/domain/model/MotivationAddressBook.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/domain/model/MotivationConfigurationSource.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/domain/model/MotivationQuotation.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/domain/model/MotivationQuotation.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/domain/model/MotivationSourceType.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/domain/model/MotivationSourceType.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/infrastructure/EvernoteMotivationQuotationQueryService.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/infrastructure/StaticMotivationQuotationQueryService.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/infrastructure/StaticTextMotivationQuotationQueryService.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/infrastructure/repository/StaticMotivationAddressBookRepository.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/infrastructure/rest/InjectMotivationNotificationService.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasks/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasks/src/main/resources/db/changelog/db.changelog-master.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/resources/db/changelog/db.changelog-master.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -63,9 +55,9 @@
         <option value="JUnit5 Test Class" />
         <option value="Kotlin Object" />
         <option value="Class" />
+        <option value="Kotlin Interface" />
         <option value="Kotlin File" />
         <option value="Kotlin Class" />
-        <option value="Kotlin Interface" />
       </list>
     </option>
   </component>
@@ -99,15 +91,15 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="project.kotlinCompiler" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="akuchars.sender.domain" />
+      <recent name="akuchars.common.domain.sender" />
       <recent name="akuchars.motivation.application.model" />
       <recent name="akuchars.notification.common.ui.rest.dto" />
       <recent name="akuchars.notification.common.ui.rest" />
-      <recent name="akuchars.notification.common.ui" />
-      <recent name="akuchars.notification.email.ui.rest" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -130,11 +122,11 @@
       <recent name="akuchars.domain.task.event" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Repozytoria\akuchars\parent\tasks\src\main\kotlin\akuchars\sender\domain" />
       <recent name="C:\Repozytoria\akuchars\parent\sender\src\main\kotlin\akuchars\notification\common\ui\rest\dto" />
       <recent name="C:\Repozytoria\akuchars\parent\sender\src\main\kotlin\akuchars\notification\common\ui\rest" />
       <recent name="C:\Repozytoria\akuchars\parent\sender\src\main\kotlin\akuchars\notification\common\ui" />
       <recent name="C:\Repozytoria\akuchars\parent\tasks\src\main\kotlin\akuchars\common\domain" />
-      <recent name="C:\Repozytoria\akuchars\parent\tasks\src\main\kotlin\akuchars\user\infrastructure" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Repozytoria\akuchars\parent\sender\src\main\kotlin" />
@@ -162,7 +154,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Kotlin.akuchars.SenderApplicationRunnerKt">
+  <component name="RunManager" selected="Kotlin.akuchars.ApplicationRunnerKt">
     <configuration name="All in tasks" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="tasks" />
       <option name="PACKAGE_NAME" value="" />
@@ -238,8 +230,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Kotlin.akuchars.SenderApplicationRunnerKt" />
         <item itemvalue="Kotlin.akuchars.ApplicationRunnerKt" />
+        <item itemvalue="Kotlin.akuchars.SenderApplicationRunnerKt" />
         <item itemvalue="Kotlin.akuchars.ApplicationRunner" />
         <item itemvalue="JUnit.All in tasks" />
         <item itemvalue="Kotlin.akuchars.motivation.ApplicatoinRunnerKt" />
@@ -250,7 +242,23 @@
     <option name="allServicesViewState">
       <serviceView>
         <treeState>
-          <expand />
+          <expand>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@6cc9b979" type="9fbbdea:ServiceModel$ServiceNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@6cc9b979" type="9fbbdea:ServiceModel$ServiceNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@2f7874f8" type="9fbbdea:ServiceModel$ServiceNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@6cc9b979" type="9fbbdea:ServiceModel$ServiceNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@2f7874f8" type="9fbbdea:ServiceModel$ServiceNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@62e0720a" type="9fbbdea:ServiceModel$ServiceNode" />
+            </path>
+          </expand>
           <select />
         </treeState>
       </serviceView>
@@ -477,7 +485,14 @@
       <option name="project" value="LOCAL" />
       <updated>1580477935630</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Adding motivation module">
+      <created>1580849422951</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1580849422951</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -496,7 +511,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="circleCi #2" />
     <MESSAGE value="circleCi #3" />
     <MESSAGE value="Adding ApplicationRunnerTest.kt which check taht spring boot for test profile is started" />
     <MESSAGE value="Adding postgres docker image to docker-compose.yml" />
@@ -521,7 +535,8 @@
     <MESSAGE value="Adding emial to properly send mails" />
     <MESSAGE value="Adding saving email template files" />
     <MESSAGE value="Adding motivation mini-app" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding motivation mini-app" />
+    <MESSAGE value="Adding motivation module" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding motivation module" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -533,12 +548,30 @@
           <line>45</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/com/evernote/evernote-api/1.25.1/evernote-api-1.25.1.jar!/com/evernote/clients/ClientFactory.class</url>
+          <line>45</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/sender/src/main/kotlin/akuchars/notification/email/application/command/EmailTemplateService.kt</url>
           <line>33</line>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/infrastructure/rest/MotivationNotificationServiceImpl.kt</url>
+          <line>26</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="JetRunConfigurationType">
+        <watch expression="source.token" />
+        <watch expression="motivationAddressBookRepository" />
+        <watch expression="motivationAddressBookRepository.findAll()" />
+        <watch expression="motivationAddressBookRepository.findAll()" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

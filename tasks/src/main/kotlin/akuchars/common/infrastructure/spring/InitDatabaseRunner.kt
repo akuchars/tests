@@ -2,12 +2,13 @@ package akuchars.common.infrastructure.spring
 
 import akuchars.common.domain.EventBus
 import akuchars.common.kernel.ProfileProperties
-import akuchars.task.domain.model.Project
-import akuchars.task.domain.model.ProjectName
-import akuchars.task.domain.model.Task
-import akuchars.task.domain.model.TaskContent
-import akuchars.task.domain.model.TaskPriority.HIGH
-import akuchars.task.domain.model.TaskTitle
+import akuchars.motivation.domain.MotivationAddressBookRepository
+import akuchars.motivation.domain.MotivationQuotationRepository
+import akuchars.motivation.domain.model.MotivationAddressBook
+import akuchars.motivation.domain.model.MotivationQuotation
+import akuchars.motivation.domain.model.MotivationSourceType.STATIC_TEXT
+import akuchars.motivation.domain.model.NotificationType.EMAIL
+import akuchars.motivation.domain.model.SourceMotivationQuotation
 import akuchars.task.domain.repository.ProjectRepository
 import akuchars.task.domain.repository.TaskRepository
 import akuchars.user.domain.model.Email
@@ -32,17 +33,29 @@ class InitDatabaseRunner(
 		private val taskRepository: TaskRepository,
 		private val roleRepository: RoleRepository,
 		private val mockedEventBus: EventBus,
-		private val passwordEncoder: PasswordEncoder
+		private val passwordEncoder: PasswordEncoder,
+		private val motivationQuotationRepository: MotivationQuotationRepository,
+		private val motivationAddressBookRepository: MotivationAddressBookRepository
 ) : ApplicationRunner {
 
 	@Transactional
 	override fun run(args: ApplicationArguments) {
-		val user = createMe()
+//		val user = createMe()
+//
+//		val project = Project.createProject(mockedEventBus, projectRepository, ProjectName("Some nice project name"), user)
+//
+//		val task = Task.createProjectTask(user, user, TaskContent("My task content"), TaskTitle("Some title"), HIGH)
+//		project.addTask(mockedEventBus, taskRepository, task) { _, _ -> true }
+		val motivations = createMotivations()
+		motivations.forEach {
+			motivationQuotationRepository.save(it)
+		}
 
-		val project = Project.createProject(mockedEventBus, projectRepository, ProjectName("Some nice project name"), user)
-
-		val task = Task.createProjectTask(user, user, TaskContent("My task content"), TaskTitle("Some title"), HIGH)
-		project.addTask(mockedEventBus, taskRepository, task) { _, _ -> true }
+		val book = MotivationAddressBook("adamkucharski1994@gmail.com", EMAIL).apply {
+			this.motivations = motivations.map { SourceMotivationQuotation(it, this, true, STATIC_TEXT) }
+					.toMutableList()
+		}
+		motivationAddressBookRepository.save(book)
 	}
 
 	private fun createMe(): User {
@@ -56,4 +69,29 @@ class InitDatabaseRunner(
 				PhoneNumber("501464579")
 		)
 	}
+
+	private fun createMotivations() =
+			listOf(
+					"Wszystko zaczyna się od marzeń. ",
+					"Najważniejsze jest najbliższe 5 minut, reszta to wyobraźnia.",
+					"If You Can dream It, than You can do It. ",
+					"There is difference beetwen knowing the path and walking the path",
+					"Zanim wygrasz daj sobie szansę że przegrasz",
+					"Przyszłość zaczyna się dziś, nie jutro",
+					"Twoje przekonania stają się twoimi myślami, \n" +
+							"Twoje myśli stają się twoimi słowami, \n" +
+							"Twoje słowa stają się twoimi czynami, \n" +
+							"Twoje czyny stają się twoimi zwyczajami, \n" +
+							"Twoje zwyczaje stają się twoimi wartościami, \n" +
+							"A twoje wartości stają się twoim przeznaczeniem.",
+					"Udawaj tak długo, aż Ci się powiedzie",
+					"Upadnij siedem razy, wstań po raz ósmy.",
+					"Wszyscy jesteśmy tym, co w swoim życiu powtarzamy. Dlatego doskonałość nie jest jednorazowym aktem, lecz nawykiem.",
+					"Każdy chce iść do nieba, nikt nie chce umrzeć",
+					"Dostaniesz dokładnie tyle, ile z siebie dasz.",
+					"To, co zasiejesz wiosną, zbierzesz latem podczas żniw.",
+					"Z czym byś się obudził jutro rano, gdybyś się obudził tylko z tym za co podziękowałeś dzisiaj",
+					"Tchórz umiera tysiąc razy, człowiek odważny umiera tylko raz",
+					"Wymagajcie od siebie, choćby inni od Was nie wymagali"
+			).map { MotivationQuotation(it, "") }
 }

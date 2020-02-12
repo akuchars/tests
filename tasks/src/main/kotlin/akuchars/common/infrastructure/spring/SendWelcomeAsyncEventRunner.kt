@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component
 class SendWelcomeAsyncEventRunner(private val eventBus: EventBus) : ApplicationRunner {
 
 	override fun run(args: ApplicationArguments) {
-		eventBus.sendAsync(ApplicationProperties.TASK_QUEUE_NAME, object : AsyncEvent {
+		eventBus.sendAsync(ApplicationProperties.MESSAGES_QUEUE_NAME, object : AsyncEvent {
 			override fun getEventType(): EventType = EventType.SPRING
 			override fun getEventMessage(): String = "After initialize spring boot"
 		})
