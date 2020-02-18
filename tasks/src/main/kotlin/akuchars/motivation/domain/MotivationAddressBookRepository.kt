@@ -5,4 +5,6 @@ import org.springframework.data.repository.CrudRepository
 import org.springframework.stereotype.Repository
 
 @Repository
-interface MotivationAddressBookRepository : CrudRepository<MotivationAddressBook, Long>
+interface MotivationAddressBookRepository : CrudRepository<MotivationAddressBook, Long> {
+	fun findByAddressee(addressee: String): MotivationAddressBook?
+}
