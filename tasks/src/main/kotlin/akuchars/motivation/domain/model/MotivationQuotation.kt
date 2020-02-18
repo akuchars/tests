@@ -8,6 +8,15 @@ import javax.persistence.Table
 @Entity
 @Table(schema = ApplicationProperties.MOTIVATION_SCHEMA_NAME, name = "quatations")
 data class MotivationQuotation(
-		val text: String,
-		val author: String?
-) : AbstractJpaEntity()
+		var text: String,
+		var author: String?
+) : AbstractJpaEntity() {
+
+	fun modify(text: String, author: String): MotivationQuotation {
+		return apply {
+			this.text = text
+			this.author = author
+		}
+	}
+
+}

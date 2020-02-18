@@ -1,7 +1,7 @@
 package akuchars.motivation.domain.model
 
 enum class MotivationSourceType {
-	DEFAULT, STATIC_TEXT, EVERNOTE;
+	DEFAULT, STATIC_TEXT, EVERNOTE, WWW;
 
 	companion object {
 		const val STATIC_DISCRIMINATOR_NAME = "STATIC"

@@ -5,4 +5,6 @@ import org.springframework.data.repository.CrudRepository
 import org.springframework.stereotype.Repository
 
 @Repository
-interface MotivationQuotationRepository : CrudRepository<MotivationQuotation, Long>
+interface MotivationQuotationRepository : CrudRepository<MotivationQuotation, Long> {
+	fun getById(id: Long): MotivationQuotation
+}

@@ -10,4 +10,6 @@ import org.springframework.stereotype.Repository
 @Repository
 interface SourceMotivationQuotationRepository : CrudRepository<SourceMotivationQuotation, Long> {
 	fun findAllByAddressBook(pageable: Pageable, addressBook: MotivationAddressBook?): Page<SourceMotivationQuotation>
+	fun findAllByAddressBook(addressBook: MotivationAddressBook?): SourceMotivationQuotation?
+	fun getById(id: Long): SourceMotivationQuotation
 }
