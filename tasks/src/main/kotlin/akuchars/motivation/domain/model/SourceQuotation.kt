@@ -12,14 +12,22 @@ import javax.persistence.Table
 
 @Entity
 @Table(schema = ApplicationProperties.MOTIVATION_SCHEMA_NAME, name = "books_quatations")
-class SourceMotivationQuotation(
+class SourceQuotation(
 		@ManyToOne
 		@JoinColumn(name = "quatations_id")
-		val motivation: MotivationQuotation,
+		var motivation: Quotation,
 		@ManyToOne(fetch = LAZY)
 		@JoinColumn(name = "address_book_id")
-		private val addressBook: MotivationAddressBook,
-		val active: Boolean,
+		private val addressBook: AddressBook,
+		var active: Boolean,
 		@Enumerated(STRING)
-		val type: MotivationSourceType
-) : AbstractJpaEntity()
+		var type: SourceType
+) : AbstractJpaEntity() {
+	fun modify(motivationText: String, author: String, active: Boolean): SourceQuotation {
+		return apply {
+			this.active = active
+			this.motivation.text = motivationText
+			this.motivation.author = author
+		}
+	}
+}

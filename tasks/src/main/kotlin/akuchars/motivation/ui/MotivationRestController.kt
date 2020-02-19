@@ -1,6 +1,7 @@
 package akuchars.motivation.ui
 
 import akuchars.common.application.model.FrontDto
+import akuchars.motivation.application.command.MotivationCommandService
 import akuchars.motivation.application.model.CollectionOfMotivationQuatationsForm
 import akuchars.motivation.application.model.MotivationDataDto
 import akuchars.motivation.application.query.MotivationQueryService
@@ -15,7 +16,10 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 @RequestMapping("/api/v1/motivations")
-class MotivationRestController(private val motivationQueryService: MotivationQueryService) {
+class MotivationRestController(
+		private val motivationQueryService: MotivationQueryService,
+		private val motivationCommandService: MotivationCommandService
+) {
 
 	@GetMapping
 	fun getAllMotivationsForCurrentUser(@RequestParam page: Int, @RequestParam size: Int): FrontDto<Page<MotivationDataDto>> {
@@ -25,6 +29,6 @@ class MotivationRestController(private val motivationQueryService: MotivationQue
 
 	@PostMapping("/create")
 	fun createOrEditForCurrentUser(@RequestBody form: CollectionOfMotivationQuatationsForm) {
-		motivationQueryService.createOrEdit(form)
+		motivationCommandService.createOrEdit(form)
 	}
 }

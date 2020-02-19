@@ -5,7 +5,7 @@ import akuchars.sender.domain.NotificationContentData
 import org.springframework.stereotype.Component
 
 @Component
-class MotivationTextBuilderImpl : MotivationTextBuilder {
+class TextBuilderImpl : TextBuilder {
 
 	//todo akuchars - teksty powinny być brane z messages.properties
 	override fun prepareMotivationText(motivationQuote: String,

@@ -2,13 +2,13 @@ package akuchars.common.infrastructure.spring
 
 import akuchars.common.domain.EventBus
 import akuchars.common.kernel.ProfileProperties
-import akuchars.motivation.domain.MotivationAddressBookRepository
-import akuchars.motivation.domain.MotivationQuotationRepository
-import akuchars.motivation.domain.model.MotivationAddressBook
-import akuchars.motivation.domain.model.MotivationQuotation
-import akuchars.motivation.domain.model.MotivationSourceType.STATIC_TEXT
+import akuchars.motivation.domain.AddressBookRepository
+import akuchars.motivation.domain.QuotationRepository
+import akuchars.motivation.domain.model.AddressBook
 import akuchars.motivation.domain.model.NotificationType.EMAIL
-import akuchars.motivation.domain.model.SourceMotivationQuotation
+import akuchars.motivation.domain.model.Quotation
+import akuchars.motivation.domain.model.SourceQuotation
+import akuchars.motivation.domain.model.SourceType.STATIC_TEXT
 import akuchars.task.domain.repository.ProjectRepository
 import akuchars.task.domain.repository.TaskRepository
 import akuchars.user.domain.model.Email
@@ -34,8 +34,8 @@ class InitDatabaseRunner(
 		private val roleRepository: RoleRepository,
 		private val mockedEventBus: EventBus,
 		private val passwordEncoder: PasswordEncoder,
-		private val motivationQuotationRepository: MotivationQuotationRepository,
-		private val motivationAddressBookRepository: MotivationAddressBookRepository
+		private val quotationRepository: QuotationRepository,
+		private val addressBookRepository: AddressBookRepository
 ) : ApplicationRunner {
 
 	@Transactional
@@ -48,14 +48,14 @@ class InitDatabaseRunner(
 //		project.addTask(mockedEventBus, taskRepository, task) { _, _ -> true }
 		val motivations = createMotivations()
 		motivations.forEach {
-			motivationQuotationRepository.save(it)
+			quotationRepository.save(it)
 		}
 
-		val book = MotivationAddressBook("adamkucharski1994@gmail.com", EMAIL).apply {
-			this.motivations = motivations.map { SourceMotivationQuotation(it, this, true, STATIC_TEXT) }
+		val book = AddressBook("adamkucharski1994@gmail.com", EMAIL).apply {
+			this.motivations = motivations.map { SourceQuotation(it, this, true, STATIC_TEXT) }
 					.toMutableList()
 		}
-		motivationAddressBookRepository.save(book)
+		addressBookRepository.save(book)
 	}
 
 	private fun createMe(): User {
@@ -93,5 +93,5 @@ class InitDatabaseRunner(
 					"Z czym byś się obudził jutro rano, gdybyś się obudził tylko z tym za co podziękowałeś dzisiaj",
 					"Tchórz umiera tysiąc razy, człowiek odważny umiera tylko raz",
 					"Wymagajcie od siebie, choćby inni od Was nie wymagali"
-			).map { MotivationQuotation(it, "") }
+			).map { Quotation(it, "") }
 }

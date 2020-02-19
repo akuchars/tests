@@ -2,18 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0bbdd235-7237-4c47-8c2c-370cf7aff8c9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/application/model/MotivationQuatationsForm.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/domain/UpdatedMotivationAddressBook.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/application/command/MotivationCommandService.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/common/kernel/ApplicationProperties.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/common/kernel/ApplicationProperties.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/application/model/MotivationDataDto.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/application/model/MotivationDataDto.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/common/infrastructure/spring/InitDatabaseRunner.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/common/infrastructure/spring/InitDatabaseRunner.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/application/command/MotivationTextBuilder.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/application/command/TextBuilder.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/application/command/MotivationTextBuilderImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/application/command/TextBuilderImpl.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/application/query/MotivationQueryService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/application/query/MotivationQueryService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/domain/MotivationQuotationRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/domain/MotivationQuotationRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/domain/SourceMotivationQuotationRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/domain/SourceMotivationQuotationRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/domain/model/MotivationAddressBook.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/domain/model/MotivationAddressBook.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/domain/model/MotivationQuotation.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/domain/model/MotivationQuotation.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/domain/model/MotivationSourceType.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/domain/model/MotivationSourceType.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/domain/model/SourceMotivationQuotation.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/domain/model/SourceMotivationQuotation.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/domain/MotivationAddressBookRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/domain/AddressBookRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/domain/MotivationQuotationRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/domain/QuotationRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/domain/SourceMotivationQuotationRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/domain/SourceQuotationRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/domain/UpdatedMotivationAddressBook.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/domain/UpdatedAddressBookEvent.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/domain/model/MotivationAddressBook.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/domain/model/AddressBook.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/domain/model/MotivationQuotation.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/domain/model/Quotation.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/domain/model/MotivationSourceType.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/domain/model/SourceType.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/domain/model/SourceMotivationQuotation.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/domain/model/SourceQuotation.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/domain/policy/MotivationChooserPolicy.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/domain/policy/MotivationChooserPolicy.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/domain/policy/RandomMotivationChooserPolicy.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/domain/policy/RandomMotivationChooserPolicy.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/infrastructure/rest/MotivationNotificationServiceImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/infrastructure/rest/NotificationServiceImpl.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/ui/MotivationRestController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/src/main/kotlin/akuchars/motivation/ui/MotivationRestController.kt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -483,7 +488,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582016591859</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Adding or editing motivaions in source">
+      <created>1582019680110</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1582019680110</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -502,7 +514,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Adding postgres docker image to docker-compose.yml" />
     <MESSAGE value="Adding new personal tables" />
     <MESSAGE value="Finished authorization and login" />
     <MESSAGE value="Adding users into project" />
@@ -527,7 +538,8 @@
     <MESSAGE value="Adding motivation module" />
     <MESSAGE value="Change sending motivation text to DDD" />
     <MESSAGE value="Get all motivations for current user" />
-    <option name="LAST_COMMIT_MESSAGE" value="Get all motivations for current user" />
+    <MESSAGE value="Adding or editing motivaions in source" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding or editing motivaions in source" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>

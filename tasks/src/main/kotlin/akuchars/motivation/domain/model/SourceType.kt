@@ -1,6 +1,6 @@
 package akuchars.motivation.domain.model
 
-enum class MotivationSourceType {
+enum class SourceType {
 	DEFAULT, STATIC_TEXT, EVERNOTE, WWW;
 
 	companion object {
